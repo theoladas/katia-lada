@@ -7,13 +7,13 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
+        /* overflow-x: hidden; */
         height: 100vh;
         font-family: 'Manrope', sans-serif;
         /* font-family: 'Arima', cursive; */
         /* font-family: 'Roboto', sans-serif; */
-
-
     }
+    
 `;
 
 export default GlobalStyle;
