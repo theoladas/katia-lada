@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../img/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Nav.scss";
 
 const Nav = () => {
@@ -29,6 +31,12 @@ const Nav = () => {
         </li>
         <li>
           <Link to="/contact">Επικοινωνία</Link>
+        </li>
+        <li>
+          <a href="tel:2373022865" className="cta-call">
+            <FontAwesomeIcon icon={faPhone} className="phone-icon" />
+            Call Us
+          </a>
         </li>
       </ul>
       <div class="burger" onClick={navSlide}>

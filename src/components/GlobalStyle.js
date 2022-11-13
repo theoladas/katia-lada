@@ -7,8 +7,11 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        /* overflow-x: hidden; */
         height: 100vh;
+        background-color: #e1E2dc;
+        /* background-color: #f5dfe8; */
+        background-color: #fff;
+        color: #282828;
         font-family: 'Manrope', sans-serif;
         /* font-family: 'Arima', cursive; */
         /* font-family: 'Roboto', sans-serif; */
