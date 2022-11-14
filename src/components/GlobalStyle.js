@@ -6,11 +6,17 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
-    body {
+    html,body {
         height: 100vh;
-        background-color: #e1E2dc;
-        /* background-color: #f5dfe8; */
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
         background-color: #fff;
+        /* background-color: #e1E2dc; */
+        /* background-color: #f5dfe8; */
+        
         color: #282828;
         font-family: 'Manrope', sans-serif;
         /* font-family: 'Arima', cursive; */

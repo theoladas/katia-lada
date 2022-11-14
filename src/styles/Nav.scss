@@ -9,13 +9,12 @@ nav {
   // background: #282828;
   background: #ffff;
   // background-color: #f5dfe8;
-
   position: sticky;
   top: 0;
   left: 0;
   .logo {
     width: 200px;
-    height: 100%;
+    height: auto;
   }
 
   .nav-links {
@@ -24,12 +23,11 @@ nav {
     li {
       padding-left: 2rem;
       font-size: 1rem;
-      letter-spacing: 1px;
       .cta-call {
-        padding: 5px 25px;
+        padding: 8px 20px;
         color: #e4389b;
         border: 1px solid #e4389b;
-        border-radius: 13px;
+        border-radius: 20px;
         transition: all 0.4s ease;
         &:hover {
           color: #282828;
@@ -73,20 +71,18 @@ nav {
   nav {
     .nav-links {
       position: absolute;
-      top: 12.8vh;
+      top: 10vh;
       right: 0px;
       height: 90vh;
       width: 30%;
       flex-direction: column;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-evenly;
       background-color: #fff;
       transform: translateX(100%);
       transition: transform 0.3s ease;
       @media (max-width: 500px) {
-        top: 10vh;
         width: 100%;
-        height: 90vh;
       }
       li {
         padding-left: 0;
