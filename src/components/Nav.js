@@ -13,6 +13,16 @@ const Nav = () => {
     burger.classList.toggle("toggle-burger");
   };
 
+  // Animation & Transition Stopper on Resize Screen
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    document.body.classList.add("resize-animation-stopper");
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      document.body.classList.remove("resize-animation-stopper");
+    }, 400);
+  });
+
   return (
     <nav>
       <Link to="/" id="logo">
@@ -35,10 +45,11 @@ const Nav = () => {
         <li>
           <a href="tel:2373022865" className="cta-call">
             <FontAwesomeIcon icon={faPhone} className="phone-icon" />
-            Call Us
+            Καλέστε μας
           </a>
         </li>
       </ul>
+
       <div class="burger" onClick={navSlide}>
         <div class="line1"></div>
         <div class="line2"></div>
