@@ -12,18 +12,24 @@ nav {
   padding: 0.5rem 2rem;
   margin: auto;
   background-color: #f0e9eb;
-  position: sticky;
-  top: 0;
-  left: 0;
+  // position: sticky;
+  // top: 0;
+  // left: 0;
 
   .logo {
-    max-width: 250px;
+    max-width: 100%;
     height: auto;
+    object-fit: cover;
     @media only screen and (max-width: 768px) {
       max-width: auto;
     }
+    @media only screen and (max-width: 360px) {
+      max-width: 150px;
+    }
   }
   #logo {
+    max-width: 250px;
+    height: auto;
     @media screen and (max-width: 1024px) {
       margin: auto;
     }
@@ -72,6 +78,10 @@ nav {
     margin: 5px;
     background-color: #e4389b;
     transition: all 0.3s ease;
+    @media only screen and (max-width: 360px) {
+      width: 20px;
+      margin: 3px;
+    }
   }
   .burger {
     display: none;
@@ -116,12 +126,18 @@ nav {
     }
     .toggle-burger .line1 {
       transform: rotate(-45deg) translate(-5px, 6px);
+      @media only screen and (max-width: 360px) {
+        transform: rotate(-45deg) translate(-5px, 3px);
+      }
     }
     .toggle-burger .line2 {
       opacity: 0;
     }
     .toggle-burger .line3 {
       transform: rotate(45deg) translate(-5px, -6px);
+      @media only screen and (max-width: 360px) {
+        transform: rotate(45deg) translate(-5px, -3px);
+      }
     }
   }
 }

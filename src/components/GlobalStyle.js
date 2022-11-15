@@ -18,6 +18,11 @@ const GlobalStyle = createGlobalStyle`
         /* font-family: 'Arima', cursive; */
         /* font-family: 'Roboto', sans-serif; */
     }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
 `;
 
 export default GlobalStyle;

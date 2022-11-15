@@ -43,7 +43,7 @@ const Nav = () => {
           <Link to="/contact">Επικοινωνία</Link>
         </li>
         <li>
-          <a href="tel:2373022865" className="cta-call">
+          <a href="tel:+00302374082034" className="cta-call">
             <FontAwesomeIcon icon={faPhone} className="phone-icon" />
             Καλέστε μας
           </a>
