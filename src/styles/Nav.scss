@@ -12,12 +12,12 @@ nav {
   padding: 0.5rem 2rem;
   margin: auto;
   background-color: #f0e9eb;
-  // position: sticky;
-  // top: 0;
-  // left: 0;
+  position: sticky;
+  top: 0;
+  left: 0;
 
   .logo {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     object-fit: cover;
     @media only screen and (max-width: 768px) {
@@ -32,6 +32,9 @@ nav {
     height: auto;
     @media screen and (max-width: 1024px) {
       margin: auto;
+    }
+    @media only screen and (max-width: 900px) {
+      margin: 0;
     }
   }
 
