@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -25,22 +25,22 @@ const Nav = () => {
 
   return (
     <nav>
-      <Link to="/" id="logo">
+      <NavLink to="/" id="logo">
         <img src={logo} className="logo"></img>
-      </Link>
+      </NavLink>
 
       <ul className="nav-links">
         <li>
-          <Link to="/">Υπηρεσίες</Link>
+          <NavLink to="/">Υπηρεσίες</NavLink>
         </li>
         <li>
-          <Link to="/work">Gallery</Link>
+          <NavLink to="/work">Gallery</NavLink>
         </li>
         <li>
-          <Link to="/contact">Ο χώρος μας</Link>
+          <NavLink to="/contact">Ο χώρος μας</NavLink>
         </li>
         <li>
-          <Link to="/contact">Επικοινωνία</Link>
+          <NavLink to="/contact">Επικοινωνία</NavLink>
         </li>
         <li>
           <a href="tel:+00302374082034" className="cta-call">
