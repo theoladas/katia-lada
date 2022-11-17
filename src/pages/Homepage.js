@@ -1,7 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import GlobalStyle from "../components/GlobalStyle.js";
-import homepageHeader from "../img/homepage-header.png";
+import homepageBanner from "../img/homepage-banner.png";
 import katiaLogo from "../img/katia-lada-text.png";
 import {
   Paragraph,
@@ -13,8 +12,11 @@ import { PrimaryBtn } from "../components/PrimaryBtn.js";
 
 const Homepage = () => {
   return (
-    <div className="homepage">
-      <Flex className="container">
+    <div>
+      <Flex className="homepage">
+        <div className="hero-image">
+          <HeroImg src={homepageBanner} class="hero-img"></HeroImg>
+        </div>
         <div className="hero-content">
           <div className="main-title">Ινστιτούτο Αισθητικής</div>
           <img src={katiaLogo} className="katia-logo-text"></img>
@@ -30,9 +32,6 @@ const Homepage = () => {
           <Paragraph>Δευ - Παρ: 09:00 - 13:00 | 17:00 - 19:00</Paragraph>
           {/* <div class="pattern-dots-md gray-light"> */}
           <PrimaryBtn />
-        </div>
-        <div className="hero-image">
-          <HeroImg src={homepageHeader}></HeroImg>
         </div>
       </Flex>
     </div>

@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: #f0e9eb;
-        color: #9da6b8;
+        color: #282828;
         font-family: 'Manrope', sans-serif;
         /* font-family: 'Arima', cursive; */
         /* font-family: 'Dancing Script', cursive; */
@@ -53,19 +53,36 @@ const GlobalStyle = createGlobalStyle`
         padding: 5rem 2rem;
       }
     }
+    .homepage{
+      padding-top: 5rem;
+      height: 100%;
+    }
     .hero-content {
       width: 50%;
-      @media screen and (max-width: 1024px) {
+      padding: 0rem .5rem;
+
+      /* @media screen and (max-width: 1070px) {
+        width: 60%;
+        padding-right: 1rem;
+      } */
+      @media screen and (max-width: 768px) {
         width: 100%;
         margin: auto;
       }
     }
     .hero-image {
       width: 50%;
-      @media screen and (max-width: 1024px) {
+      img {
         width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 80%;
       }
     }
+    
     .main-title {
       font-family: "Arima", cursive;
       font-size: 3rem;
@@ -73,18 +90,26 @@ const GlobalStyle = createGlobalStyle`
       color: #282828;
       /* padding: 1rem 0; */
       @media screen and (max-width: 1024px) {
+        line-height: 55px;
+        font-size: 2.6rem;
+      }
+      @media screen and (max-width: 768px) {
         text-align: center;
+        padding-top: 1rem;
       }
       @media only screen and (max-width: 500px) {
         font-size: 2.5rem;
       }
     }
-
+    
     .katia-logo-text {
       max-width: 100%;
       display: block;
       padding: 1rem 0 2rem;
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 990px) {
+        padding: .5rem 0;
+      }
+      @media screen and (max-width: 768px) {
         margin: auto;
         padding: 1rem;
       }
@@ -116,12 +141,16 @@ export const Paragraph = styled.p`
   max-width: 80%;
   margin-top: 0.5rem;
   padding-top: 0.5rem;
-
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 990px) {
+    font-size: 1.125rem;
+    max-width: 100%;
+  }
+  @media screen and (max-width: 768px) {
     text-align: center;
     max-width: 100%;
   }
 `;
+
 export const CTAButton = styled.a`
   border: 1px solid #e4389b;
   border-radius: 20px;
@@ -136,24 +165,25 @@ export const CTAButton = styled.a`
   }
 `;
 export const HeroImg = styled.img`
-  max-width: 90%;
+  /* max-width: 90%; */
   height: auto;
   margin-left: auto;
-  object-fit: cover;
-  display: block;
   @media screen and (max-width: 1024px) {
     margin: auto;
-    width: 80%;
+    /* width: 80%; */
   }
 `;
 
 export const CTACall = styled.a`
   color: #f49ac1;
   letter-spacing: 1px;
+  font-weight: 600;
+  opacity: 1;
   transition: all 0.4s ease;
   &:hover,
   &:focus {
-    color: #282828;
+    opacity: 1;
+    /* color: #282828; */
     text-decoration: underline;
   }
 `;
