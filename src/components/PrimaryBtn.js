@@ -21,17 +21,19 @@ const StyledPrimary = styled.div`
     color: #e4389b;
     padding: 10px 12px;
     color: #fff;
-    /* background: #e4389b; */
-    background: #f49ac1;
-    /* border: 1px solid #e4389b; */
-    border: 1px solid #f49ac1;
+    background: #e4389b;
+    /* background: #f49ac1; */
+    border: 1px solid #e4389b;
+    /* border: 1px solid #f49ac1; */
     border-radius: 10px;
+    opacity: 1;
     transition: all 0.4s ease;
     &:hover,
     &:focus {
-      color: #282828;
+      opacity: 0.65;
+      /* color: #282828;
       border: 1px solid #e4389b;
-      background: #f0e9eb;
+      background: #f0e9eb; */
     }
   }
 `;

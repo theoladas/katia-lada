@@ -36,8 +36,19 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
     .container {
+      padding: 2rem 5rem;
+      min-height: 85vh;
+      @media only screen and (max-width: 500px) {
+        padding: 5rem 2rem;
+      }
+    }
+    .flex {
+      display: flex;
+    }
+    .half-container {
       padding: 5rem 5rem;
-      min-height: 90vh;
+      min-height: 50vh;
+      background-color: #fff;
       @media only screen and (max-width: 500px) {
         padding: 5rem 2rem;
       }
@@ -70,15 +81,26 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .katia-logo-text {
+      max-width: 100%;
       display: block;
       padding: 1rem 0 2rem;
       @media screen and (max-width: 1024px) {
         margin: auto;
+        padding: 1rem;
+      }
+      @media screen and (max-width: 500px) {
+        max-width: 60%;
       }
     }
 `;
 
 export const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+export const FlexCenter = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -99,13 +121,11 @@ export const Paragraph = styled.p`
     text-align: center;
     max-width: 100%;
   }
-  @media only screen and (max-width: 500px) {
-    max-width: 90%;
-  }
 `;
 export const CTAButton = styled.a`
   border: 1px solid #e4389b;
   border-radius: 20px;
+  color: #e4389b;
   color: #e4389b;
   padding: 8px 20px;
   transition: all 0.4s ease;

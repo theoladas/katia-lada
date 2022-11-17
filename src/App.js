@@ -1,8 +1,8 @@
 import GlobalStyle from "./components/GlobalStyle";
 import "./fonts/daniel.ttf";
 import Nav from "./components/Nav";
-
 import Homepage from "./pages/Homepage";
+import Services from "./pages/Services";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Homepage />
+      {/* <Services /> */}
     </div>
   );
 }
