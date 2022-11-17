@@ -88,6 +88,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: 3rem;
       font-weight: 700;
       color: #282828;
+    
       /* padding: 1rem 0; */
       @media screen and (max-width: 1024px) {
         line-height: 55px;
@@ -106,6 +107,7 @@ const GlobalStyle = createGlobalStyle`
       max-width: 100%;
       display: block;
       padding: 1rem 0 2rem;
+      
       @media screen and (max-width: 990px) {
         padding: .5rem 0;
       }
@@ -182,9 +184,8 @@ export const CTACall = styled.a`
   transition: all 0.4s ease;
   &:hover,
   &:focus {
-    opacity: 1;
+    opacity: 0.7;
     /* color: #282828; */
-    text-decoration: underline;
   }
 `;
 export default GlobalStyle;

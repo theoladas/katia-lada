@@ -27,7 +27,7 @@ const StyledPrimary = styled.div`
     transition: all 0.4s ease;
     &:hover,
     &:focus {
-      opacity: 0.9;
+      opacity: 0.7;
     }
   }
 `;
