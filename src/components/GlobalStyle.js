@@ -16,7 +16,8 @@ const GlobalStyle = createGlobalStyle`
     }
     
     html {
-        scroll-behavior: smooth;
+      /* width: 100%; */
+      scroll-behavior: smooth;
     }
 
     body {
@@ -70,18 +71,18 @@ const GlobalStyle = createGlobalStyle`
         margin: auto;
       }
     }
-    .hero-image {
+    /* .hero-image {
       width: 50%;
-      img {
-        width: 100%;
-        min-height: 100%;
-        object-fit: cover;
-      }
+      /* img {
+        /* width: 100%; */
+        /* min-height: 100%; */
+        /* object-fit: cover;
+      } */ 
 
-      @media screen and (max-width: 768px) {
+      /* @media screen and (max-width: 768px) {
         width: 80%;
       }
-    }
+    } */
     
     .main-title {
       font-family: "Arima", cursive;
