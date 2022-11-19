@@ -54,8 +54,11 @@ const GlobalStyle = createGlobalStyle`
       }
     }
     .homepage{
-      padding-top: 5rem;
-      height: 100%;
+      /* padding-top: 5rem; */
+      min-height: 80vh;
+       @media screen and (max-width: 500px) {
+        padding-top: 2rem;
+      }
     }
     .hero-content {
       width: 50%;
@@ -68,21 +71,17 @@ const GlobalStyle = createGlobalStyle`
       @media screen and (max-width: 768px) {
         width: 100%;
         margin: auto;
-
       }
     }
     .hero-image {
       width: 50%;
-      /* img {
-        width: 90%;
-        
-      } */
-      /* img {
-        /* width: 100%; */
-        /* min-height: 100%; */
-        /* object-fit: cover;
-      } */ 
-
+      img {
+        width: 100%;
+        height: auto;
+      }
+      @media screen and (max-width: 1070px) {
+        width: 50%;
+      }
        @media screen and (max-width: 768px) {
         width: 100%;
       }
