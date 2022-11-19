@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     }
     
     html {
-      scroll-behavior: smooth;
+        scroll-behavior: smooth;
     }
 
     body {
@@ -54,20 +54,17 @@ const GlobalStyle = createGlobalStyle`
       }
     }
     .homepage{
-      /* padding-top: 5rem; */
-      min-height: 80vh;
-       @media screen and (max-width: 500px) {
-        padding-top: 2rem;
-      }
+      padding-top: 5rem;
+      height: 100%;
     }
     .hero-content {
       width: 50%;
       padding: 0rem .5rem;
 
-      @media screen and (max-width: 1070px) {
-        width: 50%;
+      /* @media screen and (max-width: 1070px) {
+        width: 60%;
         padding-right: 1rem;
-      }
+      } */
       @media screen and (max-width: 768px) {
         width: 100%;
         margin: auto;
@@ -76,14 +73,10 @@ const GlobalStyle = createGlobalStyle`
     .hero-image {
       width: 50%;
       img {
-        width: 100%;
-        height: auto;
+        width: 90%;
       }
-      @media screen and (max-width: 1070px) {
-        width: 50%;
-      }
-       @media screen and (max-width: 768px) {
-        width: 100%;
+      @media screen and (max-width: 768px) {
+        width: 80%;
       }
     }
     
@@ -92,10 +85,11 @@ const GlobalStyle = createGlobalStyle`
       font-size: 3rem;
       font-weight: 700;
       color: #282828;
+    
       /* padding: 1rem 0; */
-      @media screen and (max-width: 1070px) {
-        line-height: 35px;
-        font-size: 2.2rem;
+      @media screen and (max-width: 1024px) {
+        line-height: 55px;
+        font-size: 2.6rem;
       }
       @media screen and (max-width: 768px) {
         text-align: center;
@@ -111,7 +105,7 @@ const GlobalStyle = createGlobalStyle`
       display: block;
       padding: 1rem 0 2rem;
       
-      @media screen and (max-width: 1070px) {
+      @media screen and (max-width: 990px) {
         padding: .5rem 0;
       }
       @media screen and (max-width: 768px) {
@@ -146,7 +140,7 @@ export const Paragraph = styled.p`
   max-width: 80%;
   margin-top: 0.5rem;
   padding-top: 0.5rem;
-  @media screen and (max-width: 1070px) {
+  @media screen and (max-width: 990px) {
     font-size: 1.125rem;
     max-width: 100%;
   }
