@@ -93,9 +93,9 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 700;
       color: #282828;
       /* padding: 1rem 0; */
-      @media screen and (max-width: 1024px) {
-        line-height: 55px;
-        font-size: 2.6rem;
+      @media screen and (max-width: 1070px) {
+        line-height: 35px;
+        font-size: 2.2rem;
       }
       @media screen and (max-width: 768px) {
         text-align: center;
@@ -111,7 +111,7 @@ const GlobalStyle = createGlobalStyle`
       display: block;
       padding: 1rem 0 2rem;
       
-      @media screen and (max-width: 990px) {
+      @media screen and (max-width: 1070px) {
         padding: .5rem 0;
       }
       @media screen and (max-width: 768px) {
@@ -146,7 +146,7 @@ export const Paragraph = styled.p`
   max-width: 80%;
   margin-top: 0.5rem;
   padding-top: 0.5rem;
-  @media screen and (max-width: 990px) {
+  @media screen and (max-width: 1070px) {
     font-size: 1.125rem;
     max-width: 100%;
   }
