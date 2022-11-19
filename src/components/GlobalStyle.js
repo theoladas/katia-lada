@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
     }
     
     html {
-      /* width: 100%; */
       scroll-behavior: smooth;
     }
 
@@ -62,34 +61,38 @@ const GlobalStyle = createGlobalStyle`
       width: 50%;
       padding: 0rem .5rem;
 
-      /* @media screen and (max-width: 1070px) {
-        width: 60%;
+      @media screen and (max-width: 1070px) {
+        width: 50%;
         padding-right: 1rem;
-      } */
+      }
       @media screen and (max-width: 768px) {
         width: 100%;
         margin: auto;
+
       }
     }
-    /* .hero-image {
+    .hero-image {
       width: 50%;
+      /* img {
+        width: 90%;
+        
+      } */
       /* img {
         /* width: 100%; */
         /* min-height: 100%; */
         /* object-fit: cover;
       } */ 
 
-      /* @media screen and (max-width: 768px) {
-        width: 80%;
+       @media screen and (max-width: 768px) {
+        width: 100%;
       }
-    } */
+    }
     
     .main-title {
       font-family: "Arima", cursive;
       font-size: 3rem;
       font-weight: 700;
       color: #282828;
-    
       /* padding: 1rem 0; */
       @media screen and (max-width: 1024px) {
         line-height: 55px;
