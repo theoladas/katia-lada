@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
     }
     .half-container {
       padding: 5rem 5rem;
-      min-height: 50vh;
+      min-height: 25vh;
       background-color: #fff;
       @media only screen and (max-width: 500px) {
         padding: 5rem 2rem;
@@ -115,6 +115,57 @@ const GlobalStyle = createGlobalStyle`
         max-width: 60%;
       }
     }
+
+    .card {
+      width: 150px;
+      height: 150px;
+      margin: .5rem;
+      color: #fff;
+      background-color:#f49ac1;
+      border: 1px solid #f49ac1;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      transition: .4s all ease;
+    
+        &:hover, &:focus {
+          color: #282828;
+          background-color: #f0e9eb;
+          border: 1px solid #f49ac1;
+        }
+        }
+      .card-content {
+        position: absolute;
+        top: 10%;
+        right: 0%;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        transform: translate(0% ,10%);
+        
+        p {
+          padding-top: .5rem;
+          text-align: center;
+          font-size: .95rem;
+        }  
+      }
+    }
+    .card-content-make-up {
+      position: absolute;
+      top: 10%;
+      left: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translate(0% ,20%);      
+      p {
+          padding-top: .5rem;
+          text-align: center;
+          font-size: .95rem;
+        }  
+    }
 `;
 
 export const Flex = styled.div`
@@ -126,7 +177,7 @@ export const Flex = styled.div`
 export const FlexCenter = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 `;
 

@@ -9,6 +9,7 @@ import {
   Flex,
 } from "../components/GlobalStyle.js";
 import { PrimaryBtn } from "../components/PrimaryBtn.js";
+import { ServicesSection } from "../components/ServicesSection.js";
 
 const Homepage = () => {
   return (
@@ -37,6 +38,7 @@ const Homepage = () => {
           <PrimaryBtn />
         </div>
       </Flex>
+      <ServicesSection />
     </div>
   );
 };
