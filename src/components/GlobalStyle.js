@@ -35,13 +35,6 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
     }
-    .container {
-      padding: 2rem 5rem;
-      min-height: 85vh;
-      @media only screen and (max-width: 500px) {
-        padding: 5rem 2rem;
-      }
-    }
     .flex {
       display: flex;
     }
@@ -54,17 +47,16 @@ const GlobalStyle = createGlobalStyle`
       }
     }
     .homepage{
-      padding-top: 5rem;
-      height: 100%;
+      /* padding-top: 5rem; */
+      height: 90vh;
     }
     .hero-content {
       width: 50%;
       padding: 0rem .5rem;
-
-      /* @media screen and (max-width: 1070px) {
+      @media screen and (max-width: 1070px) {
         width: 60%;
         padding-right: 1rem;
-      } */
+      }
       @media screen and (max-width: 768px) {
         width: 100%;
         margin: auto;
@@ -73,10 +65,16 @@ const GlobalStyle = createGlobalStyle`
     .hero-image {
       width: 50%;
       img {
-        width: 90%;
+        width: 100%;
+      }
+      @media screen and (max-width: 1070px) {
+        width: 40%;  
       }
       @media screen and (max-width: 768px) {
-        width: 80%;
+        width: 90%;
+      }
+      @media screen and (max-width: 500px) {
+        width: 100%;
       }
     }
     
@@ -97,6 +95,7 @@ const GlobalStyle = createGlobalStyle`
       }
       @media only screen and (max-width: 500px) {
         font-size: 2.5rem;
+        padding-top: 0;
       }
     }
     
