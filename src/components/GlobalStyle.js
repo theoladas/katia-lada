@@ -2,22 +2,21 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-
-    @font-face {
-        font-family: "katia";
-        src: local("daniel"),url("./fonts/daniel.ttf") format("truetype");
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        user-select: none;
-    }
-    
-    html {
-        scroll-behavior: smooth;
-    }
+  @font-face {
+    font-family: "katia";
+    src: local("daniel"),url("./fonts/daniel.ttf") format("truetype");
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 
     body {
         background-color: #f0e9eb;
@@ -42,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 5rem 5rem;
       min-height: 25vh;
       background-color: #fff;
+
       @media only screen and (max-width: 500px) {
         padding: 5rem 2rem;
       }
@@ -115,56 +115,61 @@ const GlobalStyle = createGlobalStyle`
         max-width: 60%;
       }
     }
-
+.serviceSection {
+  padding-top: 2rem;
+}
     .card {
-      width: 150px;
-      height: 150px;
-      margin: .5rem;
-      color: #fff;
-      background-color:#f49ac1;
-      border: 1px solid #f49ac1;
-      border-radius: 50%;
-      position: relative;
-      cursor: pointer;
-      transition: .4s all ease;
-    
-        &:hover, &:focus {
-          color: #282828;
-          background-color: #f0e9eb;
-          border: 1px solid #f49ac1;
-        }
-        }
+      margin: 1.5rem .2rem;
       .card-content {
-        position: absolute;
-        top: 10%;
-        right: 0%;
         display: flex;
         flex-direction:column;
         align-items: center;
         justify-content: center;
-        transform: translate(0% ,10%);
         
-        p {
-          padding-top: .5rem;
-          text-align: center;
-          font-size: .95rem;
-        }  
+        width: 120px;
+        height: 120px;
+        background-color:#f49ac1;
+        border: 1px solid #f49ac1;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        transition: .4s all ease;
+    
+       &:hover, &:focus {
+        color: #282828;
+        background-color: #f0e9eb;
+        border: 1px solid #f49ac1;
+      }
+      img {
+        width: 50px;
+        height: auto;
+        background-color: fff;
       }
     }
+      p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        /* padding-top: .5rem; */
+        text-align: center;
+        font-size: .95rem;
+      }  
+  }
+
     .card-content-make-up {
-      position: absolute;
+      
+      /* position: absolute;
       top: 10%;
-      left: 30%;
+      left: 30%; */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      transform: translate(0% ,20%);      
+      /* transform: translate(0% ,20%);       */
       p {
-          padding-top: .5rem;
-          text-align: center;
-          font-size: .95rem;
-        }  
+        padding-top: .5rem;
+        text-align: center;
+        font-size: .95rem;
+      }  
     }
 `;
 
