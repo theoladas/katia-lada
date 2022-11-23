@@ -1,12 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: "katia";
-    src: local("daniel"),url("./fonts/daniel.ttf") format("truetype");
-  }
-  
+const GlobalStyle = createGlobalStyle` 
   * {
     margin: 0;
     padding: 0;
@@ -115,62 +110,67 @@ const GlobalStyle = createGlobalStyle`
         max-width: 60%;
       }
     }
-.serviceSection {
+
+  .serviceSection {
   padding-top: 2rem;
-}
+  }
     .card {
-      margin: 1.5rem .2rem;
+      margin-left: 1rem;
+      @media screen and (max-width:1070px){
+        padding: 1rem .3rem;
+      }
+      @media screen and (max-width:768px){
+        padding: 1rem .3rem;
+        }
       .card-content {
         display: flex;
         flex-direction:column;
         align-items: center;
         justify-content: center;
-        
-        width: 120px;
-        height: 120px;
+        width: 220px;
+        height: 220px;
         background-color:#f49ac1;
         border: 1px solid #f49ac1;
         border-radius: 50%;
         color: #fff;
         cursor: pointer;
         transition: .4s all ease;
-    
+        @media screen and (max-width:1070px){
+          width: 170px;
+          height: 170px;
+        }
+        @media screen and (max-width:768px){
+          width: 130px;
+          height: 130px;
+        }
        &:hover, &:focus {
         color: #282828;
         background-color: #f0e9eb;
         border: 1px solid #f49ac1;
       }
       img {
-        width: 50px;
+        padding-top: .5rem;
+        width: 70px;
         height: auto;
         background-color: fff;
+        @media screen and (max-width:768px){
+         width: 50px;
+        }
       }
     }
       p {
         overflow-wrap: break-word;
         word-wrap: break-word;
-        /* padding-top: .5rem; */
         text-align: center;
-        font-size: .95rem;
+        padding: .5rem;
+        font-size: 1.2rem;
+        @media screen and (max-width:768px){
+          font-size: 1rem;
+          padding: 0.2rem;
+          padding-bottom: 1rem;
+        }
       }  
   }
-
-    .card-content-make-up {
-      
-      /* position: absolute;
-      top: 10%;
-      left: 30%; */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      /* transform: translate(0% ,20%);       */
-      p {
-        padding-top: .5rem;
-        text-align: center;
-        font-size: .95rem;
-      }  
-    }
 `;
 
 export const Flex = styled.div`
@@ -184,6 +184,9 @@ export const FlexCenter = styled.div`
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  @media screen and (max-width: 1024px) {
+    justify-content: center;
+  }
 `;
 
 export const Paragraph = styled.p`
