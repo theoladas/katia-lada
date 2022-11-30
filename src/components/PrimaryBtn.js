@@ -15,6 +15,7 @@ const StyledPrimary = styled.div`
   }
   padding: 2rem 0;
   a {
+    font-size: 1.1rem;
     text-decoration: none;
     letter-spacing: 1px;
     color: #e4389b;

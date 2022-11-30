@@ -34,7 +34,6 @@ const Homepage = () => {
             <strong>Δευ - Παρ</strong>: 09:00 - 13:00 <strong>&</strong> 17:00 -
             19:00
           </Paragraph>
-          {/* <div class="pattern-dots-md gray-light"> */}
           <PrimaryBtn />
         </div>
       </Flex>
