@@ -1,12 +1,12 @@
 import "../styles/Footer.scss";
-import katiaLogo from "../img/katia-lada-text.png";
+import instagram from "../img/icons/instagram.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 import {
   faPhone,
   faHouse,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import GlobalStyle from "./GlobalStyle";
 
 const Footer = () => {
   return (
@@ -15,17 +15,31 @@ const Footer = () => {
         <div className="footer-card">
           <ul>
             <li>
-              <a href="">Gallery</a>
+              <a href="" className="footer-title">
+                Gallery
+              </a>
             </li>
             <li>
-              <a href="">Ο χώρος μας</a>
+              <a href="" className="footer-title">
+                Ο χώρος μας
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FaInstagram className="icon" />
+              </a>
+              <a>
+                <FaFacebook className="icon" />
+              </a>
             </li>
           </ul>
         </div>
         <div className="footer-card">
           <ul>
             <li>
-              <a href="">Υπηρεσίες</a>
+              <a href="" className="footer-title">
+                Υπηρεσίες
+              </a>
             </li>
             <hr></hr>
             <li>
@@ -48,7 +62,9 @@ const Footer = () => {
         <div className="footer-card">
           <ul>
             <li>
-              <a href="">Επικοινωνία</a>
+              <a href="" className="footer-title">
+                Επικοινωνία
+              </a>
             </li>
             <hr></hr>
             <li>

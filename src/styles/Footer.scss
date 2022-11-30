@@ -9,9 +9,10 @@ footer {
   li,
   a {
     list-style: none;
+    font-size: 1.061rem;
     text-decoration: none;
     text-align: justify;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: #fff;
     padding: 0.5rem;
     transition: color 0.4s ease;
@@ -20,6 +21,15 @@ footer {
     }
     .footer-icon {
       color: #f49ac1;
+    }
+    .icon {
+      font-size: 1.7rem;
+      color: #fff;
+      cursor: pointer;
+      transition: color 0.4s ease;
+      &:hover {
+        color: #f49ac1;
+      }
     }
     @media (max-width: 500px) {
       text-align: center;
@@ -39,6 +49,17 @@ footer {
       display: block;
       height: 300px;
       padding: 1rem;
+      @media (max-width: 500px) {
+        height: auto;
+      }
+      //   .footer-title {
+      //     color: #f49ac1;
+      //     cursor: pointer;
+      //     transition: color 0.4s ease;
+      //     &:hover {
+      //       color: #fff;
+      //     }
+      //   }
     }
   }
 }
