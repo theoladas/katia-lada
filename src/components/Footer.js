@@ -70,8 +70,7 @@ const Footer = () => {
             <li class="footer-address">
               <FontAwesomeIcon icon={faHouse} className="footer-icon" />
               <a class="footer-address">
-                Σμύρνης & 28ης Οκτωβρίου, <br></br>Νεα Φώκαια, Χαλκιδικής,
-                <br></br>Τ.Κ. 63077
+                Σμύρνης & 28ης Οκτωβρίου, Νεα Φώκαια, Χαλκιδικής, Τ.Κ. 63077
               </a>
             </li>
             <li>

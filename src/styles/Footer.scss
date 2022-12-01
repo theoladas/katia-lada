@@ -11,20 +11,25 @@ footer {
     list-style: none;
     font-size: 1.061rem;
     text-decoration: none;
-    text-align: justify;
+    text-align: left;
     letter-spacing: 1.5px;
     color: #fff;
-    padding: 0.5rem;
+    padding: 0.5rem 0rem;
     transition: color 0.4s ease;
     &:hover {
       color: #f49ac1;
     }
     .footer-icon {
       color: #f49ac1;
+      padding-right: 0.5rem;
+      @media (max-width: 915px) {
+        padding-right: 0.3rem;
+      }
     }
     .icon {
       font-size: 1.7rem;
       color: #fff;
+      margin-right: 1rem;
       cursor: pointer;
       transition: color 0.4s ease;
       &:hover {
@@ -37,7 +42,13 @@ footer {
         color: #fff;
       }
     }
-    @media (max-width: 500px) {
+    @media (max-width: 1070px) {
+      font-size: 1rem;
+    }
+    @media (max-width: 915px) {
+      font-size: 0.8rem;
+    }
+    @media (max-width: 768px) {
       text-align: center;
     }
   }
@@ -47,25 +58,22 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    @media (max-width: 500px) {
+    margin: 0 auto;
+    @media (max-width: 1070px) {
       justify-content: center;
     }
     .footer-card {
-      //   border: 1px solid red;
+      flex-basis: 27%;
       display: block;
       height: 300px;
       padding: 1rem;
-      @media (max-width: 500px) {
+      @media (max-width: 1070px) {
+        flex-basis: 30%;
+      }
+      @media (max-width: 768px) {
+        flex-basis: 100%;
         height: auto;
       }
-      //   .footer-title {
-      //     color: #f49ac1;
-      //     cursor: pointer;
-      //     transition: color 0.4s ease;
-      //     &:hover {
-      //       color: #fff;
-      //     }
-      //   }
     }
   }
 }
