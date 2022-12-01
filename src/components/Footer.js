@@ -67,20 +67,20 @@ const Footer = () => {
               </a>
             </li>
             <hr></hr>
-            <li>
+            <li class="footer-address">
               <FontAwesomeIcon icon={faHouse} className="footer-icon" />
-              <a>
+              <a class="footer-address">
                 Σμύρνης & 28ης Οκτωβρίου, <br></br>Νεα Φώκαια, Χαλκιδικής,
                 <br></br>Τ.Κ. 63077
               </a>
             </li>
             <li>
               <FontAwesomeIcon icon={faPhone} className="footer-icon" />
-              <a href="">23740 82034</a>
+              <a href="tel:+3002374082034">23740 82034</a>
             </li>
             <li>
               <FontAwesomeIcon icon={faEnvelope} className="footer-icon" />
-              <a href="">lada.katia@gmail.com</a>
+              <a href="mailto:lada.katia@gmail.com">lada.katia@gmail.com</a>
             </li>
           </ul>
         </div>
