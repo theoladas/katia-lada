@@ -11,6 +11,7 @@
   }
 
   .grid-row {
+    margin-right: -5rem;
     display: flex;
     flex-wrap: wrap;
     width: 50%;
@@ -31,7 +32,12 @@
         object-fit: cover;
         border: 1px solid black;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(244, 154, 193, 0.2);
+        opacity: 0.8;
+        transition: all 0.4s ease;
+        &:hover {
+          opacity: 1;
+          box-shadow: 0 0 11px rgba(8, 8, 8, 0.5);
+        }
       }
       @media screen and (max-width: 768px) {
         flex: 50%;
