@@ -1,5 +1,4 @@
 import { Flex, Paragraph, CTACall, HeroImg } from "../components/GlobalStyle";
-import { PrimaryBtn } from "../components/PrimaryBtn";
 import "../styles/GallerySection.scss";
 import grid1 from "../img/grid-1.png";
 import grid2 from "../img/grid-2.png";
@@ -17,7 +16,11 @@ export const GallerySection = () => {
           Επαγγελματικές Υπηρεσίες περιποίηση άκρων, μακιγιάζ, τοποθέτηση
           βλεφαρίδων lashlift, αποτρίχωσης και περιποίησης προσώπου.
         </Paragraph>
-        <PrimaryBtn />
+        <div className="primary-btn-container">
+          <a href="" className="primary-btn">
+            Περισσότερα..
+          </a>
+        </div>
       </div>
       <div className="grid-row">
         <div className="grid-column">

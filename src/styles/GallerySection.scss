@@ -2,6 +2,29 @@
   margin: 5rem 0rem;
   .hero-content {
     width: 50%;
+    .primary-btn-container {
+      padding: 2rem 0;
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
+      .primary-btn {
+        font-size: 1.1rem;
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: #e4389b;
+        padding: 10px 12px;
+        color: #fff;
+        background: #f49ac1;
+        border: 1px solid #f49ac1;
+        border-radius: 10px;
+        opacity: 1;
+        transition: all 0.4s ease;
+        &:hover,
+        &:focus {
+          opacity: 0.7;
+        }
+      }
+    }
     @media screen and (max-width: 1070px) {
       width: 40%;
     }
@@ -25,17 +48,16 @@
       flex: 25%;
       max-width: 25%;
       padding: 0.5rem;
+
       img {
         margin: 1rem 0rem;
-        // vertical-align: middle;
+        vertical-align: middle;
         width: 100%;
         object-fit: cover;
         border: 1px solid black;
         border-radius: 10px;
-        opacity: 0.8;
         transition: all 0.4s ease;
         &:hover {
-          opacity: 1;
           box-shadow: 0 0 11px rgba(8, 8, 8, 0.5);
         }
       }
