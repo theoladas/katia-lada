@@ -15,31 +15,27 @@ const Footer = () => {
         <div className="footer-card">
           <ul>
             <li>
-              <a href="" className="footer-title">
-                Gallery
-              </a>
+              <a href="">Gallery</a>
             </li>
             <li>
-              <a href="" className="footer-title">
-                Ο χώρος μας
-              </a>
+              <a href="">Ο χώρος μας</a>
             </li>
             <li>
-              <a href="">
-                <FaInstagram className="icon" />
-              </a>
-              <a>
-                <FaFacebook className="icon" />
-              </a>
+              <div className="flex">
+                <li>
+                  <a href="">Ακολουθήστε μας</a>
+                </li>
+                <a href="">
+                  <FaInstagram className="icon" />
+                </a>
+              </div>
             </li>
           </ul>
         </div>
         <div className="footer-card">
           <ul>
             <li>
-              <a href="" className="footer-title">
-                Υπηρεσίες
-              </a>
+              <a href="">Υπηρεσίες</a>
             </li>
             <hr></hr>
             <li>
@@ -62,14 +58,12 @@ const Footer = () => {
         <div className="footer-card">
           <ul>
             <li>
-              <a href="" className="footer-title">
-                Επικοινωνία
-              </a>
+              <a href="">Επικοινωνία</a>
             </li>
             <hr></hr>
             <li class="footer-address">
               <FontAwesomeIcon icon={faHouse} className="footer-icon" />
-              <a class="footer-address">
+              <a class="footer-link-no-clickable">
                 Σμύρνης & 28ης Οκτωβρίου, Νεα Φώκαια, Χαλκιδικής, Τ.Κ. 63077
               </a>
             </li>
@@ -84,6 +78,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <p>&#169; 2022 Κάτια Λαδά | Website: Theo Ladas</p>
     </footer>
   );
 };
