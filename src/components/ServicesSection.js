@@ -1,4 +1,5 @@
 import { Flex, FlexCenter } from "./GlobalStyle";
+import "../styles/ServicesSection.scss";
 import facial from "../img/icons/facial-200.png";
 import makeup from "../img/icons/makeup-200.png";
 import lashlift from "../img/icons/lashlift-200.png";

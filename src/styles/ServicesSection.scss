@@ -1,0 +1,63 @@
+.serviceSection {
+  padding-top: 2rem;
+}
+.card {
+  margin-left: 1rem;
+  @media screen and (max-width: 1200px) {
+    padding: 1rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0.3rem;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    background-color: #f49ac1;
+    border: 1px solid #f49ac1;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.4s all ease;
+    @media screen and (max-width: 1070px) {
+      width: 170px;
+      height: 170px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 130px;
+      height: 130px;
+    }
+    &:hover,
+    &:focus {
+      color: #282828;
+      background-color: #f0e9eb;
+      border: 1px solid #f49ac1;
+    }
+    img {
+      padding-top: 0.5rem;
+      width: 80px;
+      height: auto;
+      background-color: fff;
+      @media screen and (max-width: 768px) {
+        width: 50px;
+      }
+    }
+  }
+
+  p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    @media screen and (max-width: 768px) {
+      padding: 0.2rem;
+      padding-bottom: 1rem;
+      letter-spacing: 0;
+    }
+  }
+}

@@ -37,7 +37,6 @@ const GlobalStyle = createGlobalStyle`
       margin-top: 3rem;
       min-height: 45vh;
       background-color: #fff;
-
       @media only screen and (max-width: 500px) {
         padding: 5rem 2rem;
       }
@@ -111,66 +110,7 @@ const GlobalStyle = createGlobalStyle`
       }
     }
 
-  .serviceSection {
-  padding-top: 2rem;
-  }
-    .card {
-      margin-left: 1rem;
-      @media screen and (max-width:1070px){
-        padding: 1rem .3rem;
-      }
-      @media screen and (max-width:768px){
-        padding: 1rem .3rem;
-        }
-      .card-content {
-        display: flex;
-        flex-direction:column;
-        align-items: center;
-        justify-content: center;
-        width: 220px;
-        height: 220px;
-        background-color:#f49ac1;
-        border: 1px solid #f49ac1;
-        border-radius: 50%;
-        color: #fff;
-        cursor: pointer;
-        transition: .4s all ease;
-        @media screen and (max-width:1070px){
-          width: 170px;
-          height: 170px;
-        }
-        @media screen and (max-width:768px){
-          width: 130px;
-          height: 130px;
-        }
-       &:hover, &:focus {
-        color: #282828;
-        background-color: #f0e9eb;
-        border: 1px solid #f49ac1;
-      }
-      img {
-        padding-top: .5rem;
-        width: 70px;
-        height: auto;
-        background-color: fff;
-        @media screen and (max-width:768px){
-         width: 50px;
-        }
-      }
-    }
-      p {
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        text-align: center;
-        padding: .5rem;
-        font-size: 1.2rem;
-        @media screen and (max-width:768px){
-          font-size: 1rem;
-          padding: 0.2rem;
-          padding-bottom: 1rem;
-        }
-      }  
-  }
+  
 `;
 
 export const Flex = styled.div`
@@ -184,7 +124,7 @@ export const FlexCenter = styled.div`
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1200px) {
     justify-content: center;
   }
 `;
