@@ -10,6 +10,7 @@ import {
 } from "../components/GlobalStyle.js";
 import { PrimaryBtn } from "../components/PrimaryBtn.js";
 import { ServicesSection } from "../components/ServicesSection.js";
+import { GallerySection } from "../components/GallerySection.js";
 
 const Homepage = () => {
   return (
@@ -38,6 +39,7 @@ const Homepage = () => {
         </div>
       </Flex>
       <ServicesSection />
+      <GallerySection />
     </div>
   );
 };

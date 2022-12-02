@@ -44,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
     .homepage{
       height: 90vh;
     }
+    .hero-section {
+      min-height: 90vh;
+      padding: 0rem 5rem;
+    }
     .hero-content {
       width: 50%;
       padding: 0rem .5rem;
