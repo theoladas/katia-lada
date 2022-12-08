@@ -14,10 +14,18 @@ import { GallerySection } from "../components/GallerySection.js";
 
 const Homepage = () => {
   return (
-    <div>
-      <Flex className="homepage">
+    <main>
+      <Flex
+        className="homepage"
+        style={{
+          backgroundImage: `url(${homepageBanner})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
         <div className="hero-image">
-          <HeroImg src={homepageBanner} class="hero-img"></HeroImg>
+          {/* <HeroImg src={homepageBanner} class="hero-img"></HeroImg> */}
         </div>
         <div className="hero-content">
           <div className="main-title">Ινστιτούτο Αισθητικής</div>
@@ -40,7 +48,7 @@ const Homepage = () => {
       </Flex>
       <ServicesSection />
       <GallerySection />
-    </div>
+    </main>
   );
 };
 

@@ -10,6 +10,7 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Homepage />
+
       <Footer />
     </div>
   );

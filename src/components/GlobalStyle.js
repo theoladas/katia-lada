@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
       }
     }
     .homepage{
-      height: 90vh;
+      min-height: 100vh;
     }
     .hero-section {
       min-height: 90vh;
@@ -112,9 +112,7 @@ const GlobalStyle = createGlobalStyle`
       @media screen and (max-width: 500px) {
         max-width: 60%;
       }
-    }
-
-  
+    }  
 `;
 
 export const Flex = styled.div`
