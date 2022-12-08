@@ -35,7 +35,6 @@ const GlobalStyle = createGlobalStyle`
     }
     .half-container {
       padding: 5rem;
-      /* margin-top: 3rem; */
       min-height: 45vh;
       background-color: #fff;
       @media only screen and (max-width: 500px) {
@@ -46,8 +45,14 @@ const GlobalStyle = createGlobalStyle`
       min-height: 90vh;
     }
     .hero-section {
-      min-height: 90vh;
+      min-height: 80vh;
       padding: 0rem 5rem;
+      @media only screen and (max-width: 485px) {
+        padding: 0rem 2rem;
+      }
+       @media only screen and (max-width: 390px) {
+        padding: 0rem .5rem;
+      }
     }
     .hero-content {
       width: 50%;
@@ -76,15 +81,62 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
       }
     }
+    
+    /* .map-container {
+       width: 40%; 
+        .map {
+          @media screen and (max-width: 500px) {
+            width: 100%;
+            padding-bottom: 1rem;
+            margin: auto;
+          }
+        }
+      }  */
+      /* .map-container {
+        width: 60%;
+      } */
+    .our-store-content {
+        width: 50%;
+       
+      @media only screen and (max-width: 840px) {
+        width: 100%;
+      }
+    } 
+    
+    
     .address-icon {
       color: #f49ac1;
       padding-right: 10px;
     }
-    .opening-hours {
+    .opening-hours-title {
       font-family: 'Arima', cursive;
+      font-size: 1.8rem;
       padding-top: .5rem;
+      @media screen and (max-width: 768px){
+        text-align: center;
+      }
     }
-    
+    .flex-open-store {
+      display: flex;
+      gap: 1.4rem;
+      @media screen and (max-width: 768px){
+        align-items: center;
+        justify-content: center;
+      }
+       @media screen and (max-width: 500px){
+        gap: 10px;
+      }
+      .open-days, .open-hours {
+        font-size: 1.1rem;
+        line-height: 27px;
+      }
+      .open-hours {
+        color: #f49ac1;
+        span {
+          color: #282828;
+        }
+      }
+    }
     .main-title {
       font-family: "Arima", cursive;
       font-size: 3rem;
@@ -105,7 +157,29 @@ const GlobalStyle = createGlobalStyle`
         padding-top: 0;
       }
     }
-    
+     .primary-btn-container {
+      padding: 2rem 0;
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
+      .primary-btn {
+        font-size: 1.1rem;
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: #e4389b;
+        padding: 10px 12px;
+        color: #fff;
+        background: #f49ac1;
+        border: 1px solid #f49ac1;
+        border-radius: 10px;
+        opacity: 1;
+        transition: all 0.4s ease;
+        &:hover,
+        &:focus {
+          opacity: 0.7;
+        }
+      }
+    }
     .katia-logo-text {
       max-width: 100%;
       display: block;
@@ -129,6 +203,9 @@ export const Flex = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 export const FlexCenter = styled.div`
   display: flex;
