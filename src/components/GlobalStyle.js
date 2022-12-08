@@ -107,6 +107,11 @@ const GlobalStyle = createGlobalStyle`
       @media only screen and (max-width: 850px) {
         width: 100%;
       }
+                .primary-btn-container {
+      @media screen and (max-width: 850px) {
+        text-align: center;
+      }
+      }
       .main-title {
               @media screen and (max-width: 850px) {
         text-align: center;
@@ -120,11 +125,7 @@ const GlobalStyle = createGlobalStyle`
       } 
       }
     }   
-          .primary-btn-container {
-      @media screen and (max-width: 850px) {
-        text-align: center;
-      }
-      }  
+  
     .address-icon {
       color: #f49ac1;
       padding-right: 10px;
