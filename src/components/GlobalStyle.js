@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
     }
+
     .flex {
       display: flex;
     }
@@ -74,6 +75,14 @@ const GlobalStyle = createGlobalStyle`
       @media screen and (max-width: 500px) {
         width: 100%;
       }
+    }
+    .address-icon {
+      color: #f49ac1;
+      padding-right: 10px;
+    }
+    .opening-hours {
+      font-family: 'Arima', cursive;
+      padding-top: .5rem;
     }
     
     .main-title {

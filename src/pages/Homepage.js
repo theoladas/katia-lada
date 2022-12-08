@@ -11,6 +11,7 @@ import {
 import { PrimaryBtn } from "../components/PrimaryBtn.js";
 import { ServicesSection } from "../components/ServicesSection.js";
 import { GallerySection } from "../components/GallerySection.js";
+import { OurStoreSection } from "../components/OurStoreSection.js";
 
 const Homepage = () => {
   return (
@@ -48,6 +49,7 @@ const Homepage = () => {
       </Flex>
       <ServicesSection />
       <GallerySection />
+      <OurStoreSection />
     </main>
   );
 };
