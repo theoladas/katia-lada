@@ -81,29 +81,44 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
       }
     }
-    
-    /* .map-container {
-       width: 40%; 
-        .map {
-          @media screen and (max-width: 500px) {
-            width: 100%;
-            padding-bottom: 1rem;
-            margin: auto;
-          }
+    .our-store {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .map-container {
+       width: 50%; 
+       @media only screen and (max-width: 850px) {
+          width: 100%;
         }
-      }  */
-      /* .map-container {
-        width: 60%;
-      } */
+       iframe {
+        width: 90%;
+       }
+      .map {
+       @media only screen and (max-width: 850px) {
+        width: 100%;
+        padding-bottom: 1rem;
+       }    
+        }
+      }
+      }
+      .primary-btn-container {
+      @media screen and (max-width: 850px) {
+        text-align: center;
+      }
+      }
     .our-store-content {
-        width: 50%;
-       
-      @media only screen and (max-width: 840px) {
+        width: 50%; 
+      @media only screen and (max-width: 850px) {
         width: 100%;
       }
-    } 
-    
-    
+      .main-title {
+              @media screen and (max-width: 850px) {
+        text-align: center;
+        padding-top: 1rem;
+      }
+      }
+    }     
     .address-icon {
       color: #f49ac1;
       padding-right: 10px;
@@ -112,14 +127,14 @@ const GlobalStyle = createGlobalStyle`
       font-family: 'Arima', cursive;
       font-size: 1.8rem;
       padding-top: .5rem;
-      @media screen and (max-width: 768px){
+      @media screen and (max-width: 850px){
         text-align: center;
       }
     }
     .flex-open-store {
       display: flex;
       gap: 1.4rem;
-      @media screen and (max-width: 768px){
+      @media screen and (max-width: 850px){
         align-items: center;
         justify-content: center;
       }
@@ -127,7 +142,7 @@ const GlobalStyle = createGlobalStyle`
         gap: 10px;
       }
       .open-days, .open-hours {
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 27px;
       }
       .open-hours {
@@ -141,8 +156,7 @@ const GlobalStyle = createGlobalStyle`
       font-family: "Arima", cursive;
       font-size: 3rem;
       font-weight: 700;
-      color: #282828;
-    
+      color: #282828; 
       /* padding: 1rem 0; */
       @media screen and (max-width: 1024px) {
         line-height: 55px;

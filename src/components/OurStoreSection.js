@@ -1,11 +1,11 @@
-import { Flex, Paragraph } from "../components/GlobalStyle";
+import { Paragraph } from "../components/GlobalStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaInstagram } from "react-icons/fa";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 export const OurStoreSection = () => {
   return (
-    <Flex className="hero-section ">
+    <section className="hero-section our-store ">
       <div className="map-container">
         <iframe
           className="map"
@@ -21,7 +21,7 @@ export const OurStoreSection = () => {
         ></iframe>
       </div>
 
-      <div className=" our-store-content">
+      <div className="our-store-content">
         <div className="main-title">Ο Χώρος μας</div>
         <Paragraph>
           <p>
@@ -67,6 +67,6 @@ export const OurStoreSection = () => {
           </a>
         </div>
       </div>
-    </Flex>
+    </section>
   );
 };
