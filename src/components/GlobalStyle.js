@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
     }
     .half-container {
       padding: 5rem;
-      margin-top: 3rem;
+      /* margin-top: 3rem; */
       min-height: 45vh;
       background-color: #fff;
       @media only screen and (max-width: 500px) {
@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
       }
     }
     .homepage{
-      min-height: 100vh;
+      min-height: 90vh;
     }
     .hero-section {
       min-height: 90vh;
