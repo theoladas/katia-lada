@@ -102,11 +102,6 @@ const GlobalStyle = createGlobalStyle`
         }
       }
       }
-      .primary-btn-container {
-      @media screen and (max-width: 850px) {
-        text-align: center;
-      }
-      }
     .our-store-content {
         width: 50%; 
       @media only screen and (max-width: 850px) {
@@ -118,7 +113,18 @@ const GlobalStyle = createGlobalStyle`
         padding-top: 1rem;
       }
       }
-    }     
+      .address-container {
+       @media screen and (max-width: 850px) {
+        text-align: center;
+       
+      } 
+      }
+    }   
+          .primary-btn-container {
+      @media screen and (max-width: 850px) {
+        text-align: center;
+      }
+      }  
     .address-icon {
       color: #f49ac1;
       padding-right: 10px;
@@ -126,7 +132,7 @@ const GlobalStyle = createGlobalStyle`
     .opening-hours-title {
       font-family: 'Arima', cursive;
       font-size: 1.8rem;
-      padding-top: .5rem;
+      padding: 1rem 0rem .5rem 0rem;
       @media screen and (max-width: 850px){
         text-align: center;
       }
@@ -142,8 +148,11 @@ const GlobalStyle = createGlobalStyle`
         gap: 10px;
       }
       .open-days, .open-hours {
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 27px;
+        @media screen and (max-width: 550px){
+        font-size: 1rem;
+      }
       }
       .open-hours {
         color: #f49ac1;

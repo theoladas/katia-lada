@@ -24,7 +24,7 @@ export const OurStoreSection = () => {
       <div className="our-store-content">
         <div className="main-title">Ο Χώρος μας</div>
         <Paragraph>
-          <p>
+          <p className="address-container">
             <FontAwesomeIcon icon={faHouse} className="address-icon" />
             Σμύρνης & 28ης Οκτωβρίου, Νεα Φώκαια, Χαλκιδική, Τ.Κ. 63077
           </p>
