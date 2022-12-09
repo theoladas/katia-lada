@@ -1,7 +1,7 @@
 import "../styles/Footer.scss";
 import instagram from "../img/icons/instagram.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import {
   faPhone,
   faHouse,

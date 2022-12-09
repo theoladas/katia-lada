@@ -2,7 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhone,
+  faEnvelope,
+  faLocationDot,
+  faStar,
+  faImages,
+} from "@fortawesome/free-solid-svg-icons";
 import "../styles/Nav.scss";
 
 const Nav = () => {
@@ -31,15 +37,19 @@ const Nav = () => {
         </NavLink>
         <ul className="nav-links">
           <li>
+            {/* <FontAwesomeIcon icon={faStar} className="icon" /> */}
             <NavLink to="/">Υπηρεσίες</NavLink>
           </li>
           <li>
+            {/* <FontAwesomeIcon icon={faImages} className="icon" /> */}
             <NavLink to="/work">Gallery</NavLink>
           </li>
           <li>
+            {/* <FontAwesomeIcon icon={faLocationDot} className="icon" /> */}
             <NavLink to="/contact">Ο χώρος μας</NavLink>
           </li>
           <li>
+            {/* <FontAwesomeIcon icon={faEnvelope} className="icon" /> */}
             <NavLink to="/contact">Επικοινωνία</NavLink>
           </li>
           <li>
