@@ -29,7 +29,6 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
     }
-
     .flex {
       display: flex;
     }
@@ -66,19 +65,27 @@ const GlobalStyle = createGlobalStyle`
         margin: auto;
       }
     }
-    .hero-image {
-      width: 50%;
-      img {
-        width: 100%;
-      }
-      @media screen and (max-width: 1070px) {
-        width: 40%;  
-      }
+        .primary-btn-container {
+      padding: 2rem 0;
       @media screen and (max-width: 768px) {
-        width: 90%;
+        text-align: center;
       }
-      @media screen and (max-width: 500px) {
-        width: 100%;
+      .primary-btn {
+        font-size: 1.1rem;
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: #e4389b;
+        padding: 10px 12px;
+        color: #fff;
+        background: #f49ac1;
+        border: 1px solid #f49ac1;
+        border-radius: 10px;
+        opacity: 1;
+        transition: all 0.4s ease;
+        &:hover,
+        &:focus {
+          opacity: 0.7;
+        }
       }
     }
     .our-store {
@@ -104,6 +111,8 @@ const GlobalStyle = createGlobalStyle`
       }
     .our-store-content {
         width: 50%; 
+      margin-right: -5rem;
+
       @media only screen and (max-width: 850px) {
         width: 100%;
       }

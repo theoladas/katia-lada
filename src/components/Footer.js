@@ -23,10 +23,15 @@ const Footer = () => {
             <li>
               <div className="flex">
                 <li>
-                  <a href="">Ακολουθήστε μας</a>
+                  <a
+                    href="https://www.instagram.com/katia_lada"
+                    target="_blank"
+                  >
+                    Ακολουθήστε μας
+                  </a>
                 </li>
-                <a href="">
-                  <FaInstagram className="icon" />
+                <a href="https://www.instagram.com/katia_lada" target="_blank">
+                  <FaInstagram className="icon footer-icon" />
                 </a>
               </div>
             </li>
