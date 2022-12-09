@@ -1,5 +1,4 @@
 import "../styles/Footer.scss";
-import instagram from "../img/icons/instagram.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaInstagram } from "react-icons/fa";
 import {
@@ -30,8 +29,12 @@ const Footer = () => {
                     Ακολουθήστε μας
                   </a>
                 </li>
-                <a href="https://www.instagram.com/katia_lada" target="_blank">
-                  <FaInstagram className="icon footer-icon" />
+                <a
+                  href="https://www.instagram.com/katia_lada"
+                  target="_blank"
+                  className="icon footer-icon"
+                >
+                  <FaInstagram />
                 </a>
               </div>
             </li>
@@ -83,7 +86,16 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <p>&#169; 2022 Κάτια Λαδά | Website: Theo Ladas</p>
+      <p>
+        &#169; 2022 Κάτια Λαδά | Website:{" "}
+        <a
+          href="https://uk.linkedin.com/in/theodorosladas"
+          target="_blank"
+          className="website-by"
+        >
+          Theo Ladas
+        </a>
+      </p>
     </footer>
   );
 };
