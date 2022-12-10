@@ -1,4 +1,4 @@
-import "../styles/Nav2.scss";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,10 +8,10 @@ import {
   faLocationDot,
   faStar,
   faImages,
-  faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
+import "../styles/Nav2.scss";
 
-export const Nav2 = () => {
+const Nav2 = () => {
   const navSlide = () => {
     const burger = document.querySelector(".burger");
     const nav = document.querySelector(".nav-links");
@@ -31,29 +31,44 @@ export const Nav2 = () => {
 
   return (
     <header>
-      <nav class="navbar">
+      <nav>
         <NavLink to="/" id="logo">
           <img src={logo} className="logo"></img>
         </NavLink>
-
-        <div class="dropdown">
-          <NavLink to="/" class="dropbtn">
-            Υπηρεσίες
-          </NavLink>
-          <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+        <ul className="nav-links">
+          <div class="dropdown">
+            <NavLink to="/" class="dropbtn">
+              Υπηρεσίες
+            </NavLink>
+            {/* <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon> */}
+            <div class="dropdown-content">
+              <a href="/">Περιποίηση Άκρων</a>
+              <a href="/">Μακιγιάζ</a>
+              <a href="/">Αποτρίχωση</a>
+              <a href="/">Περιποίηση Προσώπου</a>
+              <a href="/">Τοποθέτηση Βλεφαρίδων Lashlift</a>
+            </div>
           </div>
-        </div>
-        <NavLink to="/">Gallery</NavLink>
-        <NavLink to="/contact">Ο χώρος μας</NavLink>
-        <NavLink to="/contact">Επικοινωνία</NavLink>
-        <a href="tel:+302374082034" className="cta-call">
-          <FontAwesomeIcon icon={faPhone} className="phone-icon" />
-          Καλέστε μας
-        </a>
+
+          <li>
+            {/* <FontAwesomeIcon icon={faImages} className="icon" /> */}
+            <NavLink to="/work">Gallery</NavLink>
+          </li>
+          <li>
+            {/* <FontAwesomeIcon icon={faLocationDot} className="icon" /> */}
+            <NavLink to="/contact">Ο χώρος μας</NavLink>
+          </li>
+          <li>
+            {/* <FontAwesomeIcon icon={faEnvelope} className="icon" /> */}
+            <NavLink to="/contact">Επικοινωνία</NavLink>
+          </li>
+          <li>
+            <a href="tel:+302374082034" className="cta-call">
+              <FontAwesomeIcon icon={faPhone} className="phone-icon" />
+              Καλέστε μας
+            </a>
+          </li>
+        </ul>
         <div class="burger" onClick={navSlide}>
           <div class="line1"></div>
           <div class="line2"></div>
@@ -63,3 +78,5 @@ export const Nav2 = () => {
     </header>
   );
 };
+
+export default Nav2;
