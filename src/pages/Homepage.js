@@ -1,17 +1,12 @@
 import React from "react";
-import GlobalStyle from "../components/GlobalStyle.js";
 import homepageBanner from "../img/homepage-banner.png";
 import katiaLogo from "../img/katia-lada-text.png";
-import {
-  Paragraph,
-  CTACall,
-  HeroImg,
-  Flex,
-} from "../components/GlobalStyle.js";
+import { Paragraph, CTACall, Flex } from "../components/GlobalStyle.js";
 import { PrimaryBtn } from "../components/PrimaryBtn.js";
 import { ServicesSection } from "../components/ServicesSection.js";
 import { GallerySection } from "../components/GallerySection.js";
 import { OurStoreSection } from "../components/OurStoreSection.js";
+import { ContactSection } from "../components/ContactSection";
 
 const Homepage = () => {
   return (
@@ -50,6 +45,7 @@ const Homepage = () => {
       <ServicesSection />
       <GallerySection />
       <OurStoreSection />
+      <ContactSection />
     </main>
   );
 };

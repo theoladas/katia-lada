@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
+// Base styles
 const GlobalStyle = createGlobalStyle` 
   * {
     margin: 0;
@@ -8,12 +9,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     user-select: none;
   }
-  
   html {
     scroll-behavior: smooth;
   }
-
-    body {
+  body {
         background-color: #f0e9eb;
         color: #282828;
         font-family: 'Manrope', sans-serif;
@@ -21,30 +20,32 @@ const GlobalStyle = createGlobalStyle`
         /* font-family: 'Dancing Script', cursive; */
         /* font-family: 'Dela Gothic One', cursive; */
         /* font-family: 'Roboto', sans-serif; */
-    }
-    img {
+  }
+  img {
         display: block;
         max-width: 100%;
-    }
-    a {
+  }
+  a {
         text-decoration: none;
-    }
-    .flex {
+  }
+  
+  /* Utility Classes */
+  .flex {
       display: flex;
-    }
-    .half-container {
+  }
+  .half-container {
       padding: 5rem;
       min-height: 45vh;
       background-color: #fff;
       @media only screen and (max-width: 500px) {
         padding: 5rem 2rem;
       }
-    }
-    .homepage{
+  }
+  .homepage{
       min-height: 90vh;
-    }
-    .hero-section {
-      min-height: 80vh;
+  }
+  .hero-section {
+      min-height: 90vh;
       padding: 0rem 5rem;
       @media only screen and (max-width: 485px) {
         padding: 0rem 2rem;
@@ -52,8 +53,8 @@ const GlobalStyle = createGlobalStyle`
        @media only screen and (max-width: 390px) {
         padding: 0rem .5rem;
       }
-    }
-    .hero-content {
+  }
+  .hero-content {
       width: 50%;
       padding: 0rem .5rem;
       @media screen and (max-width: 1070px) {
@@ -64,8 +65,8 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         margin: auto;
       }
-    }
-        .primary-btn-container {
+  }
+  .primary-btn-container {
       padding: 2rem 0;
       @media screen and (max-width: 768px) {
         text-align: center;
@@ -87,12 +88,67 @@ const GlobalStyle = createGlobalStyle`
           opacity: 0.7;
         }
       }
-    }
-    .our-store {
+  }
+  .call-us-link {
+          color: #f49ac1; 
+          opacity: .8;
+          transition: opacity 0.4s ease;
+          &:hover {
+            opacity: 1;
+          }
+  }
+  .contact-icon {
+      font-size: 1.2rem;
+      color: #f49ac1;
+      margin-right: 0.5rem;
+      transition: color 0.4s ease;
+      &:hover {
+        color: #f49ac1;
+      }
+  }
+  .main-title {
+      font-family: "Arima", cursive;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #282828; 
+      /* padding: 1rem 0; */
+      @media screen and (max-width: 1024px) {
+        line-height: 55px;
+        font-size: 2.6rem;
+      }
+      @media screen and (max-width: 768px) {
+        text-align: center;
+        padding-top: 1rem;
+      }
+      @media only screen and (max-width: 500px) {
+        font-size: 2.5rem;
+        padding-top: 0;
+      }
+  }
+  .katia-logo-text {
+      max-width: 100%;
+      display: block;
+      padding: 1rem 0 2rem;
+      
+      @media screen and (max-width: 990px) {
+        padding: .5rem 0;
+      }
+      @media screen and (max-width: 768px) {
+        margin: auto;
+        padding: 1rem;
+      }
+      @media screen and (max-width: 500px) {
+        max-width: 60%;
+      }
+  }
+
+  /* Our Store Section */
+  .our-store {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
+      background: #fff;
       .map-container {
        width: 50%; 
        @media only screen and (max-width: 850px) {
@@ -108,9 +164,8 @@ const GlobalStyle = createGlobalStyle`
        }    
         }
       }
-      }
-    .our-store-content {
-        width: 50%; 
+          .our-store-content {
+      width: 50%; 
       margin-right: -5rem;
 
       @media only screen and (max-width: 850px) {
@@ -134,7 +189,7 @@ const GlobalStyle = createGlobalStyle`
       } 
       }
     }   
-  
+
     .address-icon {
       color: #f49ac1;
       padding-right: 10px;
@@ -171,66 +226,34 @@ const GlobalStyle = createGlobalStyle`
         }
       }
     }
-    .main-title {
-      font-family: "Arima", cursive;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #282828; 
-      /* padding: 1rem 0; */
-      @media screen and (max-width: 1024px) {
-        line-height: 55px;
-        font-size: 2.6rem;
-      }
-      @media screen and (max-width: 768px) {
-        text-align: center;
-        padding-top: 1rem;
-      }
-      @media only screen and (max-width: 500px) {
-        font-size: 2.5rem;
-        padding-top: 0;
-      }
-    }
-     .primary-btn-container {
-      padding: 2rem 0;
-      @media screen and (max-width: 768px) {
-        text-align: center;
-      }
-      .primary-btn {
-        font-size: 1.1rem;
-        text-decoration: none;
-        letter-spacing: 1px;
-        color: #e4389b;
-        padding: 10px 12px;
-        color: #fff;
-        background: #f49ac1;
-        border: 1px solid #f49ac1;
-        border-radius: 10px;
-        opacity: 1;
-        transition: all 0.4s ease;
-        &:hover,
-        &:focus {
-          opacity: 0.7;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .contact-content {
+        width: 50%;
+        .contact-links {
+          color: #282828;
+          transition: color .4s ease;
+          &:hover {
+            color: #f49ac1;
+          }
         }
       }
-    }
-    .katia-logo-text {
-      max-width: 100%;
-      display: block;
-      padding: 1rem 0 2rem;
       
-      @media screen and (max-width: 990px) {
-        padding: .5rem 0;
+      .form-container {
+        width: 50%;
+        margin-right: -5rem;
       }
-      @media screen and (max-width: 768px) {
-        margin: auto;
-        padding: 1rem;
-      }
-      @media screen and (max-width: 500px) {
-        max-width: 60%;
-      }
-    }  
+  }
+
 `;
 
+// Styled Components
 export const Flex = styled.div`
   display: flex;
   align-items: center;
@@ -249,7 +272,6 @@ export const FlexCenter = styled.div`
     justify-content: center;
   }
 `;
-
 export const Paragraph = styled.p`
   font-family: "Comfortaa", cursive;
   font-size: 1.135rem;
@@ -268,7 +290,6 @@ export const Paragraph = styled.p`
     max-width: 100%;
   }
 `;
-
 export const CTAButton = styled.a`
   border: 1px solid #e4389b;
   border-radius: 20px;
@@ -291,7 +312,6 @@ export const HeroImg = styled.img`
     /* width: 80%; */
   }
 `;
-
 export const CTACall = styled.a`
   color: #f49ac1;
   letter-spacing: 1px;
