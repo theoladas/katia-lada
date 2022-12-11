@@ -8,8 +8,9 @@ import {
   faLocationDot,
   faStar,
   faImages,
+  faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
-import "../styles/Nav.scss";
+import "../styles/Nav2.scss";
 
 const Nav = () => {
   const navSlide = () => {
@@ -36,21 +37,41 @@ const Nav = () => {
           <img src={logo} className="logo"></img>
         </NavLink>
         <ul className="nav-links">
+          <div class="dropdown">
+            <NavLink to="/" class="dropbtn">
+              {/* <FontAwesomeIcon icon={faStar} className="icon" /> */}
+              Υπηρεσίες{" "}
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="icon"
+              ></FontAwesomeIcon>
+            </NavLink>
+
+            <div class="dropdown-content">
+              <a href="/">Περιποίηση Άκρων</a>
+              <a href="/">Μακιγιάζ</a>
+              <a href="/">Αποτρίχωση</a>
+              <a href="/">Περιποίηση Προσώπου</a>
+              <a href="/">Τοποθέτηση Βλεφαρίδων Lashlift</a>
+            </div>
+          </div>
           <li>
-            {/* <FontAwesomeIcon icon={faStar} className="icon" /> */}
-            <NavLink to="/">Υπηρεσίες</NavLink>
+            <NavLink to="/work">
+              {/* <FontAwesomeIcon icon={faImages} className="icon" /> */}
+              Gallery
+            </NavLink>
           </li>
           <li>
-            {/* <FontAwesomeIcon icon={faImages} className="icon" /> */}
-            <NavLink to="/work">Gallery</NavLink>
+            <NavLink to="/contact">
+              {/* <FontAwesomeIcon icon={faLocationDot} className="icon" /> */}Ο
+              χώρος μας
+            </NavLink>
           </li>
           <li>
-            {/* <FontAwesomeIcon icon={faLocationDot} className="icon" /> */}
-            <NavLink to="/contact">Ο χώρος μας</NavLink>
-          </li>
-          <li>
-            {/* <FontAwesomeIcon icon={faEnvelope} className="icon" /> */}
-            <NavLink to="/contact">Επικοινωνία</NavLink>
+            <NavLink to="/contact">
+              {/* <FontAwesomeIcon icon={faEnvelope} className="icon" /> */}
+              Επικοινωνία
+            </NavLink>
           </li>
           <li>
             <a href="tel:+302374082034" className="cta-call">

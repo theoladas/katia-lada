@@ -8,6 +8,7 @@ import {
   faLocationDot,
   faStar,
   faImages,
+  faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Nav2.scss";
 
@@ -38,9 +39,14 @@ const Nav2 = () => {
         <ul className="nav-links">
           <div class="dropdown">
             <NavLink to="/" class="dropbtn">
-              Υπηρεσίες
+              {/* <FontAwesomeIcon icon={faStar} className="icon" /> */}
+              Υπηρεσίες{" "}
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="icon"
+              ></FontAwesomeIcon>
             </NavLink>
-            {/* <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon> */}
+
             <div class="dropdown-content">
               <a href="/">Περιποίηση Άκρων</a>
               <a href="/">Μακιγιάζ</a>
@@ -49,18 +55,23 @@ const Nav2 = () => {
               <a href="/">Τοποθέτηση Βλεφαρίδων Lashlift</a>
             </div>
           </div>
-
           <li>
-            {/* <FontAwesomeIcon icon={faImages} className="icon" /> */}
-            <NavLink to="/work">Gallery</NavLink>
+            <NavLink to="/work">
+              {/* <FontAwesomeIcon icon={faImages} className="icon" /> */}
+              Gallery
+            </NavLink>
           </li>
           <li>
-            {/* <FontAwesomeIcon icon={faLocationDot} className="icon" /> */}
-            <NavLink to="/contact">Ο χώρος μας</NavLink>
+            <NavLink to="/contact">
+              {/* <FontAwesomeIcon icon={faLocationDot} className="icon" /> */}Ο
+              χώρος μας
+            </NavLink>
           </li>
           <li>
-            {/* <FontAwesomeIcon icon={faEnvelope} className="icon" /> */}
-            <NavLink to="/contact">Επικοινωνία</NavLink>
+            <NavLink to="/contact">
+              {/* <FontAwesomeIcon icon={faEnvelope} className="icon" /> */}
+              Επικοινωνία
+            </NavLink>
           </li>
           <li>
             <a href="tel:+302374082034" className="cta-call">
