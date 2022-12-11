@@ -244,10 +244,47 @@ const GlobalStyle = createGlobalStyle`
           }
         }
       }
-      
       .form-container {
         width: 50%;
         margin-right: -5rem;
+        form {
+          display: flex;
+          flex-direction: column;
+          background: #fff;
+          padding: 2rem;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          max-width: 500px;
+          input, textarea {
+            padding: .5rem;
+            border: 1px solid #F0F0F0;
+            background-color: #F0F0F0;
+            border-radius: 10px;
+            margin: .5rem 0;
+          }
+          textarea {
+            resize: none;
+          } 
+          .form-btn{
+            /* width: 20%; */
+            margin-left: auto;
+            padding: .5rem;
+            margin-top: .5rem;
+            background: #f49ac1;
+            border: 1px solid #f49ac1;
+            border-radius: 10px;
+            color: #fff;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            opacity: 1;
+            transition: opacity .4s ease;
+            &:hover {
+              opacity: .8;
+            }
+          }
+        }
       }
   }
 

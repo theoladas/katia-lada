@@ -58,18 +58,17 @@ export const ContactSection = () => {
         </div>
       </div>
       <div className="form-container">
-        <iframe
-          className="map"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1769.487232705234!2d23.3960987!3d40.132723!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a881778cf28ea5%3A0xdcf47ad774598ca3!2zzprOkc6kzpnOkSDOm86RzpTOkQ!5e1!3m2!1sen!2suk!4v1670526803894!5m2!1sen!2suk"
-          //   width="600"
-          width="500"
-          //   height="450"
-          height="450"
-          style={{ border: 0, borderRadius: "20px" }}
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <form action="">
+          <label htmlFor="">Ονοματεπώνυμο:</label>
+          <input type="text" />
+          <label htmlFor="">Email:</label>
+          <input type="email" />
+          <label htmlFor="">Μήνυμα:</label>
+          <textarea rows="4" cols="20" />
+          <button type="submit" className="form-btn">
+            Στείλτε
+          </button>
+        </form>
       </div>
     </section>
   );

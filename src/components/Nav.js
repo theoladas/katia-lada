@@ -10,7 +10,7 @@ import {
   faImages,
   faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
-import "../styles/Nav2.scss";
+import "../styles/Nav.scss";
 
 const Nav = () => {
   const navSlide = () => {
