@@ -16,14 +16,10 @@ export const ContactSection = () => {
         <Paragraph>
           Για πληροφορίες σχετικά με τις υπηρεσίες μας, παρακαλώ επικοινωνήστε
           μαζί μας.
-          {/* <p className="address-container">
-            <FontAwesomeIcon icon={faHouse} className="address-icon" />
-            Σμύρνης & 28ης Οκτωβρίου, Νεα Φώκαια, Χαλκιδική, Τ.Κ. 63077
-          </p> */}
         </Paragraph>
         <Paragraph>
           Αν επιθυμείτε να κλείσετε ραντεβού, μπορείτε να μας καλέσετε{" "}
-          <a href="tel:+3002374082034" className="call-us-link">
+          <a href="tel:+302374082034" className="call-us-link">
             23740 82034
           </a>
           , στις ώρες λειτουργίας μας.
@@ -66,7 +62,7 @@ export const ContactSection = () => {
           <label htmlFor="">Μήνυμα:</label>
           <textarea rows="4" cols="20" />
           <button type="submit" className="form-btn">
-            Στείλτε
+            Στείλτε Μήνυμα
           </button>
         </form>
       </div>

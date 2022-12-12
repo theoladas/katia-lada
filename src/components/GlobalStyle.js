@@ -46,12 +46,13 @@ const GlobalStyle = createGlobalStyle`
   }
   .hero-section {
       min-height: 90vh;
-      padding: 0rem 5rem;
-      @media only screen and (max-width: 485px) {
-        padding: 0rem 2rem;
+      padding: 5rem;
+
+      @media only screen and (max-width: 500px) {
+        padding: 2rem;
       }
        @media only screen and (max-width: 390px) {
-        padding: 0rem .5rem;
+        padding: 2rem .5rem;
       }
   }
   .hero-content {
@@ -91,10 +92,9 @@ const GlobalStyle = createGlobalStyle`
   }
   .call-us-link {
           color: #f49ac1; 
-          opacity: .8;
-          transition: opacity 0.4s ease;
+          transition: text-decoration 0.4s ease;
           &:hover {
-            opacity: 1;
+            text-decoration: underline ;
           }
   }
   .contact-icon {
@@ -102,6 +102,10 @@ const GlobalStyle = createGlobalStyle`
       color: #f49ac1;
       margin-right: 0.5rem;
       transition: color 0.4s ease;
+      @media only screen and (max-width: 390px) {
+        font-size: 1rem;
+        margin-right: .3rem;     
+      }
       &:hover {
         color: #f49ac1;
       }
@@ -164,20 +168,20 @@ const GlobalStyle = createGlobalStyle`
        }    
         }
       }
-          .our-store-content {
-      width: 50%; 
-      margin-right: -5rem;
-
-      @media only screen and (max-width: 850px) {
-        width: 100%;
-      }
-                .primary-btn-container {
+      .our-store-content {
+        width: 50%; 
+        margin-right: -5rem;
+        @media only screen and (max-width: 850px) {
+          width: 100%;
+          margin-right: 0rem;
+        }
+      .primary-btn-container {
       @media screen and (max-width: 850px) {
         text-align: center;
       }
       }
       .main-title {
-              @media screen and (max-width: 850px) {
+      @media screen and (max-width: 850px) {
         text-align: center;
         padding-top: 1rem;
       }
@@ -185,7 +189,6 @@ const GlobalStyle = createGlobalStyle`
       .address-container {
        @media screen and (max-width: 850px) {
         text-align: center;
-       
       } 
       }
     }   
@@ -209,7 +212,7 @@ const GlobalStyle = createGlobalStyle`
         align-items: center;
         justify-content: center;
       }
-       @media screen and (max-width: 500px){
+       @media screen and (max-width: 450px){
         gap: 10px;
       }
       .open-days, .open-hours {
@@ -234,8 +237,20 @@ const GlobalStyle = createGlobalStyle`
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
+      @media only screen and (max-width: 850px) {
+        justify-content: center;
+      }
       .contact-content {
         width: 50%;
+        padding-bottom: 2rem;
+        @media only screen and (max-width: 850px) {
+        width: 100%;
+        text-align: center;
+        p {
+          text-align: center;
+        }
+        }
+
         .contact-links {
           color: #282828;
           transition: color .4s ease;
@@ -246,7 +261,13 @@ const GlobalStyle = createGlobalStyle`
       }
       .form-container {
         width: 50%;
+        padding-right: 5rem;
         margin-right: -5rem;
+        @media only screen and (max-width: 850px) {
+          width: 100%;
+          margin-right: 0rem; 
+          padding-right: 0rem;
+        }
         form {
           display: flex;
           flex-direction: column;
@@ -255,6 +276,9 @@ const GlobalStyle = createGlobalStyle`
           border-radius: 10px;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           max-width: 500px;
+          @media only screen and (max-width: 850px) {
+            margin:auto;
+          }
           input, textarea {
             padding: .5rem;
             border: 1px solid #F0F0F0;
@@ -262,11 +286,15 @@ const GlobalStyle = createGlobalStyle`
             border-radius: 10px;
             margin: .5rem 0;
           }
+          input[type="text"] {
+                    font-family: 'Manrope', sans-serif;
+
+          }
           textarea {
+            font-family: 'Manrope', sans-serif;
             resize: none;
           } 
           .form-btn{
-            /* width: 20%; */
             margin-left: auto;
             padding: .5rem;
             margin-top: .5rem;
@@ -276,7 +304,7 @@ const GlobalStyle = createGlobalStyle`
             color: #fff;
             font-family: 'Manrope', sans-serif;
             font-size: 1rem;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             cursor: pointer;
             opacity: 1;
             transition: opacity .4s ease;
@@ -325,6 +353,9 @@ export const Paragraph = styled.p`
   @media screen and (max-width: 768px) {
     text-align: center;
     max-width: 100%;
+  }
+  @media only screen and (max-width: 390px) {
+    font-size: 1rem;
   }
 `;
 export const CTAButton = styled.a`
