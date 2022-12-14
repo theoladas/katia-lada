@@ -1,4 +1,5 @@
 import "../styles/Footer.scss";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaInstagram } from "react-icons/fa";
 import {
@@ -50,7 +51,7 @@ const Footer = () => {
               <a href="">Περιποίηση Άκρων</a>
             </li>
             <li>
-              <a href="">Μακιγιάζ</a>
+              <Link to="/make-up">Μακιγιάζ</Link>
             </li>
             <li>
               <a href="">Αποτρίχωση</a>
