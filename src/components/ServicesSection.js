@@ -41,7 +41,9 @@ export const ServicesSection = () => {
           <div className="card">
             <div className="card-content">
               <img src={facial}></img>
-              <p>Περιποίηση Προσώπου</p>
+              <p>
+                Περιποίηση <br></br>Προσώπου
+              </p>
             </div>
           </div>
           <div className="card">
