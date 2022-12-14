@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -48,11 +48,11 @@ const Nav = () => {
             </NavLink>
 
             <div class="dropdown-content">
-              <a href="/">Περιποίηση Άκρων</a>
-              <a href="/">Μακιγιάζ</a>
-              <a href="/">Αποτρίχωση</a>
-              <a href="/">Περιποίηση Προσώπου</a>
-              <a href="/">Τοποθέτηση Βλεφαρίδων Lashlift</a>
+              <Link to="/nails">Περιποίηση Άκρων</Link>
+              <Link to="/make-up">Μακιγιάζ</Link>
+              <Link to="/waxing">Αποτρίχωση</Link>
+              <Link to="/face">Περιποίηση Προσώπου</Link>
+              <Link to="/lash-lift">Τοποθέτηση Βλεφαρίδων Lashlift</Link>
             </div>
           </div>
           <li>

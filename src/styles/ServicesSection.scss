@@ -45,13 +45,18 @@
     }
   }
 
-  p {
+  a {
     overflow-wrap: break-word;
     word-wrap: break-word;
     text-align: center;
     letter-spacing: 1px;
     padding: 0.5rem;
     font-size: 0.9rem;
+    // color: #fff;
+    &:hover,
+    &:focus {
+      color: #282828;
+    }
     @media screen and (max-width: 768px) {
       padding: 0.2rem;
       padding-bottom: 1rem;
