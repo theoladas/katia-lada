@@ -38,7 +38,10 @@ const GlobalStyle = createGlobalStyle`
       min-height: 45vh;
       background-color: #fff;
       @media only screen and (max-width: 500px) {
-        padding: 5rem 2rem;
+        padding: 4rem 2rem;
+      }
+      @media only screen and (max-width: 390px) {
+        padding: 2rem 1rem;
       }
   }
   .homepage{
@@ -49,10 +52,10 @@ const GlobalStyle = createGlobalStyle`
       padding: 5rem;
 
       @media only screen and (max-width: 500px) {
-        padding: 2rem;
+        padding: 4rem 2rem;
       }
        @media only screen and (max-width: 390px) {
-        padding: 2rem .5rem;
+        padding: 2rem 1rem;
       }
   }
   .hero-content {
@@ -243,14 +246,15 @@ const GlobalStyle = createGlobalStyle`
       .contact-content {
         width: 50%;
         padding-bottom: 2rem;
+        padding-right: 2rem;
         @media only screen and (max-width: 850px) {
         width: 100%;
         text-align: center;
+        padding-right: 0rem;
         p {
           text-align: center;
         }
         }
-
         .contact-links {
           color: #282828;
           transition: color .4s ease;
@@ -261,8 +265,12 @@ const GlobalStyle = createGlobalStyle`
       }
       .form-container {
         width: 50%;
-        padding-right: 5rem;
+        padding-right: 2rem;
         margin-right: -5rem;
+        @media only screen and (max-width: 950px) {
+          margin-right: -2rem; 
+          padding-right: 0rem;
+        }
         @media only screen and (max-width: 850px) {
           width: 100%;
           margin-right: 0rem; 
@@ -286,12 +294,11 @@ const GlobalStyle = createGlobalStyle`
             border-radius: 10px;
             margin: .5rem 0;
           }
-          input[type="text"] {
+          input[type="text"],input[type="email"], textarea {
                     font-family: 'Manrope', sans-serif;
-
+                    font-size: 1.1rem;
           }
           textarea {
-            font-family: 'Manrope', sans-serif;
             resize: none;
           } 
           .form-btn{

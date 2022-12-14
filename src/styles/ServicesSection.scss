@@ -2,12 +2,9 @@
   padding-top: 2rem;
 }
 .card {
-  margin-left: 1rem;
-  @media screen and (max-width: 1200px) {
-    padding: 1rem;
-  }
+  padding: 1rem;
   @media screen and (max-width: 768px) {
-    padding: 1rem 0.3rem;
+    padding: 0.5rem;
   }
   .card-content {
     display: flex;
