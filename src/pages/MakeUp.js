@@ -1,3 +1,6 @@
+import makeup from "../img/makeup.jpg";
+import { Flex } from "../components/GlobalStyle";
+
 const MakeUp = () => {
   return (
     <main className="hero-section">
