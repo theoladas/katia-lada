@@ -379,12 +379,10 @@ export const CTAButton = styled.a`
   }
 `;
 export const HeroImg = styled.img`
-  /* max-width: 90%; */
   height: auto;
   margin-left: auto;
   @media screen and (max-width: 1024px) {
     margin: auto;
-    /* width: 80%; */
   }
 `;
 export const CTACall = styled.a`
@@ -396,7 +394,6 @@ export const CTACall = styled.a`
   &:hover,
   &:focus {
     opacity: 0.7;
-    /* color: #282828; */
   }
 `;
 export default GlobalStyle;

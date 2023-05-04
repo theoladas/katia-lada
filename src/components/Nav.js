@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,41 +13,45 @@ import {
 import "../styles/Nav.scss";
 
 const Nav = () => {
+  const [navActive, setNavActive] = useState(false);
+
   const navSlide = () => {
-    const burger = document.querySelector(".burger");
-    const nav = document.querySelector(".nav-links");
-    nav.classList.toggle("nav-active");
-    burger.classList.toggle("toggle-burger");
+    setNavActive(!navActive);
   };
 
-  // Animation & Transition Stopper on Resize Screen
-  let resizeTimer;
-  window.addEventListener("resize", () => {
+  const handleResize = () => {
     document.body.classList.add("resize-animation-stopper");
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
+    setTimeout(() => {
       document.body.classList.remove("resize-animation-stopper");
     }, 400);
-  });
+  };
+
+  const handleNavLinkClick = () => {
+    if (navActive) {
+      navSlide();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <header>
       <nav>
         <NavLink to="/" id="logo">
-          <img src={logo} className="logo"></img>
+          <img src={logo} className="logo" alt="Katia Lada logo" />
         </NavLink>
-        <ul className="nav-links">
-          <div class="dropdown">
-            <NavLink to="/" class="dropbtn">
-              {/* <FontAwesomeIcon icon={faStar} className="icon" /> */}
-              Υπηρεσίες{" "}
-              <FontAwesomeIcon
-                icon={faCaretDown}
-                className="icon"
-              ></FontAwesomeIcon>
+        <ul className={`nav-links${navActive ? " nav-active" : ""}`}>
+          <div className="dropdown" onClick={handleNavLinkClick}>
+            <NavLink to="/" className="dropbtn">
+              <FontAwesomeIcon icon={faStar} className="icon" />
+              Υπηρεσίες <FontAwesomeIcon icon={faCaretDown} className="icon" />
             </NavLink>
-
-            <div class="dropdown-content">
+            <div className="dropdown-content">
               <Link to="/nails">Περιποίηση Άκρων</Link>
               <Link to="/make-up">Μακιγιάζ</Link>
               <Link to="/waxing">Αποτρίχωση</Link>
@@ -55,35 +59,38 @@ const Nav = () => {
               <Link to="/lash-lift">Τοποθέτηση Βλεφαρίδων Lashlift</Link>
             </div>
           </div>
-          <li>
+          <li onClick={handleNavLinkClick}>
             <NavLink to="/work">
-              {/* <FontAwesomeIcon icon={faImages} className="icon" /> */}
+              <FontAwesomeIcon icon={faImages} className="icon" />
               Gallery
             </NavLink>
           </li>
-          <li>
+          <li onClick={handleNavLinkClick}>
             <NavLink to="/contact">
-              {/* <FontAwesomeIcon icon={faLocationDot} className="icon" /> */}Ο
-              χώρος μας
+              <FontAwesomeIcon icon={faLocationDot} className="icon" />Ο χώρος
+              μας
             </NavLink>
           </li>
-          <li>
+          <li onClick={handleNavLinkClick}>
             <NavLink to="/contact">
-              {/* <FontAwesomeIcon icon={faEnvelope} className="icon" /> */}
+              <FontAwesomeIcon icon={faEnvelope} className="icon" />
               Επικοινωνία
             </NavLink>
           </li>
-          <li>
+          <li onClick={handleNavLinkClick}>
             <a href="tel:+302374082034" className="cta-call">
               <FontAwesomeIcon icon={faPhone} className="phone-icon" />
               Καλέστε μας
             </a>
           </li>
         </ul>
-        <div class="burger" onClick={navSlide}>
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+        <div
+          className={`burger${navActive ? " toggle-burger" : ""}`}
+          onClick={navSlide}
+        >
+          <div className="line1"></div>
+          <div className="line2"></div>
+          <div className="line3"></div>
         </div>
       </nav>
     </header>

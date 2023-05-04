@@ -3,6 +3,17 @@
   animation: none !important;
 }
 
+// Variables
+$color-primary: #f49ac1;
+$color-secondary: #e4389b;
+$color-text: #282828;
+$color-bg: #f0e9eb;
+
+$breakpoint-desktop: 1070px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 500px;
+$breakpoint-small: 360px;
+
 header {
   position: sticky;
   top: 0;
@@ -18,8 +29,8 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 0rem 2rem;
-    background-color: #f0e9eb;
-    @media (max-width: 768px) {
+    background-color: $color-bg;
+    @media (max-width: $breakpoint-tablet) {
       justify-content: space-between;
     }
 
@@ -27,13 +38,13 @@ header {
       width: 300px;
       height: auto;
       object-fit: cover;
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: $breakpoint-tablet) {
         max-width: auto;
       }
-      @media only screen and (max-width: 500px) {
+      @media only screen and (max-width: $breakpoint-mobile) {
         width: 250px;
       }
-      @media only screen and (max-width: 360px) {
+      @media only screen and (max-width: $breakpoint-small) {
         max-width: 200px;
       }
     }
@@ -42,7 +53,7 @@ header {
       flex-wrap: wrap;
       margin-left: auto;
       list-style: none;
-      @media screen and (max-width: 1070px) {
+      @media screen and (max-width: $breakpoint-desktop) {
         width: 100%;
         justify-content: center;
         padding-bottom: 1rem;
@@ -52,10 +63,10 @@ header {
         overflow: hidden;
         a {
           font-size: 1.2rem;
-          color: #282828;
+          color: $color-text;
           transition: color 0.1s ease;
           &:hover {
-            color: #f49ac1;
+            color: $color-primary;
           }
         }
       }
@@ -63,7 +74,7 @@ header {
         font-size: 1rem;
         border: none;
         outline: none;
-        color: white;
+        color: $color-text;
         padding: 14px 16px;
         background-color: inherit;
         font-family: inherit;
@@ -78,23 +89,22 @@ header {
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         z-index: 1;
-        @media only screen and (max-width: 1070px) {
+        @media only screen and (max-width: $breakpoint-desktop) {
           bottom: -235px;
         }
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: $breakpoint-tablet) {
           top: 135px;
           right: 10px;
           height: 300px;
         }
-        @media only screen and (max-width: 500px) {
-          top: 195px;
+        @media only screen and (max-width: $breakpoint-mobile) {
+          top: 210px;
           left: 10px;
           height: 250px;
-          // width: 10%;
         }
         a {
           float: none;
-          color: #282828;
+          color: $color-text;
           padding: 12px 16px;
           text-decoration: none;
           display: block;
@@ -102,9 +112,9 @@ header {
           transition: all 0.4s ease;
           &:hover {
             color: #fff;
-            background-color: #f49ac1;
+            background-color: $color-primary;
           }
-          @media only screen and (max-width: 500px) {
+          @media only screen and (max-width: $breakpoint-mobile) {
             text-align: center;
           }
         }
@@ -117,32 +127,36 @@ header {
         font-size: 1.2rem;
         .cta-call {
           padding: 10px 12px;
-          color: #e4389b;
-          border: 1px solid #f49ac1;
+          color: $color-secondary;
+          border: 1px solid $color-primary;
           border-radius: 10px;
           transition: all 0.4s ease;
           &:hover,
           &:focus {
             color: #fff;
-            background: #f49ac1;
+            background: $color-primary;
           }
           .phone-icon {
             margin-right: 10px;
           }
         }
         a {
-          color: #282828;
+          color: $color-text;
           text-decoration: none;
           transition: all 0.3s ease;
           &:hover,
           &:focus {
-            color: #f49ac1;
+            color: $color-primary;
             cursor: pointer;
+            .icon {
+              color: $color-primary;
+            }
           }
         }
         .icon {
-          color: #282828;
+          color: $color-text;
           margin-right: 5px;
+          transition: all 0.3s ease;
         }
       }
     }
@@ -150,9 +164,9 @@ header {
       width: 25px;
       height: 3px;
       margin: 5px;
-      background-color: #e4389b;
+      background-color: $color-secondary;
       transition: all 0.3s ease;
-      @media only screen and (max-width: 360px) {
+      @media only screen and (max-width: $breakpoint-small) {
         width: 20px;
         margin: 3px;
       }
@@ -166,7 +180,7 @@ header {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $breakpoint-tablet) {
   body {
     overflow-x: hidden;
   }
@@ -181,10 +195,10 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        background-color: #f0e9eb;
+        background-color: $color-bg;
         transform: translateX(100%);
         transition: all 0.3s ease;
-        @media (max-width: 500px) {
+        @media (max-width: $breakpoint-mobile) {
           width: 100%;
           justify-content: center;
           gap: 5rem;
@@ -201,7 +215,7 @@ header {
       }
       .toggle-burger .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
-        @media only screen and (max-width: 360px) {
+        @media only screen and (max-width: $breakpoint-small) {
           transform: rotate(-45deg) translate(-5px, 3px);
         }
       }
@@ -210,7 +224,7 @@ header {
       }
       .toggle-burger .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
-        @media only screen and (max-width: 360px) {
+        @media only screen and (max-width: $breakpoint-small) {
           transform: rotate(45deg) translate(-5px, -3px);
         }
       }
