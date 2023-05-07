@@ -26,24 +26,22 @@ const Homepage = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="hero-image">
-          {/* <HeroImg src={homepageBanner} class="hero-img"></HeroImg> */}
-        </div>
+        <div className="hero-image"></div>
         <div className="hero-content">
-          <div className="main-title">Ινστιτούτο Αισθητικής</div>
+          <button onClick={() => changeLanguage("el")}>Ελληνικά</button>
+          <button onClick={() => changeLanguage("en")}>English</button>
+
+          <div className="main-title">{t("institutoAisthitikis")}</div>
           <img src={katiaLogo} className="katia-logo-text"></img>
+          <Paragraph>{t("professionalServices")}</Paragraph>
           <Paragraph>
-            Επαγγελματικές Υπηρεσίες περιποίηση άκρων, μακιγιάζ, τοποθέτηση
-            βλεφαρίδων lashlift, αποτρίχωσης και περιποίησης προσώπου.
+            {t("forAppointments")}{" "}
+            <CTACall href="tel:+302374082034">23740 82034</CTACall>,{" "}
+            {t("workingHours")}
           </Paragraph>
           <Paragraph>
-            Για ραντεβού μπορείτε να καλέσετε στο{" "}
-            <CTACall href="tel:+302374082034">23740 82034</CTACall>, στις ώρες
-            λειτουργίας μας.
-          </Paragraph>
-          <Paragraph>
-            <strong>Δευ - Παρ</strong>: 09:00 - 13:00 <strong>&</strong> 17:00 -
-            19:00
+            <strong>{t("monFri")}</strong>: {t("morningHours")}{" "}
+            <strong>&</strong> {t("eveningHours")}
           </Paragraph>
           <PrimaryBtn />
         </div>

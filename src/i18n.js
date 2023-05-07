@@ -9,7 +9,10 @@ i18n
     supportedLngs: ["el", "en"],
     fallbackLng: "el",
     backend: {
-      loadPath: "/locales/{{lng}}/translation.json",
+      loadPath: process.env.PUBLIC_URL + "/locales/{{lng}}/translation.json",
+    },
+    react: {
+      useSuspense: false,
     },
   });
 
