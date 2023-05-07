@@ -151,33 +151,33 @@ const Nav = () => {
             <ServicesDropdownWrapper>
               <ServicesDropdownButton to="/">
                 <FontAwesomeIcon icon={faStar} className="icon" />
-                Υπηρεσίες{" "}
+                {t("ipiresies")}{" "}
                 <FontAwesomeIcon icon={faCaretDown} className="icon" />
               </ServicesDropdownButton>
               <DropdownContent>
                 <Link to="/nails">
                   <DropdownItem onClick={handleNavLinkClick}>
-                    Περιποίηση Άκρων
+                    {t("peripoihshAkron")}
                   </DropdownItem>
                 </Link>
                 <Link to="/make-up">
                   <DropdownItem onClick={handleNavLinkClick}>
-                    Μακιγιάζ
+                    {t("makigiaz")}
                   </DropdownItem>
                 </Link>
                 <Link to="/waxing">
                   <DropdownItem onClick={handleNavLinkClick}>
-                    Αποτρίχωση
+                    {t("apotrixosi")}
                   </DropdownItem>
                 </Link>
                 <Link to="/face">
                   <DropdownItem onClick={handleNavLinkClick}>
-                    Περιποίηση Προσώπου
+                    {t("peripoihshProsopou")}
                   </DropdownItem>
                 </Link>
                 <Link to="/lash-lift">
                   <DropdownItem onClick={handleNavLinkClick}>
-                    Τοποθέτηση Βλεφαρίδων Lashlift
+                    {t("lashlift")}
                   </DropdownItem>
                 </Link>
               </DropdownContent>
@@ -191,14 +191,14 @@ const Nav = () => {
           </li>
           <li onClick={handleNavLinkClick}>
             <NavLink to="/contact">
-              <FontAwesomeIcon icon={faLocationDot} className="icon" />Ο χώρος
-              μας
+              <FontAwesomeIcon icon={faLocationDot} className="icon" />
+              {t("oXorosMas")}
             </NavLink>
           </li>
           <li onClick={handleNavLinkClick}>
             <NavLink to="/contact">
               <FontAwesomeIcon icon={faEnvelope} className="icon" />
-              Επικοινωνία
+              {t("epikoinonia")}
             </NavLink>
           </li>
           <li>
@@ -218,13 +218,16 @@ const Nav = () => {
                 <DropdownItem onClick={() => changeLanguage("en")}>
                   EN
                 </DropdownItem>
+                <DropdownItem onClick={() => changeLanguage("ru")}>
+                  RU
+                </DropdownItem>
               </DropdownContent>
             </DropdownWrapper>
           </li>
           <li onClick={handleNavLinkClick}>
             <a href="tel:+302374082034" className="cta-call">
               <FontAwesomeIcon icon={faPhone} className="phone-icon" />
-              Καλέστε μας
+              {t("kalesteMas")}
             </a>
           </li>
         </ul>

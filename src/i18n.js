@@ -6,7 +6,7 @@ i18n
   .use(HttpApi)
   .use(initReactI18next)
   .init({
-    supportedLngs: ["el", "en"],
+    supportedLngs: ["el", "en", "ru"],
     fallbackLng: "el",
     backend: {
       loadPath: process.env.PUBLIC_URL + "/locales/{{lng}}/translation.json",

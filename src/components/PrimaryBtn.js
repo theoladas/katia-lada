@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 export const PrimaryBtn = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <StyledPrimary>
-      <Link to="/contact">Κλείστε Ραντεβού</Link>
+      <Link to="/contact">{t("kleisteRantebou")}</Link>
     </StyledPrimary>
   );
 };
