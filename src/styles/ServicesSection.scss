@@ -17,6 +17,7 @@
     border: 1px solid #f49ac1;
     border-radius: 50%;
     color: #fff;
+    text-align: center;
     cursor: pointer;
     transition: 0.4s all ease;
     @media screen and (max-width: 1070px) {
@@ -35,12 +36,18 @@
       box-shadow: 0 10px 25px rgba(244, 154, 193, 0.7);
     }
     img {
-      padding-top: 0.5rem;
+      padding: 0.5rem 0;
       width: 80px;
       height: auto;
       background-color: fff;
       @media screen and (max-width: 768px) {
-        width: 50px;
+        width: 40px;
+      }
+    }
+    p {
+      padding: 0 1rem;
+      @media screen and (max-width: 768px) {
+        font-size: 0.8rem;
       }
     }
   }

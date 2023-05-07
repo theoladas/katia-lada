@@ -51,6 +51,7 @@ const Nav = () => {
               <FontAwesomeIcon icon={faStar} className="icon" />
               Υπηρεσίες <FontAwesomeIcon icon={faCaretDown} className="icon" />
             </NavLink>
+
             <div className="dropdown-content">
               <Link to="/nails">Περιποίηση Άκρων</Link>
               <Link to="/make-up">Μακιγιάζ</Link>
