@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, Link } from "react-router-dom";
+import styled from "styled-components";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,13 +15,103 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Nav.scss";
 
+const DropdownButton = styled.button`
+  background-color: transparent;
+  color: #282828;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  .translate-icon {
+    padding-right: 4px;
+  }
+  .translate-arrow {
+    padding-left: 3px;
+  }
+  &:hover {
+    background-color: #f49ac1;
+    color: white;
+  }
+`;
+
+const DropdownContent = styled.div.attrs((props) => ({
+  onClick: () => props.onItemClick && props.onItemClick(),
+}))`
+  display: ${({ open }) => (open ? "block" : "none")};
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 70px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+`;
+
+const DropdownWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover ${DropdownContent} {
+    display: block;
+  }
+`;
+
+const DropdownItem = styled.button`
+  color: #282828;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: none;
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+  &:hover {
+    background-color: #f49ac1;
+    color: white;
+  }
+`;
+
+const ServicesDropdownWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover ${DropdownContent} {
+    display: block;
+  }
+`;
+
+const ServicesDropdownButton = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #282828;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  .icon {
+    margin-left: 5px;
+    transition: color 0.3s ease;
+  }
+`;
+const StyledLink = styled(Link)`
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif;
+  &:hover {
+    color: white;
+  }
+`;
 const Nav = () => {
   const { t, i18n } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+  const [navActive, setNavActive] = useState(false);
+
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
+    setCurrentLanguage(language);
+    if (navActive) {
+      navSlide();
+    }
   };
-
-  const [navActive, setNavActive] = useState(false);
 
   const navSlide = () => {
     setNavActive(!navActive);
@@ -53,20 +144,42 @@ const Nav = () => {
           <img src={logo} className="logo" alt="Katia Lada logo" />
         </NavLink>
         <ul className={`nav-links${navActive ? " nav-active" : ""}`}>
-          <div className="dropdown" onClick={handleNavLinkClick}>
-            <NavLink to="/" className="dropbtn">
-              <FontAwesomeIcon icon={faStar} className="icon" />
-              Υπηρεσίες <FontAwesomeIcon icon={faCaretDown} className="icon" />
-            </NavLink>
-
-            <div className="dropdown-content">
-              <Link to="/nails">Περιποίηση Άκρων</Link>
-              <Link to="/make-up">Μακιγιάζ</Link>
-              <Link to="/waxing">Αποτρίχωση</Link>
-              <Link to="/face">Περιποίηση Προσώπου</Link>
-              <Link to="/lash-lift">Τοποθέτηση Βλεφαρίδων Lashlift</Link>
-            </div>
-          </div>
+          <li>
+            <ServicesDropdownWrapper>
+              <ServicesDropdownButton to="/">
+                <FontAwesomeIcon icon={faStar} className="icon" />
+                Υπηρεσίες{" "}
+                <FontAwesomeIcon icon={faCaretDown} className="icon" />
+              </ServicesDropdownButton>
+              <DropdownContent>
+                <Link to="/nails">
+                  <DropdownItem onClick={handleNavLinkClick}>
+                    Περιποίηση Άκρων
+                  </DropdownItem>
+                </Link>
+                <Link to="/make-up">
+                  <DropdownItem onClick={handleNavLinkClick}>
+                    Μακιγιάζ
+                  </DropdownItem>
+                </Link>
+                <Link to="/waxing">
+                  <DropdownItem onClick={handleNavLinkClick}>
+                    Αποτρίχωση
+                  </DropdownItem>
+                </Link>
+                <Link to="/face">
+                  <DropdownItem onClick={handleNavLinkClick}>
+                    Περιποίηση Προσώπου
+                  </DropdownItem>
+                </Link>
+                <Link to="/lash-lift">
+                  <DropdownItem onClick={handleNavLinkClick}>
+                    Τοποθέτηση Βλεφαρίδων Lashlift
+                  </DropdownItem>
+                </Link>
+              </DropdownContent>
+            </ServicesDropdownWrapper>
+          </li>
           <li onClick={handleNavLinkClick}>
             <NavLink to="/work">
               <FontAwesomeIcon icon={faImages} className="icon" />
@@ -86,16 +199,24 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
-            <div className="dropdown">
-              <button className="dropbtn">
-                <FontAwesomeIcon icon={faGlobe} /> English
-                <FontAwesomeIcon icon={faCaretDown} className="icon" />
-              </button>
-              <div className="dropdown">
-                <button onClick={() => changeLanguage("el")}>GR</button>
-                <button onClick={() => changeLanguage("en")}>EN</button>
-              </div>
-            </div>
+            <DropdownWrapper>
+              <DropdownButton>
+                <FontAwesomeIcon icon={faGlobe} className="translate-icon" />
+                {currentLanguage.toUpperCase()}
+                <FontAwesomeIcon
+                  icon={faCaretDown}
+                  className="icon translate-arrow"
+                />
+              </DropdownButton>
+              <DropdownContent>
+                <DropdownItem onClick={() => changeLanguage("el")}>
+                  EL
+                </DropdownItem>
+                <DropdownItem onClick={() => changeLanguage("en")}>
+                  EN
+                </DropdownItem>
+              </DropdownContent>
+            </DropdownWrapper>
           </li>
           <li onClick={handleNavLinkClick}>
             <a href="tel:+302374082034" className="cta-call">

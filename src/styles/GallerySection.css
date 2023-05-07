@@ -1,0 +1,53 @@
+.hero-section .hero-content {
+  width: 50%;
+}
+@media screen and (max-width: 1070px) {
+  .hero-section .hero-content {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero-section .hero-content {
+    width: 100%;
+  }
+}
+.hero-section .grid-row {
+  margin-right: -5rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+@media screen and (max-width: 1070px) {
+  .hero-section .grid-row {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero-section .grid-row {
+    width: 100%;
+    margin-right: 0rem;
+  }
+}
+.hero-section .grid-row .grid-column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0.5rem;
+}
+.hero-section .grid-row .grid-column img {
+  margin: 1rem 0rem;
+  vertical-align: middle;
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+.hero-section .grid-row .grid-column img:hover {
+  box-shadow: 0 0 11px rgba(8, 8, 8, 0.5);
+}
+@media screen and (max-width: 768px) {
+  .hero-section .grid-row .grid-column {
+    flex: 33%;
+    max-width: 33%;
+  }
+}/*# sourceMappingURL=GallerySection.css.map */
