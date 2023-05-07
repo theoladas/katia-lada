@@ -44,6 +44,7 @@ const DropdownContent = styled.div.attrs((props) => ({
   background-color: #f1f1f1;
   min-width: 70px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   z-index: 1;
 `;
 
@@ -70,6 +71,14 @@ const DropdownItem = styled.button`
     background-color: #f49ac1;
     color: white;
   }
+  &:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  &:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 `;
 
 const ServicesDropdownWrapper = styled.div`
@@ -93,13 +102,7 @@ const ServicesDropdownButton = styled(NavLink)`
     transition: color 0.3s ease;
   }
 `;
-const StyledLink = styled(Link)`
-  font-size: 1rem;
-  font-family: "Manrope", sans-serif;
-  &:hover {
-    color: white;
-  }
-`;
+
 const Nav = () => {
   const { t, i18n } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
