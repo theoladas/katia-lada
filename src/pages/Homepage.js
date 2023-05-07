@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import homepageBanner from "../img/homepage-banner.png";
 import katiaLogo from "../img/katia-lada-text.png";
 import { Paragraph, CTACall, Flex } from "../components/GlobalStyle.js";
@@ -9,6 +10,11 @@ import { OurStoreSection } from "../components/OurStoreSection.js";
 import { ContactSection } from "../components/ContactSection";
 
 const Homepage = () => {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
   return (
     <main>
       <Flex
