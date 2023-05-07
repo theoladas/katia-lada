@@ -1,2 +1,2 @@
 # katia-lada
- Katia Lada | Beauty & Nails Salon
+ Katia Lada | Beauty & Nail Salon
