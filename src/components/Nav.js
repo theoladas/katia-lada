@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,10 +10,16 @@ import {
   faStar,
   faImages,
   faCaretDown,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Nav.scss";
 
 const Nav = () => {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
   const [navActive, setNavActive] = useState(false);
 
   const navSlide = () => {
@@ -77,6 +84,18 @@ const Nav = () => {
               <FontAwesomeIcon icon={faEnvelope} className="icon" />
               Επικοινωνία
             </NavLink>
+          </li>
+          <li>
+            <div className="dropdown">
+              <button className="dropbtn">
+                <FontAwesomeIcon icon={faGlobe} /> English
+                <FontAwesomeIcon icon={faCaretDown} className="icon" />
+              </button>
+              <div className="dropdown">
+                <button onClick={() => changeLanguage("el")}>GR</button>
+                <button onClick={() => changeLanguage("en")}>EN</button>
+              </div>
+            </div>
           </li>
           <li onClick={handleNavLinkClick}>
             <a href="tel:+302374082034" className="cta-call">

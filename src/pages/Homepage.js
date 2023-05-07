@@ -28,9 +28,6 @@ const Homepage = () => {
       >
         <div className="hero-image"></div>
         <div className="hero-content">
-          <button onClick={() => changeLanguage("el")}>Ελληνικά</button>
-          <button onClick={() => changeLanguage("en")}>English</button>
-
           <div className="main-title">{t("institutoAisthitikis")}</div>
           <img src={katiaLogo} className="katia-logo-text"></img>
           <Paragraph>{t("professionalServices")}</Paragraph>
