@@ -1,28 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaInstagram } from "react-icons/fa";
 import {
   faHouse,
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { Paragraph } from "./GlobalStyle";
-import GlobalStyle from "./GlobalStyle";
+import { useTranslation } from "react-i18next";
 
 export const ContactSection = () => {
+  const { t, i18 } = useTranslation();
+
   return (
     <section className="hero-section contact-section ">
       <div className="contact-content">
-        <div className="main-title">Επικοινωνία</div>
+        <div className="main-title">{t("epikoinonia")}</div>
+        <Paragraph>{t("plirofories")}</Paragraph>
         <Paragraph>
-          Για πληροφορίες σχετικά με τις υπηρεσίες μας, παρακαλώ επικοινωνήστε
-          μαζί μας.
-        </Paragraph>
-        <Paragraph>
-          Αν επιθυμείτε να κλείσετε ραντεβού, μπορείτε να μας καλέσετε{" "}
+          {t("forAppointments")}{" "}
           <a href="tel:+302374082034" className="call-us-link">
             23740 82034
           </a>
-          , στις ώρες λειτουργίας μας.
+          {", "}
+          {t("workingHoursContant")}
         </Paragraph>
         <div className="contact-details">
           <ul>
@@ -40,29 +39,27 @@ export const ContactSection = () => {
             </Paragraph>
             <Paragraph>
               <FontAwesomeIcon icon={faHouse} className="contact-icon" />
-              <a class="footer-link-no-clickable">
-                Σμύρνης & 28ης Οκτωβρίου, Νεα Φώκαια, Χαλκιδικής, Τ.Κ. 63077
-              </a>
+              <a class="footer-link-no-clickable">{t("dieuthinsi")}</a>
             </Paragraph>
           </ul>
         </div>
 
         <div className="primary-btn-container">
           <a href="" className="primary-btn">
-            Περισσότερα..
+            {t("perisotera")}
           </a>
         </div>
       </div>
       <div className="form-container">
         <form action="">
-          <label htmlFor="">Ονοματεπώνυμο:</label>
+          <label htmlFor="">{t("onomateponimo")}</label>
           <input type="text" />
           <label htmlFor="">Email:</label>
           <input type="email" />
-          <label htmlFor="">Μήνυμα:</label>
+          <label htmlFor="">{t("minima")}</label>
           <textarea rows="4" cols="20" />
           <button type="submit" className="form-btn">
-            Στείλτε Μήνυμα
+            {t("steilteMinima")}
           </button>
         </form>
       </div>
