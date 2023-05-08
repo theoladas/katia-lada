@@ -133,13 +133,13 @@ const Homepage = () => {
         onChange={(inView) => setGalleryInView(inView)}
       >
         <motion.div
-          initial={galleryInView ? "visible" : "hidden"}
-          animate={galleryInView ? "visible" : "hidden"}
-          variants={fadeIn}
+          initial={{ x: 200 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <GallerySection />
+          {galleryInView && <GallerySection />}
         </motion.div>
-      </InView>{" "}
+      </InView>
       <InView
         as="div"
         threshold={0.1}
