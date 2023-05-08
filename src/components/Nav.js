@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import logo from "../img/logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
   faEnvelope,
@@ -136,6 +137,11 @@ const Nav = () => {
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
   const [navActive, setNavActive] = useState(false);
 
+  const fadeIn = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
+  };
+
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
     setCurrentLanguage(language);
@@ -169,116 +175,128 @@ const Nav = () => {
   }, []);
 
   return (
-    <header>
-      <nav>
-        <NavLink to="/" id="logo">
-          <img src={logo} className="logo" alt="Katia Lada logo" />
-        </NavLink>
-        <ul className={`nav-links${navActive ? " nav-active" : ""}`}>
-          <li>
-            <ServicesDropdownWrapper>
-              <ServicesDropdownButton to="/">
-                <FontAwesomeIcon icon={faStar} className="icon" />
-                {t("ipiresies")}{" "}
-                <FontAwesomeIcon icon={faCaretDown} className="icon" />
-              </ServicesDropdownButton>
-              <DropdownContent>
-                <ServicesDropdownItem
-                  to="/nails"
-                  onClick={handleNavLinkClick}
-                  className="dropNavLink"
-                >
-                  {t("peripoihshAkron")}
-                </ServicesDropdownItem>
-                <ServicesDropdownItem
-                  to="/make-up"
-                  onClick={handleNavLinkClick}
-                  className="dropNavLink"
-                >
-                  {t("makigiaz")}
-                </ServicesDropdownItem>
-                <ServicesDropdownItem
-                  to="/waxing"
-                  onClick={handleNavLinkClick}
-                  className="dropNavLink"
-                >
-                  {t("apotrixosi")}
-                </ServicesDropdownItem>
-                <ServicesDropdownItem
-                  to="/face"
-                  onClick={handleNavLinkClick}
-                  className="dropNavLink"
-                >
-                  {t("peripoihshProsopou")}
-                </ServicesDropdownItem>
-                <ServicesDropdownItem
-                  to="/lash-lift"
-                  onClick={handleNavLinkClick}
-                  className="dropNavLink"
-                >
-                  {t("lashlift")}
-                </ServicesDropdownItem>
-              </DropdownContent>
-            </ServicesDropdownWrapper>
-          </li>
-          <li onClick={handleNavLinkClick}>
-            <NavLink to="/work">
-              <FontAwesomeIcon icon={faImages} className="icon" />
-              Gallery
+    <AnimatePresence>
+      <motion.header
+        key="header"
+        initial={fadeIn.initial}
+        animate={fadeIn.animate}
+        style={{ zIndex: 1000 }}
+      >
+        <header>
+          <nav>
+            <NavLink to="/" id="logo">
+              <img src={logo} className="logo" alt="Katia Lada logo" />
             </NavLink>
-          </li>
-          <li onClick={handleNavLinkClick}>
-            <NavLink to="/contact">
-              <FontAwesomeIcon icon={faLocationDot} className="icon" />
-              {t("oXorosMas")}
-            </NavLink>
-          </li>
-          <li onClick={handleNavLinkClick}>
-            <NavLink to="/contact">
-              <FontAwesomeIcon icon={faEnvelope} className="icon" />
-              {t("epikoinonia")}
-            </NavLink>
-          </li>
-          <li>
-            <DropdownWrapper>
-              <DropdownButton>
-                <FontAwesomeIcon icon={faGlobe} className="translate-icon" />
-                {currentLanguage.toUpperCase()}
-                <FontAwesomeIcon
-                  icon={faCaretDown}
-                  className="icon translate-arrow"
-                />
-              </DropdownButton>
-              <DropdownContent>
-                <DropdownItem onClick={() => changeLanguage("el")}>
-                  EL
-                </DropdownItem>
-                <DropdownItem onClick={() => changeLanguage("en")}>
-                  EN
-                </DropdownItem>
-                <DropdownItem onClick={() => changeLanguage("ru")}>
-                  RU
-                </DropdownItem>
-              </DropdownContent>
-            </DropdownWrapper>
-          </li>
-          <li onClick={handleNavLinkClick}>
-            <a href="tel:+302374082034" className="cta-call">
-              <FontAwesomeIcon icon={faPhone} className="phone-icon" />
-              {t("kalesteMas")}
-            </a>
-          </li>
-        </ul>
-        <div
-          className={`burger${navActive ? " toggle-burger" : ""}`}
-          onClick={navSlide}
-        >
-          <div className="line1"></div>
-          <div className="line2"></div>
-          <div className="line3"></div>
-        </div>
-      </nav>
-    </header>
+            <ul className={`nav-links${navActive ? " nav-active" : ""}`}>
+              <li>
+                <ServicesDropdownWrapper>
+                  <ServicesDropdownButton to="/">
+                    <FontAwesomeIcon icon={faStar} className="icon" />
+                    {t("ipiresies")}{" "}
+                    <FontAwesomeIcon icon={faCaretDown} className="icon" />
+                  </ServicesDropdownButton>
+                  <DropdownContent>
+                    <ServicesDropdownItem
+                      to="/nails"
+                      onClick={handleNavLinkClick}
+                      className="dropNavLink"
+                    >
+                      {t("peripoihshAkron")}
+                    </ServicesDropdownItem>
+                    <ServicesDropdownItem
+                      to="/make-up"
+                      onClick={handleNavLinkClick}
+                      className="dropNavLink"
+                    >
+                      {t("makigiaz")}
+                    </ServicesDropdownItem>
+                    <ServicesDropdownItem
+                      to="/waxing"
+                      onClick={handleNavLinkClick}
+                      className="dropNavLink"
+                    >
+                      {t("apotrixosi")}
+                    </ServicesDropdownItem>
+                    <ServicesDropdownItem
+                      to="/face"
+                      onClick={handleNavLinkClick}
+                      className="dropNavLink"
+                    >
+                      {t("peripoihshProsopou")}
+                    </ServicesDropdownItem>
+                    <ServicesDropdownItem
+                      to="/lash-lift"
+                      onClick={handleNavLinkClick}
+                      className="dropNavLink"
+                    >
+                      {t("lashlift")}
+                    </ServicesDropdownItem>
+                  </DropdownContent>
+                </ServicesDropdownWrapper>
+              </li>
+              <li onClick={handleNavLinkClick}>
+                <NavLink to="/work">
+                  <FontAwesomeIcon icon={faImages} className="icon" />
+                  Gallery
+                </NavLink>
+              </li>
+              <li onClick={handleNavLinkClick}>
+                <NavLink to="/contact">
+                  <FontAwesomeIcon icon={faLocationDot} className="icon" />
+                  {t("oXorosMas")}
+                </NavLink>
+              </li>
+              <li onClick={handleNavLinkClick}>
+                <NavLink to="/contact">
+                  <FontAwesomeIcon icon={faEnvelope} className="icon" />
+                  {t("epikoinonia")}
+                </NavLink>
+              </li>
+              <li>
+                <DropdownWrapper>
+                  <DropdownButton>
+                    <FontAwesomeIcon
+                      icon={faGlobe}
+                      className="translate-icon"
+                    />
+                    {currentLanguage.toUpperCase()}
+                    <FontAwesomeIcon
+                      icon={faCaretDown}
+                      className="icon translate-arrow"
+                    />
+                  </DropdownButton>
+                  <DropdownContent>
+                    <DropdownItem onClick={() => changeLanguage("el")}>
+                      EL
+                    </DropdownItem>
+                    <DropdownItem onClick={() => changeLanguage("en")}>
+                      EN
+                    </DropdownItem>
+                    <DropdownItem onClick={() => changeLanguage("ru")}>
+                      RU
+                    </DropdownItem>
+                  </DropdownContent>
+                </DropdownWrapper>
+              </li>
+              <li onClick={handleNavLinkClick}>
+                <a href="tel:+302374082034" className="cta-call">
+                  <FontAwesomeIcon icon={faPhone} className="phone-icon" />
+                  {t("kalesteMas")}
+                </a>
+              </li>
+            </ul>
+            <div
+              className={`burger${navActive ? " toggle-burger" : ""}`}
+              onClick={navSlide}
+            >
+              <div className="line1"></div>
+              <div className="line2"></div>
+              <div className="line3"></div>
+            </div>
+          </nav>
+        </header>
+      </motion.header>
+    </AnimatePresence>
   );
 };
 
