@@ -86,6 +86,9 @@ header {
           &:hover,
           &:focus {
             color: $color-primary;
+            &.dropNavLink {
+              color: white;
+            }
             cursor: pointer;
             .icon {
               color: $color-primary;

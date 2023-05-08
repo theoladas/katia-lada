@@ -34,6 +34,9 @@ const DropdownButton = styled.button`
     background-color: #f49ac1;
     color: white;
   }
+  .translate-icon-hover:hover {
+    color: #f49ac1;
+  }
 `;
 
 const DropdownContent = styled.div.attrs((props) => ({
@@ -103,6 +106,31 @@ const ServicesDropdownButton = styled(NavLink)`
   }
 `;
 
+const ServicesDropdownItem = styled(Link)`
+  color: #282828;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: none;
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+  &:hover {
+    background-color: #f49ac1;
+    color: white;
+  }
+  &:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  &:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+`;
+
 const Nav = () => {
   const { t, i18n } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
@@ -155,31 +183,41 @@ const Nav = () => {
                 <FontAwesomeIcon icon={faCaretDown} className="icon" />
               </ServicesDropdownButton>
               <DropdownContent>
-                <Link to="/nails">
-                  <DropdownItem onClick={handleNavLinkClick}>
-                    {t("peripoihshAkron")}
-                  </DropdownItem>
-                </Link>
-                <Link to="/make-up">
-                  <DropdownItem onClick={handleNavLinkClick}>
-                    {t("makigiaz")}
-                  </DropdownItem>
-                </Link>
-                <Link to="/waxing">
-                  <DropdownItem onClick={handleNavLinkClick}>
-                    {t("apotrixosi")}
-                  </DropdownItem>
-                </Link>
-                <Link to="/face">
-                  <DropdownItem onClick={handleNavLinkClick}>
-                    {t("peripoihshProsopou")}
-                  </DropdownItem>
-                </Link>
-                <Link to="/lash-lift">
-                  <DropdownItem onClick={handleNavLinkClick}>
-                    {t("lashlift")}
-                  </DropdownItem>
-                </Link>
+                <ServicesDropdownItem
+                  to="/nails"
+                  onClick={handleNavLinkClick}
+                  className="dropNavLink"
+                >
+                  {t("peripoihshAkron")}
+                </ServicesDropdownItem>
+                <ServicesDropdownItem
+                  to="/make-up"
+                  onClick={handleNavLinkClick}
+                  className="dropNavLink"
+                >
+                  {t("makigiaz")}
+                </ServicesDropdownItem>
+                <ServicesDropdownItem
+                  to="/waxing"
+                  onClick={handleNavLinkClick}
+                  className="dropNavLink"
+                >
+                  {t("apotrixosi")}
+                </ServicesDropdownItem>
+                <ServicesDropdownItem
+                  to="/face"
+                  onClick={handleNavLinkClick}
+                  className="dropNavLink"
+                >
+                  {t("peripoihshProsopou")}
+                </ServicesDropdownItem>
+                <ServicesDropdownItem
+                  to="/lash-lift"
+                  onClick={handleNavLinkClick}
+                  className="dropNavLink"
+                >
+                  {t("lashlift")}
+                </ServicesDropdownItem>
               </DropdownContent>
             </ServicesDropdownWrapper>
           </li>
