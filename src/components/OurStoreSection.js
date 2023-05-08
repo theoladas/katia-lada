@@ -1,9 +1,11 @@
 import { Paragraph } from "../components/GlobalStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaInstagram } from "react-icons/fa";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 export const OurStoreSection = () => {
+  const { t, i18 } = useTranslation();
+
   return (
     <section className="hero-section our-store ">
       <div className="map-container">
@@ -22,23 +24,23 @@ export const OurStoreSection = () => {
       </div>
 
       <div className="our-store-content">
-        <div className="main-title">Ο Χώρος μας</div>
+        <div className="main-title">{t("oXorosMas")}</div>
         <Paragraph>
           <p className="address-container">
             <FontAwesomeIcon icon={faHouse} className="address-icon" />
-            Σμύρνης & 28ης Οκτωβρίου, Νεα Φώκαια, Χαλκιδική, Τ.Κ. 63077
+            {t("dieuthinsi")}
           </p>
         </Paragraph>
-        <h2 className="opening-hours-title">Ώρες Λειτουργίας:</h2>
+        <h2 className="opening-hours-title">{t("oresLitourgias")}</h2>
         <div className="flex-open-store">
           <div className="open-days">
-            <p>Δευτέρα</p>
-            <p>Τρίτη</p>
-            <p>Τετάρτη</p>
-            <p>Πέμπτη</p>
-            <p>Παρασκευή</p>
-            <p>Σάββατο</p>
-            <p>Κυριακή</p>
+            <p>{t("deutera")}</p>
+            <p>{t("triti")}</p>
+            <p>{t("tetarti")}</p>
+            <p>{t("pempti")}</p>
+            <p>{t("paraskeui")}</p>
+            <p>{t("sabato")}</p>
+            <p>{t("kiriaki")}</p>
           </div>
           <div className="open-hours">
             <p>
@@ -56,14 +58,14 @@ export const OurStoreSection = () => {
             <p>
               09:00 - 13:00 <span>| </span>17:00 - 19:00
             </p>
-            <p>Κλειστά</p>
-            <p>Κλειστά</p>
+            <p>{t("kleista")}</p>
+            <p>{t("kleista")}</p>
           </div>
         </div>
 
         <div className="primary-btn-container">
           <a href="" className="primary-btn">
-            Περισσότερα..
+            {t("perisotera")}
           </a>
         </div>
       </div>
