@@ -7,8 +7,11 @@ import {
   faHouse,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t, i18 } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="footer-columns">
@@ -18,7 +21,7 @@ const Footer = () => {
               <a href="">Gallery</a>
             </li>
             <li>
-              <a href="">Ο χώρος μας</a>
+              <a href="">{t("oXorosMas")}</a>
             </li>
             <li>
               <div className="flex">
@@ -27,7 +30,7 @@ const Footer = () => {
                     href="https://www.instagram.com/katia_lada"
                     target="_blank"
                   >
-                    Ακολουθήστε μας
+                    {t("akolouthisteMas")}
                   </a>
                 </li>
                 <a
@@ -44,37 +47,35 @@ const Footer = () => {
         <div className="footer-card">
           <ul>
             <li>
-              <a href="">Υπηρεσίες</a>
+              <a href="">{t("ipiresies")}</a>
             </li>
             <hr></hr>
             <li>
-              <a href="">Περιποίηση Άκρων</a>
+              <a href="">{t("peripoihshAkron")}</a>
             </li>
             <li>
-              <Link to="/make-up">Μακιγιάζ</Link>
+              <Link to="/make-up">{t("makigiaz")}</Link>
             </li>
             <li>
-              <a href="">Αποτρίχωση</a>
+              <a href="">{t("apotrixosi")}</a>
             </li>
             <li>
-              <a href="">Περιποίηση Προσώπου</a>
+              <a href="">{t("peripoihshProsopou")}</a>
             </li>
             <li>
-              <a href="">Τοποθέτηση Βλαφαρίδων Lashlift</a>
+              <a href="">{t("lashlift")}</a>
             </li>
           </ul>
         </div>
         <div className="footer-card">
           <ul>
             <li>
-              <a href="">Επικοινωνία</a>
+              <a href="">{t("epikoinonia")}</a>
             </li>
             <hr></hr>
             <li class="footer-address">
               <FontAwesomeIcon icon={faHouse} className="footer-icon" />
-              <a class="footer-link-no-clickable">
-                Σμύρνης & 28ης Οκτωβρίου, Νεα Φώκαια, Χαλκιδικής, Τ.Κ. 63077
-              </a>
+              <a class="footer-link-no-clickable">{t("dieuthinsi")}</a>
             </li>
             <li>
               <FontAwesomeIcon icon={faPhone} className="footer-icon" />
