@@ -1,4 +1,5 @@
-import { Flex, Paragraph, CTACall, HeroImg } from "../components/GlobalStyle";
+import { Flex, Paragraph } from "../components/GlobalStyle";
+import { useTranslation } from "react-i18next";
 import "../styles/GallerySection.scss";
 import grid1 from "../img/grid-1.png";
 import grid2 from "../img/grid-2.png";
@@ -8,17 +9,16 @@ import grid5 from "../img/grid-5.png";
 import grid6 from "../img/grid-6.png";
 
 export const GallerySection = () => {
+  const { t, i18 } = useTranslation();
+
   return (
     <Flex className="hero-section">
       <div className="hero-content">
         <div className="main-title">Gallery</div>
-        <Paragraph>
-          Επαγγελματικές Υπηρεσίες περιποίηση άκρων, μακιγιάζ, τοποθέτηση
-          βλεφαρίδων lashlift, αποτρίχωσης και περιποίησης προσώπου.
-        </Paragraph>
+        <Paragraph>{t("professionalServices")}</Paragraph>
         <div className="primary-btn-container">
           <a href="" className="primary-btn">
-            Περισσότερα..
+            {t("perisotera")}
           </a>
         </div>
       </div>
