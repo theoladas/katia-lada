@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
@@ -23,6 +23,7 @@ const Homepage = () => {
   const [galleryInView, setGalleryInView] = useState(false);
   const [ourStoreInView, setOurStoreInView] = useState(false);
   const [contactInView, setContactInView] = useState(false);
+  const [ready, setReady] = useState(false);
 
   const dropIn = {
     hidden: { opacity: 0, y: -50 },
@@ -39,15 +40,6 @@ const Homepage = () => {
     visible: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
   };
 
-  const servicesVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.2, duration: 0.5 },
-    }),
-  };
-
   const cards = [
     { image: nails, text: "peripoihshAkron" },
     { image: makeup, text: "makigiaz" },
@@ -55,6 +47,12 @@ const Homepage = () => {
     { image: facial, text: "peripoihshProsopou" },
     { image: lashlift, text: "lashlift" },
   ];
+
+  useEffect(() => {
+    i18n.changeLanguage(localStorage.getItem("i18nextLng") || "el").then(() => {
+      setReady(true);
+    });
+  }, []);
 
   return (
     <main>
@@ -124,7 +122,9 @@ const Homepage = () => {
         onChange={(inView) => setServicesInView(inView)}
       >
         <div className="services-wrapper">
-          <ServicesSection cards={cards} servicesInView={servicesInView} />
+          {ready && (
+            <ServicesSection cards={cards} servicesInView={servicesInView} />
+          )}
         </div>
       </InView>
       <InView

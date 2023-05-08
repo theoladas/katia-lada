@@ -17,9 +17,21 @@ export const ServicesSection = ({ cards, servicesInView }) => {
     }),
   };
 
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
+  };
+
   return (
     <div className="half-container">
-      <FlexCenter className="main-title">{t("ipiresies")} </FlexCenter>
+      <motion.div
+        className="main-title"
+        initial="hidden"
+        animate={servicesInView ? "visible" : "hidden"}
+        variants={fadeIn}
+      >
+        <FlexCenter>{t("ipiresies")}</FlexCenter>
+      </motion.div>
       <div className="serviceSection">
         <FlexCenter>
           {cards.map((card, index) => (
