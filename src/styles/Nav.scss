@@ -9,6 +9,7 @@ $color-secondary: #e4389b;
 $color-text: #282828;
 $color-bg: #f0e9eb;
 
+$breakpoint-large: 1330px;
 $breakpoint-desktop: 1070px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 500px;
@@ -54,9 +55,8 @@ header {
       justify-content: center;
       flex-wrap: wrap;
       margin-left: auto;
-
       list-style: none;
-      @media screen and (max-width: $breakpoint-desktop) {
+      @media screen and (max-width: $breakpoint-large) {
         width: 100%;
         justify-content: center;
         padding-bottom: 1rem;
@@ -64,12 +64,21 @@ header {
       li {
         padding-left: 2rem;
         font-size: 1.2rem;
+        @media (max-width: $breakpoint-large) {
+          padding: 0 1rem 0.5rem 0rem;
+        }
         .cta-call {
           padding: 10px 12px;
           color: $color-secondary;
           border: 1px solid $color-primary;
           border-radius: 10px;
           transition: all 0.3s ease;
+          @media (max-width: 950px) {
+            display: none;
+          }
+          @media (max-width: $breakpoint-tablet) {
+            display: block;
+          }
           &:hover,
           &:focus {
             color: #fff;
@@ -146,7 +155,7 @@ header {
           gap: 5rem;
         }
         li {
-          padding-left: 0;
+          padding: 0;
         }
       }
       .nav-active {
