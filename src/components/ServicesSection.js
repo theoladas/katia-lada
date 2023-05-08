@@ -1,60 +1,46 @@
-import { Flex, FlexCenter } from "./GlobalStyle";
-import "../styles/ServicesSection.scss";
-import facial from "../img/icons/facial-200.png";
-import makeup from "../img/icons/makeup-200.png";
-import lashlift from "../img/icons/lashlift-200.png";
-import nails from "../img/icons/nails-200.png";
-import waxing from "../img/icons/waxing-200.png";
+import React from "react";
+import { FlexCenter } from "./GlobalStyle";
 import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence } from "framer-motion";
 
-export const ServicesSection = () => {
+import "../styles/ServicesSection.scss";
+
+export const ServicesSection = ({ cards, servicesInView }) => {
   const { t, i18n } = useTranslation();
+
+  const servicesVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2, duration: 0.5 },
+    }),
+  };
 
   return (
     <div className="half-container">
       <FlexCenter className="main-title">{t("ipiresies")} </FlexCenter>
       <div className="serviceSection">
         <FlexCenter>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-                <img src={nails}></img>
+          {cards.map((card, index) => (
+            <motion.div
+              key={index}
+              className="card"
+              initial="hidden"
+              animate={servicesInView ? "visible" : "hidden"}
+              variants={servicesVariants}
+              custom={index}
+            >
+              <div className="card-content">
+                <div className="card-image">
+                  <img src={card.image} alt={t(card.text)} />
+                </div>
+                <div>
+                  <p>{t(card.text)}</p>
+                </div>
               </div>
-              <div>
-                <p>{t("peripoihshAkron")}</p>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-                <img src={makeup}></img>
-              </div>
-              <p>{t("makigiaz")}</p>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-                <img src={waxing}></img>
-              </div>
-              <p>{t("apotrixosi")}</p>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-content">
-              <img src={facial}></img>
-              <p>{t("peripoihshProsopou")}</p>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-image">
-                <img src={lashlift}></img>
-              </div>
-              <p>{t("lashlift")}</p>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </FlexCenter>
       </div>
     </div>

@@ -8,6 +8,11 @@ import { ServicesSection } from "../components/ServicesSection.js";
 import { GallerySection } from "../components/GallerySection.js";
 import { OurStoreSection } from "../components/OurStoreSection.js";
 import { ContactSection } from "../components/ContactSection";
+import facial from "../img/icons/facial-200.png";
+import makeup from "../img/icons/makeup-200.png";
+import lashlift from "../img/icons/lashlift-200.png";
+import nails from "../img/icons/nails-200.png";
+import waxing from "../img/icons/waxing-200.png";
 import homepageBanner from "../img/homepage-banner.png";
 import katiaLogo from "../img/katia-lada-text.png";
 
@@ -33,6 +38,23 @@ const Homepage = () => {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
   };
+
+  const servicesVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2, duration: 0.5 },
+    }),
+  };
+
+  const cards = [
+    { image: nails, text: "peripoihshAkron" },
+    { image: makeup, text: "makigiaz" },
+    { image: waxing, text: "apotrixosi" },
+    { image: facial, text: "peripoihshProsopou" },
+    { image: lashlift, text: "lashlift" },
+  ];
 
   return (
     <main>
@@ -101,14 +123,10 @@ const Homepage = () => {
         threshold={0.1}
         onChange={(inView) => setServicesInView(inView)}
       >
-        <motion.div
-          initial={servicesInView ? "visible" : "hidden"}
-          animate={servicesInView ? "visible" : "hidden"}
-          variants={fadeIn}
-        >
-          <ServicesSection />
-        </motion.div>
-      </InView>{" "}
+        <div className="services-wrapper">
+          <ServicesSection cards={cards} servicesInView={servicesInView} />
+        </div>
+      </InView>
       <InView
         as="div"
         threshold={0.1}
