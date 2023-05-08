@@ -5,11 +5,14 @@ import makeup from "../img/icons/makeup-200.png";
 import lashlift from "../img/icons/lashlift-200.png";
 import nails from "../img/icons/nails-200.png";
 import waxing from "../img/icons/waxing-200.png";
+import { useTranslation } from "react-i18next";
 
 export const ServicesSection = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="half-container">
-      <FlexCenter className="main-title">Υπηρεσίες</FlexCenter>
+      <FlexCenter className="main-title">{t("ipiresies")} </FlexCenter>
       <div className="serviceSection">
         <FlexCenter>
           <div className="card">
@@ -18,7 +21,7 @@ export const ServicesSection = () => {
                 <img src={nails}></img>
               </div>
               <div>
-                <p>Περιποίηση Άκρων</p>
+                <p>{t("peripoihshAkron")}</p>
               </div>
             </div>
           </div>
@@ -27,7 +30,7 @@ export const ServicesSection = () => {
               <div className="card-image">
                 <img src={makeup}></img>
               </div>
-              <p>Μακιγιάζ</p>
+              <p>{t("makigiaz")}</p>
             </div>
           </div>
           <div className="card">
@@ -35,15 +38,13 @@ export const ServicesSection = () => {
               <div className="card-image">
                 <img src={waxing}></img>
               </div>
-              <p>Αποτρίχωση</p>
+              <p>{t("apotrixosi")}</p>
             </div>
           </div>
           <div className="card">
             <div className="card-content">
               <img src={facial}></img>
-              <p>
-                Περιποίηση <br></br>Προσώπου
-              </p>
+              <p>{t("peripoihshProsopou")}</p>
             </div>
           </div>
           <div className="card">
@@ -51,9 +52,7 @@ export const ServicesSection = () => {
               <div className="card-image">
                 <img src={lashlift}></img>
               </div>
-              <p>
-                Τοποθέτηση Βλεφαρίδων <br></br>Lashlift
-              </p>
+              <p>{t("lashlift")}</p>
             </div>
           </div>
         </FlexCenter>
