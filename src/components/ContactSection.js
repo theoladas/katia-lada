@@ -1,12 +1,12 @@
+import { Paragraph } from "./GlobalStyle";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { Paragraph } from "./GlobalStyle";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 
 export const ContactSection = ({ animate }) => {
   const { t } = useTranslation();
