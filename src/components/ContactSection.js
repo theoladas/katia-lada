@@ -66,9 +66,9 @@ export const ContactSection = ({ animate }) => {
               </ul>
             </div>
             <div className="primary-btn-container">
-              <span href="" className="primary-btn">
+              <a href="" className="primary-btn">
                 {t("perisotera")}
-              </span>
+              </a>
             </div>
           </motion.div>
 

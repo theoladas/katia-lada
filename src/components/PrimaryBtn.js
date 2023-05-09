@@ -10,6 +10,7 @@ export const PrimaryBtn = () => {
       <a
         href="https://koalendar.com/e/book-an-appointment-koaQ7d6e"
         target="_blank"
+        rel="noreferrer"
       >
         {t("kleisteRantebou")}
       </a>

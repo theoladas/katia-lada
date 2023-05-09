@@ -91,7 +91,7 @@ const Footer = () => {
         </div>
       </div>
       <p>
-        &#169; 2022 Κάτια Λαδά | Website:{" "}
+        &#169; 2023 Κάτια Λαδά | Website:{" "}
         <a
           href="https://uk.linkedin.com/in/theodorosladas"
           target="_blank"
