@@ -6,63 +6,90 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Paragraph } from "./GlobalStyle";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
-export const ContactSection = () => {
-  const { t, i18 } = useTranslation();
+export const ContactSection = ({ animate }) => {
+  const { t } = useTranslation();
+
+  const useFadeInAnimation = () => {
+    return {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
+    };
+  };
+
+  const fadeIn = useFadeInAnimation();
 
   return (
     <section className="hero-section contact-section ">
-      <div className="contact-content">
-        <div className="main-title">{t("epikoinonia")}</div>
-        <Paragraph>{t("plirofories")}</Paragraph>
-        <Paragraph>
-          {t("forAppointments")}{" "}
-          <a href="tel:+302374082034" className="call-us-link">
-            23740 82034
-          </a>
-          {", "}
-          {t("workingHoursContant")}
-        </Paragraph>
-        <div className="contact-details">
-          <ul>
+      {animate && (
+        <>
+          <motion.div
+            className="contact-content"
+            initial={{ x: -200 }}
+            animate={{ x: 0, ...fadeIn.visible }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
+          >
+            <div className="main-title">{t("epikoinonia")}</div>
+            <Paragraph>{t("plirofories")}</Paragraph>
             <Paragraph>
-              <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
-              <a href="mailto:lada.katia@gmail.com" className="contact-links">
-                lada.katia@gmail.com
-              </a>
-            </Paragraph>
-            <Paragraph>
-              <FontAwesomeIcon icon={faPhone} className="contact-icon" />
-              <a href="tel:+3002374082034" className="contact-links">
+              {t("forAppointments")}{" "}
+              <a href="tel:+302374082034" className="call-us-link">
                 23740 82034
               </a>
+              {", "}
+              {t("workingHoursContant")}
             </Paragraph>
-            <Paragraph>
-              <FontAwesomeIcon icon={faHouse} className="contact-icon" />
-              <a class="footer-link-no-clickable">{t("dieuthinsi")}</a>
-            </Paragraph>
-          </ul>
-        </div>
+            <div className="contact-details">
+              <ul>
+                <Paragraph>
+                  <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
+                  <a
+                    href="mailto:lada.katia@gmail.com"
+                    className="contact-links"
+                  >
+                    lada.katia@gmail.com
+                  </a>
+                </Paragraph>
+                <Paragraph>
+                  <FontAwesomeIcon icon={faPhone} className="contact-icon" />
+                  <a href="tel:+3002374082034" className="contact-links">
+                    23740 82034
+                  </a>
+                </Paragraph>
+                <Paragraph>
+                  <FontAwesomeIcon icon={faHouse} className="contact-icon" />
+                  <p class="footer-link-no-clickable">{t("dieuthinsi")}</p>
+                </Paragraph>
+              </ul>
+            </div>
+            <div className="primary-btn-container">
+              <span href="" className="primary-btn">
+                {t("perisotera")}
+              </span>
+            </div>
+          </motion.div>
 
-        <div className="primary-btn-container">
-          <a href="" className="primary-btn">
-            {t("perisotera")}
-          </a>
-        </div>
-      </div>
-      <div className="form-container">
-        <form action="">
-          <label htmlFor="">{t("onomateponimo")}</label>
-          <input type="text" />
-          <label htmlFor="">Email:</label>
-          <input type="email" />
-          <label htmlFor="">{t("minima")}</label>
-          <textarea rows="4" cols="20" />
-          <button type="submit" className="form-btn">
-            {t("steilteMinima")}
-          </button>
-        </form>
-      </div>
+          <motion.div
+            className="form-container"
+            initial={{ x: 200 }}
+            animate={{ x: 0, ...fadeIn.visible }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
+          >
+            <form action="">
+              <label htmlFor="">{t("onomateponimo")}</label>
+              <input type="text" />
+              <label htmlFor="">Email:</label>
+              <input type="email" />
+              <label htmlFor="">{t("minima")}</label>
+              <textarea rows="4" cols="20" />
+              <button type="submit" className="form-btn">
+                {t("steilteMinima")}
+              </button>
+            </form>
+          </motion.div>
+        </>
+      )}
     </section>
   );
 };

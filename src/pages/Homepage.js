@@ -52,7 +52,7 @@ const Homepage = () => {
     i18n.changeLanguage(localStorage.getItem("i18nextLng") || "el").then(() => {
       setReady(true);
     });
-  }, []);
+  }, [i18n]);
 
   return (
     <main>
@@ -137,7 +137,7 @@ const Homepage = () => {
           animate={{ x: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          {galleryInView && <GallerySection />}
+          <GallerySection animate={galleryInView} />
         </motion.div>
       </InView>
       <InView
@@ -150,7 +150,7 @@ const Homepage = () => {
           animate={ourStoreInView ? "visible" : "hidden"}
           variants={fadeIn}
         >
-          <OurStoreSection />
+          <OurStoreSection animate={ourStoreInView} />
         </motion.div>
       </InView>
       <InView
@@ -163,7 +163,7 @@ const Homepage = () => {
           animate={contactInView ? "visible" : "hidden"}
           variants={fadeIn}
         >
-          <ContactSection />
+          <ContactSection animate={contactInView} />
         </motion.div>
       </InView>
     </main>
