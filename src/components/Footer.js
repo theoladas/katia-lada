@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="footer-card">
           <ul>
             <li>
-              <a href="/">Gallery</a>
+              <Link to="/work">Gallery</Link>
             </li>
             <li>
               <a href="/">{t("oXorosMas")}</a>
