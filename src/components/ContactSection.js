@@ -59,7 +59,9 @@ export const ContactSection = ({ animate }) => {
                 </Paragraph>
                 <Paragraph>
                   <FontAwesomeIcon icon={faHouse} className="contact-icon" />
-                  <p class="footer-link-no-clickable">{t("dieuthinsi")}</p>
+                  <span class="footer-link-no-clickable">
+                    {t("dieuthinsi")}
+                  </span>
                 </Paragraph>
               </ul>
             </div>
@@ -70,6 +72,7 @@ export const ContactSection = ({ animate }) => {
             </div>
           </motion.div>
 
+          {/* Form */}
           <motion.div
             className="form-container"
             initial={{ x: 200 }}
