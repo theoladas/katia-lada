@@ -1,12 +1,12 @@
 import React from "react";
 import { FlexCenter } from "./GlobalStyle";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import "../styles/ServicesSection.scss";
 
 export const ServicesSection = ({ cards, servicesInView }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const servicesVariants = {
     hidden: { opacity: 0, y: -50 },

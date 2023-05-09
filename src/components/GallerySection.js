@@ -11,7 +11,7 @@ import grid6 from "../img/grid-6.png";
 import "../styles/GallerySection.scss";
 
 export const GallerySection = () => {
-  const { t, i18 } = useTranslation();
+  const { t } = useTranslation();
 
   const fadeIn = {
     hidden: { opacity: 0 },
@@ -29,7 +29,7 @@ export const GallerySection = () => {
         <div className="main-title">Gallery</div>
         <Paragraph>{t("professionalServices")}</Paragraph>
         <div className="primary-btn-container">
-          <a href="" className="primary-btn">
+          <a href="/" className="primary-btn">
             {t("perisotera")}
           </a>
         </div>
@@ -41,20 +41,20 @@ export const GallerySection = () => {
         transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
       >
         <div className="grid-column">
-          <img src={grid1}></img>
-          <img src={grid6}></img>
-          <img src={grid5}></img>
+          <img src={grid1} alt="Gallery example"></img>
+          <img src={grid6} alt="Gallery example"></img>
+          <img src={grid5} alt="Gallery example"></img>
         </div>
         <div className="grid-column">
-          <img src={grid2}></img>
-          <img src={grid4}></img>
+          <img src={grid2} alt="Gallery example"></img>
+          <img src={grid4} alt="Gallery example"></img>
 
-          <img src={grid6}></img>
+          <img src={grid6} alt="Gallery example"></img>
         </div>
         <div className="grid-column">
-          <img src={grid3}></img>
-          <img src={grid5}></img>
-          <img src={grid4}></img>
+          <img src={grid3} alt="Gallery example"></img>
+          <img src={grid5} alt="Gallery example"></img>
+          <img src={grid4} alt="Gallery example"></img>
         </div>
       </motion.div>
     </Flex>

@@ -52,7 +52,7 @@ const Homepage = () => {
     i18n.changeLanguage(localStorage.getItem("i18nextLng") || "el").then(() => {
       setReady(true);
     });
-  }, []);
+  }, [i18n]);
 
   return (
     <main>

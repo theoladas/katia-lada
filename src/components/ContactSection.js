@@ -8,7 +8,7 @@ import { Paragraph } from "./GlobalStyle";
 import { useTranslation } from "react-i18next";
 
 export const ContactSection = () => {
-  const { t, i18 } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="hero-section contact-section ">
@@ -39,15 +39,15 @@ export const ContactSection = () => {
             </Paragraph>
             <Paragraph>
               <FontAwesomeIcon icon={faHouse} className="contact-icon" />
-              <a class="footer-link-no-clickable">{t("dieuthinsi")}</a>
+              <p class="footer-link-no-clickable">{t("dieuthinsi")}</p>
             </Paragraph>
           </ul>
         </div>
 
         <div className="primary-btn-container">
-          <a href="" className="primary-btn">
+          <span href="" className="primary-btn">
             {t("perisotera")}
-          </a>
+          </span>
         </div>
       </div>
       <div className="form-container">

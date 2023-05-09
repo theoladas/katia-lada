@@ -10,7 +10,7 @@ import {
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t, i18 } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <footer className="footer">
@@ -18,10 +18,10 @@ const Footer = () => {
         <div className="footer-card">
           <ul>
             <li>
-              <a href="">Gallery</a>
+              <a href="/">Gallery</a>
             </li>
             <li>
-              <a href="">{t("oXorosMas")}</a>
+              <a href="/">{t("oXorosMas")}</a>
             </li>
             <li>
               <div className="flex">
@@ -29,6 +29,7 @@ const Footer = () => {
                   <a
                     href="https://www.instagram.com/katia_lada"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     {t("akolouthisteMas")}
                   </a>
@@ -36,6 +37,7 @@ const Footer = () => {
                 <a
                   href="https://www.instagram.com/katia_lada"
                   target="_blank"
+                  rel="noreferrer"
                   className="icon footer-icon"
                 >
                   <FaInstagram />
@@ -47,35 +49,35 @@ const Footer = () => {
         <div className="footer-card">
           <ul>
             <li>
-              <a href="">{t("ipiresies")}</a>
+              <a href="/">{t("ipiresies")}</a>
             </li>
             <hr></hr>
             <li>
-              <a href="">{t("peripoihshAkron")}</a>
+              <a href="/">{t("peripoihshAkron")}</a>
             </li>
             <li>
               <Link to="/make-up">{t("makigiaz")}</Link>
             </li>
             <li>
-              <a href="">{t("apotrixosi")}</a>
+              <a href="/">{t("apotrixosi")}</a>
             </li>
             <li>
-              <a href="">{t("peripoihshProsopou")}</a>
+              <a href="/">{t("peripoihshProsopou")}</a>
             </li>
             <li>
-              <a href="">{t("lashlift")}</a>
+              <a href="/">{t("lashlift")}</a>
             </li>
           </ul>
         </div>
         <div className="footer-card">
           <ul>
             <li>
-              <a href="">{t("epikoinonia")}</a>
+              <a href="/">{t("epikoinonia")}</a>
             </li>
             <hr></hr>
             <li class="footer-address">
               <FontAwesomeIcon icon={faHouse} className="footer-icon" />
-              <a class="footer-link-no-clickable">{t("dieuthinsi")}</a>
+              <span class="footer-link-no-clickable">{t("dieuthinsi")}</span>
             </li>
             <li>
               <FontAwesomeIcon icon={faPhone} className="footer-icon" />
@@ -93,6 +95,7 @@ const Footer = () => {
         <a
           href="https://uk.linkedin.com/in/theodorosladas"
           target="_blank"
+          rel="noreferrer"
           className="website-by"
         >
           Theo Ladas
