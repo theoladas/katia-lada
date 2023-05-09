@@ -7,7 +7,12 @@ export const PrimaryBtn = () => {
 
   return (
     <StyledPrimary>
-      <Link to="/contact">{t("kleisteRantebou")}</Link>
+      <a
+        href="https://koalendar.com/e/book-an-appointment-koaQ7d6e"
+        target="_blank"
+      >
+        {t("kleisteRantebou")}
+      </a>
     </StyledPrimary>
   );
 };

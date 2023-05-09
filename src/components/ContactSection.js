@@ -81,11 +81,11 @@ export const ContactSection = ({ animate }) => {
           >
             <form action="https://formspree.io/f/mrgvjnvg" method="POST">
               <label htmlFor="">{t("onomateponimo")}</label>
-              <input type="text" name="name" />
+              <input type="text" name="name" required />
               <label htmlFor="">Email:</label>
-              <input type="email" name="email" />
+              <input type="email" name="email" required />
               <label htmlFor="">{t("minima")}</label>
-              <textarea rows="4" cols="20" name="message"></textarea>
+              <textarea rows="4" cols="20" name="message" required></textarea>
               <button type="submit" className="form-btn">
                 {t("steilteMinima")}
               </button>
