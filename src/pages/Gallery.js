@@ -6,9 +6,11 @@ import galleryData from "../resources/gallery-data.json";
 
 const GalleryPage = styled.main`
   padding: 2rem 5rem;
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
 `;
 const GalleryTitle = styled.h2`
-  @include flex;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,18 +20,23 @@ const GalleryWrapper = styled.div`
   --primary: #e4389b;
   --dot-width: 15px;
   --dot-height: 15px;
-  padding-top: 5rem;
+  padding-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* min-height: 60vh; */
 
   .carousel .slide img {
+    max-width: 50%;
     display: block;
-    max-width: 40%;
     height: auto;
     margin: 0 auto;
     object-fit: cover;
+    @media (max-width: 1024px) {
+      max-width: 80%;
+    }
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   .carousel .control-next.control-arrow:before {
@@ -48,12 +55,20 @@ const GalleryWrapper = styled.div`
     background: white;
     width: var(--dot-width);
     height: var(--dot-height);
+    @media (max-width: 768px) {
+      width: 12px;
+      height: 12px;
+    }
   }
 
   .carousel .control-dots .dot.selected {
     background: var(--primary);
     width: var(--dot-width);
     height: var(--dot-height);
+    @media (max-width: 768px) {
+      width: 12px;
+      height: 12px;
+    }
   }
 
   .carousel .carousel-status {
