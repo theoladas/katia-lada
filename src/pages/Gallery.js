@@ -4,6 +4,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from "styled-components";
 import galleryData from "../resources/gallery-data.json";
 
+const GalleryPage = styled.main`
+  padding-top: 2rem;
+`;
 const GalleryTitle = styled.h2`
   @include flex;
   display: flex;
@@ -15,10 +18,16 @@ const GalleryWrapper = styled.div`
   --primary: #e4389b;
   --dot-width: 15px;
   --dot-height: 15px;
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 60vh; */
 
   .carousel .slide img {
     display: block;
-    height: 70vh;
+    max-width: 40%;
+    height: auto;
     margin: 0 auto;
     object-fit: cover;
   }
@@ -47,6 +56,10 @@ const GalleryWrapper = styled.div`
     height: var(--dot-height);
   }
 
+  .carousel .carousel-status {
+    display: none;
+  }
+
   .carousel .thumbs-wrapper {
     display: flex;
     justify-content: center;
@@ -57,7 +70,7 @@ const Gallery = () => {
   const images = galleryData.images;
 
   return (
-    <main className="hero-section">
+    <GalleryPage>
       <GalleryTitle className="main-title gallery-title">Gallery</GalleryTitle>
       <GalleryWrapper>
         <Carousel
@@ -77,7 +90,7 @@ const Gallery = () => {
           })}
         </Carousel>
       </GalleryWrapper>
-    </main>
+    </GalleryPage>
   );
 };
 

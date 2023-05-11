@@ -118,18 +118,21 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 3rem;
       font-weight: 700;
       color: #282828; 
-      /* padding: 1rem 0; */
+      margin-top: 5rem;
       @media screen and (max-width: 1024px) {
         line-height: 55px;
         font-size: 2.6rem;
+        margin-top: 5rem;
       }
       @media screen and (max-width: 768px) {
         text-align: center;
-        padding-top: 1rem;
+                
+
       }
       @media only screen and (max-width: 500px) {
         font-size: 2.5rem;
         padding-top: 0;
+        margin-top: 1rem;
       }
   }
   .katia-logo-text {

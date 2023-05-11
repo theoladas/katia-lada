@@ -1,5 +1,6 @@
 import React from "react";
 import { Flex, Paragraph } from "../components/GlobalStyle";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import grid1 from "../img/grid-1.png";
@@ -35,9 +36,9 @@ export const GallerySection = ({ animate }) => {
             <div className="main-title">Gallery</div>
             <Paragraph>{t("professionalServices")}</Paragraph>
             <div className="primary-btn-container">
-              <a href="/" className="primary-btn">
+              <Link to="/gallery" className="primary-btn">
                 {t("perisotera")}
-              </a>
+              </Link>
             </div>
           </motion.div>
           <motion.div

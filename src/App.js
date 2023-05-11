@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { React, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import GlobalStyle from "./components/GlobalStyle";
 import "./fonts/daniel.ttf";
 import Nav from "./components/Nav";
@@ -8,6 +9,12 @@ import MakeUp from "./pages/MakeUp";
 import Footer from "./components/Footer";
 
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="App">
       <GlobalStyle />
@@ -16,7 +23,7 @@ function App() {
         <Route path="/" exact element={<Homepage />} />
       </Routes>
       <Routes>
-        <Route path="/work" exact element={<Gallery />} />
+        <Route path="/gallery" exact element={<Gallery />} />
       </Routes>
       <Routes>
         <Route path="/make-up" exact element={<MakeUp />} />

@@ -235,7 +235,7 @@ const Nav = () => {
                 </ServicesDropdownWrapper>
               </li>
               <li onClick={handleNavLinkClick}>
-                <NavLink to="/work">
+                <NavLink to="/gallery">
                   <FontAwesomeIcon icon={faImages} className="icon" />
                   Gallery
                 </NavLink>
