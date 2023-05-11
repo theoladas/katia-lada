@@ -20,11 +20,14 @@ const GalleryWrapper = styled.div`
   --primary: #e4389b;
   --dot-width: 15px;
   --dot-height: 15px;
-  padding-top: 2rem;
+  padding: 2rem 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    padding: 0rem;
+  }
   .carousel .slide img {
     max-width: 50%;
     display: block;
