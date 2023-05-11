@@ -1,86 +1,73 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from "styled-components";
-import about from "../img/about-us-header.png";
-import about2 from "../img/about-us-homepage.png";
+import galleryData from "../resources/gallery-data.json";
 
 const GalleryTitle = styled.h2`
+  @include flex;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
+
 const GalleryWrapper = styled.div`
-  .slick-slide img {
+  --primary: #e4389b;
+  --dot-width: 15px;
+  --dot-height: 15px;
+
+  .carousel .slide img {
     display: block;
-    height: 60vh;
+    height: 70vh;
     margin: 0 auto;
     object-fit: cover;
   }
 
-  .slick-prev:before,
-  .slick-next:before {
-    font-size: 30px;
-    color: #e4389b;
+  .carousel .control-next.control-arrow:before {
+    border-left: 8px solid var(--primary);
   }
 
-  .slick-dots li button:before {
-    font-size: 12px;
-    color: black;
+  .carousel .control-prev.control-arrow:before {
+    border-right: 8px solid var(--primary);
   }
 
-  .slick-dots li.slick-active button:before {
-    color: #e4389b;
+  .carousel .control-arrow {
+    color: var(--primary);
+  }
+
+  .carousel .control-dots .dot {
+    background: white;
+    width: var(--dot-width);
+    height: var(--dot-height);
+  }
+
+  .carousel .control-dots .dot.selected {
+    background: var(--primary);
+    width: var(--dot-width);
+    height: var(--dot-height);
+  }
+
+  .carousel .thumbs-wrapper {
+    display: flex;
+    justify-content: center;
   }
 `;
 
 const Gallery = () => {
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    adaptiveHeight: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  const images = galleryData.images;
 
-  const images = [
-    { src: about, alt: "Grid 1" },
-    { src: about2, alt: "Grid 2" },
-    { src: about, alt: "Grid 3" },
-    { src: about2, alt: "Grid 4" },
-  ];
   return (
     <main className="hero-section">
       <GalleryTitle className="main-title gallery-title">Gallery</GalleryTitle>
       <GalleryWrapper>
-        <Slider {...sliderSettings}>
+        <Carousel
+          showThumbs={true}
+          autoPlay
+          infiniteLoop
+          interval={3000}
+          dynamicHeight
+          useKeyboardArrows
+        >
           {images.map((image, index) => {
             return (
               <div key={index}>
@@ -88,7 +75,7 @@ const Gallery = () => {
               </div>
             );
           })}
-        </Slider>
+        </Carousel>
       </GalleryWrapper>
     </main>
   );

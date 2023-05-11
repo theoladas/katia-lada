@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
 // Base styles
-const GlobalStyle = createGlobalStyle` 
+export const GlobalStyle = createGlobalStyle` 
   * {
     margin: 0;
     padding: 0;
@@ -30,6 +30,12 @@ const GlobalStyle = createGlobalStyle`
   }
   
   /* Utility Classes */
+  .flexGallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
   .flex {
       display: flex;
   }
