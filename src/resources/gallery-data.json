@@ -1,8 +1,8 @@
 {
   "images": [
-    { "src": "../img/about-us-header.png", "alt": "Grid 1" },
-    { "src": "../img/about-us-homepage.png", "alt": "Grid 2" },
-    { "src": "../img/about-us-header.png", "alt": "Grid 3" },
-    { "src": "../img/about-us-homepage.png", "alt": "Grid 4" }
+    { "src": "img/about-us-header.png", "alt": "Grid 1" },
+    { "src": "img/about-us-homepage.png", "alt": "Grid 2" },
+    { "src": "img/about-us-header.png", "alt": "Grid 3" },
+    { "src": "img/about-us-homepage.png", "alt": "Grid 4" }
   ]
 }

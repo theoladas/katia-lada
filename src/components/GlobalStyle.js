@@ -30,12 +30,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   /* Utility Classes */
-  .flexGallery {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
   .flex {
       display: flex;
   }
