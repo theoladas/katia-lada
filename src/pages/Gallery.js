@@ -70,29 +70,24 @@ const Gallery = () => {
     ],
   };
 
+  const images = [
+    { src: about, alt: "Grid 1" },
+    { src: about2, alt: "Grid 2" },
+    { src: about, alt: "Grid 3" },
+    { src: about2, alt: "Grid 4" },
+  ];
   return (
     <main className="hero-section">
       <GalleryTitle className="main-title gallery-title">Gallery</GalleryTitle>
       <GalleryWrapper>
         <Slider {...sliderSettings}>
-          <div>
-            <img src={about} alt="Grid 1" />
-          </div>
-          <div>
-            <img src={about2} alt="Grid 2" />
-          </div>
-          <div>
-            <img src={about} alt="Grid 3" />
-          </div>
-          <div>
-            <img src={about2} alt="Grid 4" />
-          </div>
-          <div>
-            <img src={about} alt="Grid 5" />
-          </div>
-          <div>
-            <img src={about2} alt="Grid 6" />
-          </div>
+          {images.map((image, index) => {
+            return (
+              <div key={index}>
+                <img src={image.src} alt={image.alt} />
+              </div>
+            );
+          })}
         </Slider>
       </GalleryWrapper>
     </main>
