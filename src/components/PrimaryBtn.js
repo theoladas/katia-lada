@@ -7,11 +7,7 @@ export const PrimaryBtn = () => {
 
   return (
     <StyledPrimary>
-      <a
-        href="https://koalendar.com/e/book-an-appointment-koaQ7d6e"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href="tel:+302374082034" rel="noreferrer">
         {t("kleisteRantebou")}
       </a>
     </StyledPrimary>

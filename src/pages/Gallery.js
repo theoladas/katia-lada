@@ -5,7 +5,7 @@ import styled from "styled-components";
 import galleryData from "../resources/gallery-data.json";
 
 const GalleryPage = styled.main`
-  padding-top: 2rem;
+  padding: 2rem 5rem;
 `;
 const GalleryTitle = styled.h2`
   @include flex;
