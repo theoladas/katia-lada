@@ -2,19 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
-export const PrimaryBtn = () => {
-  const { t } = useTranslation();
-
-  return (
-    <StyledPrimary>
-      <a href="tel:+302374082034" rel="noreferrer">
-        {t("kleisteRantebou")}
-      </a>
-    </StyledPrimary>
-  );
-};
-
-const StyledPrimary = styled.div`
+export const StyledPrimary = styled.div`
   @media screen and (max-width: 768px) {
     text-align: center;
   }
@@ -37,3 +25,15 @@ const StyledPrimary = styled.div`
     }
   }
 `;
+
+export const PrimaryBtn = () => {
+  const { t } = useTranslation();
+
+  return (
+    <StyledPrimary>
+      <a href="tel:+302374082034" rel="noreferrer">
+        {t("kleisteRantebou")}
+      </a>
+    </StyledPrimary>
+  );
+};

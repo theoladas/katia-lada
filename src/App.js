@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Homepage from "./pages/Homepage";
 import Gallery from "./pages/Gallery";
 import MakeUp from "./pages/MakeUp";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" exact element={<Homepage />} />
+      </Routes>
+      <Routes>
+        <Route path="/contact" exact element={<Contact />} />
       </Routes>
       <Routes>
         <Route path="/gallery" exact element={<Gallery />} />
