@@ -24,6 +24,7 @@
   "eveningHours": "17:00 - 19:00",
   "kleista": "Κλειστά",
   "dieuthinsi": "Σμύρνης & 28ης Οκτωβρίου, Νεα Φώκαια, Χαλκιδική, Τ.Κ. 63077",
+  "dieuthinsiTitlos": "Διεύθυνση",
   "tilefono": "Τηλέφωνο",
   "oresLitourgias": "Ώρες Λειτουργίας:",
   "deutera": "Δευτέρα",
@@ -33,5 +34,6 @@
   "paraskeui": "Παρασκευή",
   "sabato": "Σάββατο",
   "kiriaki": "Κυριακή",
-  "perisotera": "Περισσότερα.."
+  "perisotera": "Περισσότερα..",
+  "instagramBanner": "Ακολουθήστε μας στα social media"
 }

@@ -24,6 +24,7 @@
   "eveningHours": "17:00 - 19:00",
   "kleista": "Closed",
   "dieuthinsi": "Smirnis & 28 Oktobriou, Nea Fokaia, Chalkidiki, PostalCode 63077",
+  "dieuthinsiTitlos": "Address",
   "tilefono": "Phone Number",
   "oresLitourgias": "Working Hours:",
   "deutera": "Monday",
@@ -33,5 +34,6 @@
   "paraskeui": "Friday",
   "sabato": "Saturday",
   "kiriaki": "Sunday",
-  "perisotera": "More.."
+  "perisotera": "More..",
+  "instagramBanner": "Follow us on social media"
 }

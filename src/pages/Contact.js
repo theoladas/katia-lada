@@ -1,6 +1,5 @@
 import React from "react";
 import { Paragraph, CTACall } from "../components/GlobalStyle.js";
-import { PrimaryBtn } from "../components/PrimaryBtn.js";
 import { motion, animate } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import magazi from "../img/magazi.png";
@@ -111,14 +110,17 @@ const Content = styled.p`
 `;
 
 const InstagramBanner = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  text-align: center;
   padding: 1rem;
   margin: 2rem 0;
   background-color: #f49ac1;
   border-radius: 10px;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
   h2 {
     font-family: "Comfortaa", cursive;
     font-size: 1.135rem;
@@ -192,19 +194,6 @@ const Contact = () => {
               </Beauty>
             </h2>
           </Paragraph>
-
-          <Paragraph>
-            {t("forAppointments")}{" "}
-            <CTACall href="tel:+302374082034">23740 82034</CTACall>,{" "}
-            {t("workingHours")}
-          </Paragraph>
-          <Paragraph>
-            <strong>{t("monFri")}</strong>: {t("morningHours")}{" "}
-            <strong>&</strong> {t("eveningHours")}
-          </Paragraph>
-          <Paragraph>
-            {t("sabato")} & {t("kiriaki")}: {t("kleista")}
-          </Paragraph>
         </motion.div>
         <motion.div
           initial="hidden"
@@ -243,7 +232,7 @@ const Contact = () => {
                   />
                 </g>
               </svg>
-              <Title>Διεύθυνση</Title>
+              <Title>{t("dieuthinsiTitlos")}</Title>
               <Content>{t("dieuthinsi")}</Content>
             </Card>
             <Card>
@@ -326,28 +315,56 @@ const Contact = () => {
           {/* <PrimaryBtn /> */}
         </motion.div>
 
-        <InstagramBanner>
-          <h2>
-            Ακολουθήστε μας στα social media, για να ενημερώνεστε για τις νέες
-            τάσεις της μόδας
-          </h2>
-          <a href="https://www.instagram.com/katia_lada/" target="_blank">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="31.993"
-              viewBox="0 0 32 31.993"
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={riseIn}
+          custom={4}
+        >
+          <Paragraph>
+            {t("forAppointments")}{" "}
+            <CTACall href="tel:+302374082034">23740 82034</CTACall>,{" "}
+            {t("workingHours")}
+          </Paragraph>
+          <Paragraph>
+            <strong>{t("monFri")}</strong>: {t("morningHours")}{" "}
+            <strong>&</strong> {t("eveningHours")}
+          </Paragraph>
+          <Paragraph>
+            {t("sabato")} & {t("kiriaki")}: {t("kleista")}
+          </Paragraph>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          custom={4}
+        >
+          <InstagramBanner>
+            <a
+              href="https://www.instagram.com/katia_lada/"
+              target="_blank"
+              rel="noreferrer"
             >
-              <path
-                id="Icon_awesome-instagram"
-                data-name="Icon awesome-instagram"
-                d="M16,10.032a8.2,8.2,0,1,0,8.2,8.2A8.19,8.19,0,0,0,16,10.032Zm0,13.535a5.333,5.333,0,1,1,5.333-5.333A5.342,5.342,0,0,1,16,23.567ZM26.45,9.7a1.913,1.913,0,1,1-1.913-1.913A1.909,1.909,0,0,1,26.45,9.7Zm5.433,1.942a9.468,9.468,0,0,0-2.584-6.7,9.53,9.53,0,0,0-6.7-2.584c-2.641-.15-10.558-.15-13.2,0a9.517,9.517,0,0,0-6.7,2.577,9.5,9.5,0,0,0-2.584,6.7c-.15,2.641-.15,10.558,0,13.2a9.468,9.468,0,0,0,2.584,6.7,9.542,9.542,0,0,0,6.7,2.584c2.641.15,10.558.15,13.2,0a9.468,9.468,0,0,0,6.7-2.584,9.53,9.53,0,0,0,2.584-6.7c.15-2.641.15-10.551,0-13.193ZM28.47,27.665a5.4,5.4,0,0,1-3.041,3.041c-2.106.835-7.1.642-9.43.642s-7.332.186-9.43-.642a5.4,5.4,0,0,1-3.041-3.041c-.835-2.106-.642-7.1-.642-9.43S2.7,10.9,3.527,8.8A5.4,5.4,0,0,1,6.568,5.763c2.106-.835,7.1-.642,9.43-.642s7.332-.186,9.43.642A5.4,5.4,0,0,1,28.47,8.8c.835,2.106.642,7.1.642,9.43S29.305,25.566,28.47,27.665Z"
-                transform="translate(0.005 -2.238)"
-                fill="#fff"
-              />
-            </svg>
-          </a>
-        </InstagramBanner>
+              <h2>{t("instagramBanner")} </h2>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="31.993"
+                viewBox="0 0 32 31.993"
+              >
+                <path
+                  id="Icon_awesome-instagram"
+                  data-name="Icon awesome-instagram"
+                  d="M16,10.032a8.2,8.2,0,1,0,8.2,8.2A8.19,8.19,0,0,0,16,10.032Zm0,13.535a5.333,5.333,0,1,1,5.333-5.333A5.342,5.342,0,0,1,16,23.567ZM26.45,9.7a1.913,1.913,0,1,1-1.913-1.913A1.909,1.909,0,0,1,26.45,9.7Zm5.433,1.942a9.468,9.468,0,0,0-2.584-6.7,9.53,9.53,0,0,0-6.7-2.584c-2.641-.15-10.558-.15-13.2,0a9.517,9.517,0,0,0-6.7,2.577,9.5,9.5,0,0,0-2.584,6.7c-.15,2.641-.15,10.558,0,13.2a9.468,9.468,0,0,0,2.584,6.7,9.542,9.542,0,0,0,6.7,2.584c2.641.15,10.558.15,13.2,0a9.468,9.468,0,0,0,6.7-2.584,9.53,9.53,0,0,0,2.584-6.7c.15-2.641.15-10.551,0-13.193ZM28.47,27.665a5.4,5.4,0,0,1-3.041,3.041c-2.106.835-7.1.642-9.43.642s-7.332.186-9.43-.642a5.4,5.4,0,0,1-3.041-3.041c-.835-2.106-.642-7.1-.642-9.43S2.7,10.9,3.527,8.8A5.4,5.4,0,0,1,6.568,5.763c2.106-.835,7.1-.642,9.43-.642s7.332-.186,9.43.642A5.4,5.4,0,0,1,28.47,8.8c.835,2.106.642,7.1.642,9.43S29.305,25.566,28.47,27.665Z"
+                  transform="translate(0.005 -2.238)"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+          </InstagramBanner>
+        </motion.div>
       </HeroContent>
 
       <ContactSection className="contact-section ">

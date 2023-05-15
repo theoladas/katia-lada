@@ -24,6 +24,7 @@
   "eveningHours": "17:00 - 19:00",
   "kleista": "Закрыто",
   "dieuthinsi": "Smirnis & 28 Oktobriou, Nea Fokaia, Халкидики, почтовый индекс 63077",
+  "dieuthinsiTitlos": "Адрес",
   "tilefono": "Номер телефона",
   "oresLitourgias": "рабочие часы:",
   "deutera": "Понедельник",
@@ -33,5 +34,6 @@
   "paraskeui": "Пятница",
   "sabato": "Суббота",
   "kiriaki": "Воскресенье",
-  "perisotera": "Более.."
+  "perisotera": "Более..",
+  "instagramBanner": "Следите за нами в социальных сетях"
 }
