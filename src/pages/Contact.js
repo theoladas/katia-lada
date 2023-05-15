@@ -1,6 +1,8 @@
 import React from "react";
 import { Paragraph, CTACall } from "../components/GlobalStyle.js";
 import { motion, animate } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import { useTranslation } from "react-i18next";
 import magazi from "../img/magazi.png";
 import styled from "styled-components";
@@ -34,6 +36,7 @@ const HeroImage = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 `;
+
 const HeroContent = styled.div`
   max-width: 100%;
   padding-top: 2rem;
@@ -157,6 +160,11 @@ const Contact = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1, // Percentage of the element that is in view before the callback triggers
+  });
+
   const useFadeInAnimation = () => {
     return {
       hidden: { opacity: 0 },
@@ -181,10 +189,11 @@ const Contact = () => {
       <HeroContent>
         <motion.div
           initial="hidden"
-          animate="visible"
-          variants={dropIn}
-          custom={3}
+          animate={inView ? "visible" : "hidden"}
+          variants={riseIn}
+          ref={ref}
         >
+          {" "}
           <Paragraph>
             {" "}
             <h2>
@@ -197,9 +206,9 @@ const Contact = () => {
         </motion.div>
         <motion.div
           initial="hidden"
-          animate="visible"
+          animate={inView ? "visible" : "hidden"}
           variants={riseIn}
-          custom={4}
+          ref={ref}
         >
           <CardContainer>
             <Card>
@@ -317,9 +326,9 @@ const Contact = () => {
 
         <motion.div
           initial="hidden"
-          animate="visible"
+          animate={inView ? "visible" : "hidden"}
           variants={riseIn}
-          custom={4}
+          ref={ref}
         >
           <Paragraph>
             {t("forAppointments")}{" "}
@@ -337,9 +346,9 @@ const Contact = () => {
 
         <motion.div
           initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          custom={4}
+          animate={inView ? "visible" : "hidden"}
+          variants={dropIn}
+          ref={ref}
         >
           <InstagramBanner>
             <a
