@@ -2,12 +2,11 @@ import React from "react";
 import { Paragraph, CTACall } from "../components/GlobalStyle.js";
 import { motion, animate } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
 import { useTranslation } from "react-i18next";
 import magazi from "../img/magazi.png";
 import styled from "styled-components";
 
-const ContactPage = styled.main`
+export const Page = styled.main`
   min-height: 90vh;
   padding: 2rem 5rem;
   @media (max-width: 768px) {
@@ -15,7 +14,7 @@ const ContactPage = styled.main`
   }
 `;
 
-const ContactTitle = styled.h2``;
+export const PageTitle = styled.h2``;
 
 const Beauty = styled.span`
   font-family: "Dancing Script", cursive;
@@ -28,7 +27,7 @@ const Beauty = styled.span`
   }
 `;
 
-const HeroImage = styled.div`
+export const HeroImage = styled.div`
   padding-top: 2rem;
   img {
     max-width: 100%;
@@ -37,7 +36,7 @@ const HeroImage = styled.div`
   }
 `;
 
-const HeroContent = styled.div`
+export const HeroContent = styled.div`
   max-width: 100%;
   padding-top: 2rem;
 `;
@@ -140,7 +139,7 @@ const ContactSection = styled.section`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding-top: 3rem;
+  padding: 2rem 0;
   margin: auto 0;
   @media (max-width: 768px) {
     padding-top: 0;
@@ -175,10 +174,10 @@ const Contact = () => {
   const fadeIn = useFadeInAnimation();
 
   return (
-    <ContactPage>
-      <ContactTitle className="main-title gallery-title">
+    <Page>
+      <PageTitle className="main-title gallery-title">
         {t("epikoinonia")}
-      </ContactTitle>
+      </PageTitle>
 
       <HeroImage>
         <motion.div initial="hidden" animate="visible">
@@ -408,7 +407,7 @@ const Contact = () => {
           </>
         )}
       </ContactSection>
-    </ContactPage>
+    </Page>
   );
 };
 

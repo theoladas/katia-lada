@@ -41,7 +41,7 @@ const Homepage = () => {
   };
 
   const cards = [
-    { image: nails, text: "peripoihshAkron" },
+    { image: nails, text: "peripoihshAkron", href: "/manicure-pedicure" },
     { image: makeup, text: "makigiaz" },
     { image: waxing, text: "apotrixosi" },
     { image: facial, text: "peripoihshProsopou" },

@@ -197,7 +197,7 @@ const Nav = () => {
                   </ServicesDropdownButton>
                   <DropdownContent>
                     <ServicesDropdownItem
-                      to="/nails"
+                      to="/manicure-pedicure"
                       onClick={handleNavLinkClick}
                       className="dropNavLink"
                     >
