@@ -1,24 +1,17 @@
 import React from "react";
-import { Paragraph, CTACall } from "../components/GlobalStyle.js";
-import { motion, animate } from "framer-motion";
+import {
+  Paragraph,
+  CTACall,
+  Page,
+  PageTitle,
+  HeroContent,
+  FlexRowHeroContainer,
+} from "../components/GlobalStyle.js";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import manicure from "../img/manicure.jpg";
 import styled from "styled-components";
-import {
-  Page,
-  ContactTitle,
-  HeroImage,
-  HeroContent,
-  PageTitle,
-} from "./Contact.js";
-
-const FlexRow = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  padding-top: 2rem;
-`;
 
 const ImageContainer = styled.div`
   width: 50%;
@@ -60,7 +53,7 @@ const Manicure = () => {
       <PageTitle className="main-title gallery-title">
         {t("peripoihshAkron")}
       </PageTitle>
-      <FlexRow>
+      <FlexRowHeroContainer>
         <ImageContainer>
           <motion.div initial="hidden" animate="visible">
             <img src={manicure} alt="Manicure / Pedicure service"></img>
@@ -88,7 +81,7 @@ const Manicure = () => {
             </Paragraph>
           </motion.div>
         </HeroContent>
-      </FlexRow>
+      </FlexRowHeroContainer>
     </Page>
   );
 };

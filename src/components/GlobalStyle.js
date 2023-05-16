@@ -126,8 +126,6 @@ export const GlobalStyle = createGlobalStyle`
       }
       @media screen and (max-width: 768px) {
         text-align: center;
-                
-
       }
       @media only screen and (max-width: 500px) {
         font-size: 2.5rem;
@@ -329,6 +327,56 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 // Styled Components
+export const Page = styled.main`
+  min-height: 90vh;
+  padding: 2rem 5rem;
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
+`;
+
+export const PageTitle = styled.h2`
+  font-family: "Arima", cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #282828;
+  margin-top: 5rem;
+  @media screen and (max-width: 1024px) {
+    line-height: 55px;
+    font-size: 2.6rem;
+    margin-top: 5rem;
+  }
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 2.5rem;
+    padding-top: 0;
+    margin-top: 1rem;
+  }
+`;
+
+export const FlexRowHeroContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-top: 2rem;
+`;
+
+export const HeroContent = styled.div`
+  max-width: 100%;
+  padding-top: 2rem;
+`;
+
+export const HeroImage = styled.div`
+  padding-top: 2rem;
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+`;
+
 export const Flex = styled.div`
   display: flex;
   align-items: center;

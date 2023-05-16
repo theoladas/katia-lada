@@ -1,20 +1,17 @@
 import React from "react";
-import { Paragraph, CTACall } from "../components/GlobalStyle.js";
+import {
+  Paragraph,
+  CTACall,
+  Page,
+  PageTitle,
+  HeroContent,
+  HeroImage,
+} from "../components/GlobalStyle.js";
 import { motion, animate } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import magazi from "../img/magazi.png";
 import styled from "styled-components";
-
-export const Page = styled.main`
-  min-height: 90vh;
-  padding: 2rem 5rem;
-  @media (max-width: 768px) {
-    padding: 2rem 2rem;
-  }
-`;
-
-export const PageTitle = styled.h2``;
 
 const Beauty = styled.span`
   font-family: "Dancing Script", cursive;
@@ -25,20 +22,6 @@ const Beauty = styled.span`
     margin: 1rem 0rem;
     opacity: 0.3;
   }
-`;
-
-export const HeroImage = styled.div`
-  padding-top: 2rem;
-  img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-`;
-
-export const HeroContent = styled.div`
-  max-width: 100%;
-  padding-top: 2rem;
 `;
 
 const CardContainer = styled.div`
