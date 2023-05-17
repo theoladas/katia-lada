@@ -3,6 +3,24 @@ import styled from "styled-components";
 
 // Base styles
 export const GlobalStyle = createGlobalStyle` 
+
+body.scrolling::-webkit-scrollbar-thumb {
+  background:  #f49ac1;
+}
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent; 
+  border-radius: 10px; 
+  &:hover {
+  background: #f49ac1;  
+  }
+}
+
   * {
     margin: 0;
     padding: 0;
