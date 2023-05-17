@@ -19,12 +19,19 @@ const TabList = styled.div`
 `;
 
 const Tab = styled.div`
-  font-family: "Manrope", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 1rem;
   border: 2px solid transparent;
   cursor: pointer;
+  @media (max-width: 400px) {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+  @media (max-width: 350px) {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
 
   ${({ active }) =>
     active &&
@@ -33,11 +40,12 @@ const Tab = styled.div`
     `}
   &:hover {
     border-top-left-radius: 10px;
-    background-color: white;
+    /* background-color: white; */
   }
 `;
 
 const TabContent = styled.div`
+  font-family: "Roboto", sans-serif;
   width: 100%;
   padding: 1rem;
   border-bottom-left-radius: 10px;

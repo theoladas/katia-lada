@@ -83,6 +83,7 @@ const Manicure = () => {
           {t("peripoihshAkron")}
         </PageTitle>
       </motion.div>
+
       <FlexRowHeroContainer>
         <HeroContent>
           <motion.div
