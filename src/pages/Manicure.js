@@ -1,15 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
+import Tabs from "../components/Tabs.js";
 import {
-  Paragraph,
-  CTACall,
   Page,
   PageTitle,
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useTranslation } from "react-i18next";
 import manicure from "../img/manicure.jpg";
 import styled from "styled-components";
 
@@ -48,14 +47,41 @@ const Manicure = () => {
 
   const fadeIn = useFadeInAnimation();
 
+  const tabData = [
+    {
+      id: 1,
+      title: "Μανικιούρ",
+      description:
+        "This is the description for Tab 1.  \n This is the description for Tab 1.This is the description for Tab 1. This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1.",
+    },
+    {
+      id: 2,
+      title: "Πεντικιούρ",
+      description:
+        "This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1. ",
+    },
+  ];
+
   return (
     <Page>
-      <PageTitle className="main-title gallery-title">
-        {t("peripoihshAkron")}
-      </PageTitle>
+      <motion.div
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={dropIn}
+        ref={ref}
+      >
+        <PageTitle className="main-title gallery-title">
+          {t("peripoihshAkron")}
+        </PageTitle>
+      </motion.div>
       <FlexRowHeroContainer>
         <ImageContainer>
-          <motion.div initial="hidden" animate="visible">
+          <motion.div
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={fadeIn}
+            ref={ref}
+          >
             <img src={manicure} alt="Manicure / Pedicure service"></img>
           </motion.div>
         </ImageContainer>
@@ -67,18 +93,7 @@ const Manicure = () => {
             variants={riseIn}
             ref={ref}
           >
-            <Paragraph>
-              {t("forAppointments")}{" "}
-              <CTACall href="tel:+302374082034">23740 82034</CTACall>,{" "}
-              {t("workingHours")}
-            </Paragraph>
-            <Paragraph>
-              <strong>{t("monFri")}</strong>: {t("morningHours")}{" "}
-              <strong>&</strong> {t("eveningHours")}
-            </Paragraph>
-            <Paragraph>
-              {t("sabato")} & {t("kiriaki")}: {t("kleista")}
-            </Paragraph>
+            <Tabs tabs={tabData} />
           </motion.div>
         </HeroContent>
       </FlexRowHeroContainer>
