@@ -21,6 +21,7 @@ const TabList = styled.div`
 const Tab = styled.div`
   font-family: "Manrope", sans-serif;
   font-size: 1.5rem;
+  font-weight: bold;
   padding: 1rem;
   border: 2px solid transparent;
   cursor: pointer;
@@ -39,7 +40,6 @@ const Tab = styled.div`
 const TabContent = styled.div`
   width: 100%;
   padding: 1rem;
-  /* border: 1px solid #ccc; */
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 `;

@@ -57,7 +57,7 @@ const Manicure = () => {
     },
     {
       id: 2,
-      title: "Πεντικιούρ",
+      title: t("pentikiour"),
       description:
         "This is the description for Tab 2.  \n\nThis is the description for Tab 2.This is the description for Tab 2. This is the description for Tab 2.\nThis is the description for Tab 2.\n\nThis is the description for Tab 2.",
     },
