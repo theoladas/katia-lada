@@ -50,20 +50,29 @@ const Manicure = () => {
   const tabData = [
     {
       id: 1,
-      title: "Μανικιούρ",
+      title: t("manikiour"),
       description:
-        "This is the description for Tab 1.  \n This is the description for Tab 1.This is the description for Tab 1. This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1.",
+        "This is the description for Tab 1.  \n\nThis is the description for Tab 1.This is the description for Tab 1. This is the description for Tab 1.\nThis is the description for Tab 1.\n\nThis is the description for Tab 1. ",
+      image: "",
     },
     {
       id: 2,
       title: "Πεντικιούρ",
       description:
-        "This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1.This is the description for Tab 1. ",
+        "This is the description for Tab 2.  \n\nThis is the description for Tab 2.This is the description for Tab 2. This is the description for Tab 2.\nThis is the description for Tab 2.\n\nThis is the description for Tab 2.",
     },
   ];
 
   return (
-    <Page>
+    <Page
+      className="homepage"
+      style={{
+        backgroundImage: `url(${manicure})`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -75,17 +84,6 @@ const Manicure = () => {
         </PageTitle>
       </motion.div>
       <FlexRowHeroContainer>
-        <ImageContainer>
-          <motion.div
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={fadeIn}
-            ref={ref}
-          >
-            <img src={manicure} alt="Manicure / Pedicure service"></img>
-          </motion.div>
-        </ImageContainer>
-
         <HeroContent>
           <motion.div
             initial="hidden"

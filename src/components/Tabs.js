@@ -7,6 +7,7 @@ const TabContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: white;
+  border: 2px solid transparent;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
@@ -18,9 +19,12 @@ const TabList = styled.div`
 `;
 
 const Tab = styled.div`
-  /* padding: 0.5rem; */
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
   padding: 1rem;
+  border: 2px solid transparent;
   cursor: pointer;
+
   ${({ active }) =>
     active &&
     css`
@@ -30,17 +34,14 @@ const Tab = styled.div`
     border-top-left-radius: 10px;
     background-color: white;
   }
-  font-size: 1.5rem;
-  font-family: "Manrope", sans-serif;
 `;
 
 const TabContent = styled.div`
   width: 100%;
-  padding: 20px;
-  border: 1px solid #ccc;
+  padding: 1rem;
+  /* border: 1px solid #ccc; */
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  font-family: "Manrope", sans-serif;
 `;
 
 const fadeIn = keyframes`
@@ -50,6 +51,7 @@ const fadeIn = keyframes`
 
 const Description = styled.p`
   animation: 0.5s ${fadeIn} ease-out;
+  white-space: pre-line;
 `;
 
 const Tabs = ({ tabs }) => {
