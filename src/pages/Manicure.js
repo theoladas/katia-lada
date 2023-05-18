@@ -10,16 +10,6 @@ import {
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
 import manicure from "../img/manicure.jpg";
-import styled from "styled-components";
-
-const ImageContainer = styled.div`
-  width: 50%;
-  img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    max-width: 100%;
-  }
-`;
 
 const Manicure = () => {
   const { t } = useTranslation();
@@ -38,28 +28,17 @@ const Manicure = () => {
     threshold: 0.1, // Percentage of the element that is in view before the callback triggers
   });
 
-  const useFadeInAnimation = () => {
-    return {
-      hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
-    };
-  };
-
-  const fadeIn = useFadeInAnimation();
-
   const tabData = [
     {
       id: 1,
       title: t("manikiour"),
-      description:
-        "This is the description for Tab 1.  \n\nThis is the description for Tab 1.This is the description for Tab 1. This is the description for Tab 1.\nThis is the description for Tab 1.\n\nThis is the description for Tab 1. ",
-      image: "",
+      description: t("manikiourPerigrafi"),
+      // image: "../img/mani.jpg",
     },
     {
       id: 2,
       title: t("pentikiour"),
-      description:
-        "This is the description for Tab 2.  \n\nThis is the description for Tab 2.This is the description for Tab 2. This is the description for Tab 2.\nThis is the description for Tab 2.\n\nThis is the description for Tab 2.",
+      description: t("pentikiourPerigrafi"),
     },
   ];
 

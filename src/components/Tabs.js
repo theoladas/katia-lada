@@ -45,6 +45,8 @@ const Tab = styled.div`
 `;
 
 const TabContent = styled.div`
+  font-size: 1.2rem;
+  line-height: 32px;
   width: 100%;
   padding: 1rem;
   border-bottom-left-radius: 10px;
