@@ -4,9 +4,6 @@ import styled from "styled-components";
 // Base styles
 export const GlobalStyle = createGlobalStyle` 
 
-body.scrolling::-webkit-scrollbar-thumb {
-  background:  #f49ac1;
-}
 ::-webkit-scrollbar {
   width: 9px;
 }
@@ -348,12 +345,6 @@ export const Page = styled.main`
   @media (max-width: 768px) {
     padding: 2rem 2rem;
   }
-  /* min-height: 90vh;
-  padding: 2rem 5rem;
-  @media (max-width: 768px) {
-    padding: 2rem 2rem;
-    min-height: initial;
-  } */
 `;
 
 export const PageTitle = styled.h2`

@@ -45,7 +45,6 @@ const Tab = styled.div`
 `;
 
 const TabContent = styled.div`
-  font-family: "Roboto", sans-serif;
   width: 100%;
   padding: 1rem;
   border-bottom-left-radius: 10px;
