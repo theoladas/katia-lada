@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
@@ -13,6 +13,7 @@ import waxing from "../img/waxing.jpg";
 
 const Waxing = () => {
   const { t } = useTranslation();
+
   const dropIn = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
@@ -33,24 +34,34 @@ const Waxing = () => {
       id: 1,
       title: t("apotrixosiPodion"),
       description: t("apotrixosiPodionPerigrafi"),
+      image: "/img/waxing.jpg",
     },
     {
       id: 2,
       title: t("apotrixosiXerion"),
       description: t("apotrixosiXerionPerigrafi"),
+      image: "/img/waxing-arms.webp",
     },
     {
       id: 3,
       title: t("apotrixosiMpikini"),
       description: t("apotrixosiMpikiniPerigrafi"),
+      image: "/img/waxing-bikini.jpg",
     },
   ];
+  const [selectedTab, setSelectedTab] = useState(tabData[0].id);
+
+  const selectedTabData = tabData.find((tab) => tab.id === selectedTab);
+  const backgroundImage = selectedTabData ? selectedTabData.image : waxing;
+  const handleTabChange = (tabId) => {
+    setSelectedTab(tabId);
+  };
 
   return (
     <Page
       className="homepage"
       style={{
-        backgroundImage: `url(${waxing})`,
+        backgroundImage: `url(${backgroundImage})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -75,7 +86,7 @@ const Waxing = () => {
             variants={riseIn}
             ref={ref}
           >
-            <Tabs tabs={tabData} />
+            <Tabs tabs={tabData} onTabChange={handleTabChange} />
           </motion.div>
         </HeroContent>
       </FlexRowHeroContainer>

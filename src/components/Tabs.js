@@ -66,8 +66,16 @@ const Description = styled.p`
   white-space: pre-line;
 `;
 
-const Tabs = ({ tabs }) => {
+const Tabs = ({ tabs, onTabChange }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
+
+  // Call the onTabChange function whenever a tab is clicked.
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+    if (onTabChange) {
+      onTabChange(tabId);
+    }
+  };
 
   return (
     <TabContainer>
@@ -76,7 +84,7 @@ const Tabs = ({ tabs }) => {
           <Tab
             key={tab.id}
             active={activeTab === tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => handleTabClick(tab.id)}
           >
             {tab.title}
           </Tab>
