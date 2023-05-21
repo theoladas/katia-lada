@@ -28,28 +28,17 @@ const MakeUp = () => {
     threshold: 0.1, // Percentage of the element that is in view before the callback triggers
   });
 
-  const useFadeInAnimation = () => {
-    return {
-      hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
-    };
-  };
-
-  const fadeIn = useFadeInAnimation();
-
   const tabData = [
     {
       id: 1,
-      title: t("manikiour"),
-      description:
-        "This is the description for Tab 1.  \n\nThis is the description for Tab 1.This is the description for Tab 1. This is the description for Tab 1.\nThis is the description for Tab 1.\n\nThis is the description for Tab 1. ",
+      title: t("makigiaz"),
+      description: t("makigiazPerigrafi"),
       image: "",
     },
     {
       id: 2,
-      title: t("pentikiour"),
-      description:
-        "This is the description for Tab 2.  \n\nThis is the description for Tab 2.This is the description for Tab 2. This is the description for Tab 2.\nThis is the description for Tab 2.\n\nThis is the description for Tab 2.",
+      title: t("nifikoMakigiaz"),
+      description: t("nigikoMakigiazPerigrafi"),
     },
   ];
 
