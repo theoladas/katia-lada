@@ -10,6 +10,9 @@ const TabContainer = styled.div`
   border: 2px solid transparent;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
 `;
 
 const TabList = styled.div`

@@ -33,7 +33,6 @@ const Manicure = () => {
       id: 1,
       title: t("manikiour"),
       description: t("manikiourPerigrafi"),
-      // image: "../img/mani.jpg",
     },
     {
       id: 2,
