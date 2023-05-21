@@ -167,6 +167,16 @@ const Nav = () => {
     }
   };
 
+  const languageDisplayMap = {
+    el: "ΕΛ",
+    en: "EN",
+    ru: "RU",
+  };
+
+  const getDisplayLanguage = (langCode) => {
+    return languageDisplayMap[langCode] || langCode.toUpperCase();
+  };
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
@@ -259,15 +269,16 @@ const Nav = () => {
                       icon={faGlobe}
                       className="translate-icon"
                     />
-                    {currentLanguage.toUpperCase()}
+                    {getDisplayLanguage(currentLanguage)}
                     <FontAwesomeIcon
                       icon={faCaretDown}
                       className="icon translate-arrow"
                     />
                   </DropdownButton>
+
                   <DropdownContent>
                     <DropdownItem onClick={() => changeLanguage("el")}>
-                      EL
+                      ΕΛ
                     </DropdownItem>
                     <DropdownItem onClick={() => changeLanguage("en")}>
                       EN
