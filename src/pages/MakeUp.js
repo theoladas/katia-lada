@@ -31,7 +31,7 @@ const MakeUp = () => {
   const tabData = [
     {
       id: 1,
-      title: t("makigiaz"),
+      title: "Standard",
       description: t("makigiazPerigrafi"),
       image: "",
     },

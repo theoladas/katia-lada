@@ -7,6 +7,7 @@ import Homepage from "./pages/Homepage";
 import Gallery from "./pages/Gallery";
 import MakeUp from "./pages/MakeUp";
 import Manicure from "./pages/Manicure";
+import Waxing from "./pages/Waxing";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 
@@ -32,6 +33,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/make-up" exact element={<MakeUp />} />
+      </Routes>
+      <Routes>
+        <Route path="/waxing" exact element={<Waxing />} />
       </Routes>
       <Routes>
         <Route path="/manicure-pedicure" exact element={<Manicure />} />
