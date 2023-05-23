@@ -235,7 +235,7 @@ const Nav = () => {
                       {t("peripoihshProsopou")}
                     </ServicesDropdownItem>
                     <ServicesDropdownItem
-                      to="/lash-lift"
+                      to="/lashlift"
                       onClick={handleNavLinkClick}
                       className="dropNavLink"
                     >
