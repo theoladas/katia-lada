@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
@@ -25,7 +25,7 @@ const Manicure = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.1, // Percentage of the element that is in view before the callback triggers
+    threshold: 0.1,
   });
 
   const tabData = [
@@ -33,19 +33,28 @@ const Manicure = () => {
       id: 1,
       title: t("manikiour"),
       description: t("manikiourPerigrafi"),
+      image: "/img/manicure.jpg",
     },
     {
       id: 2,
       title: t("pentikiour"),
       description: t("pentikiourPerigrafi"),
+      image: "/img/pedicure.jpg",
     },
   ];
+  const [selectedTab, setSelectedTab] = useState(tabData[0].id);
+
+  const selectedTabData = tabData.find((tab) => tab.id === selectedTab);
+  const backgroundImage = selectedTabData ? selectedTabData.image : manicure;
+  const handleTabChange = (tabId) => {
+    setSelectedTab(tabId);
+  };
 
   return (
     <Page
       className="homepage"
       style={{
-        backgroundImage: `url(${manicure})`,
+        backgroundImage: `url(${backgroundImage})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -70,7 +79,7 @@ const Manicure = () => {
             variants={riseIn}
             ref={ref}
           >
-            <Tabs tabs={tabData} />
+            <Tabs tabs={tabData} onTabChange={handleTabChange} />
           </motion.div>
         </HeroContent>
       </FlexRowHeroContainer>
