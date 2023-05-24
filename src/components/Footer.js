@@ -53,19 +53,19 @@ const Footer = () => {
             </li>
             <hr></hr>
             <li>
-              <a href="/">{t("peripoihshAkron")}</a>
+              <Link to="/manicure-pedicure">{t("manikiour")}</Link>
             </li>
             <li>
               <Link to="/make-up">{t("makigiaz")}</Link>
             </li>
             <li>
-              <a href="/">{t("apotrixosi")}</a>
+              <Link to="/waxing">{t("apotrixosi")}</Link>
             </li>
             <li>
               <a href="/">{t("peripoihshProsopou")}</a>
             </li>
             <li>
-              <a href="/">{t("lashlift")}</a>
+              <Link to="/lashlift">{t("lashlift")}</Link>
             </li>
           </ul>
         </div>
