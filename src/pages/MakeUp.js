@@ -1,4 +1,3 @@
-import makeup from "../img/makeup.jpg";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -10,6 +9,7 @@ import {
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
+import makeup from "../img/makeup.jpg";
 
 const MakeUp = () => {
   const { t } = useTranslation();
