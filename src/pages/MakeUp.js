@@ -1,5 +1,5 @@
 import makeup from "../img/makeup.jpg";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
@@ -33,20 +33,27 @@ const MakeUp = () => {
       id: 1,
       title: "Standard",
       description: t("makigiazPerigrafi"),
-      image: "",
+      image: "/img/makeup.jpg",
     },
     {
       id: 2,
       title: t("nifikoMakigiaz"),
       description: t("nigikoMakigiazPerigrafi"),
+      image: "/img/makeup-bride.jpg",
     },
   ];
+  const [selectedTab, setSelectedTab] = useState(tabData[0].id);
 
+  const selectedTabData = tabData.find((tab) => tab.id === selectedTab);
+  const backgroundImage = selectedTabData ? selectedTabData.image : makeup;
+  const handleTabChange = (tabId) => {
+    setSelectedTab(tabId);
+  };
   return (
     <Page
       className="homepage"
       style={{
-        backgroundImage: `url(${makeup})`,
+        backgroundImage: `url(${backgroundImage})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -71,7 +78,7 @@ const MakeUp = () => {
             variants={riseIn}
             ref={ref}
           >
-            <Tabs tabs={tabData} />
+            <Tabs tabs={tabData} onTabChange={handleTabChange} />
           </motion.div>
         </HeroContent>
       </FlexRowHeroContainer>

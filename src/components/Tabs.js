@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 
 const TabContainer = styled.div`
-  max-width: 80%;
+  /* max-width: 80%; */
+  max-width: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +12,7 @@ const TabContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media (max-width: 768px) {
+    max-width: 90%;
     margin: 0 auto;
   }
 `;
