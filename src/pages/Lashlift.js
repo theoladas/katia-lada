@@ -32,20 +32,20 @@ const Lashlift = () => {
   const tabData = [
     {
       id: 1,
-      title: t("apotrixosiPodion"),
-      description: t("apotrixosiPodionPerigrafi"),
+      title: "Lashlift",
+      description: t("lashliftPerigrafi"),
       image: "/img/lashlift.jpg",
     },
     {
       id: 2,
-      title: t("apotrixosiXerion"),
-      description: t("apotrixosiXerionPerigrafi"),
+      title: "",
+      description: "",
       image: "/img/waxing-arms.webp",
     },
     {
       id: 3,
-      title: t("apotrixosiMpikini"),
-      description: t("apotrixosiMpikiniPerigrafi"),
+      title: "",
+      description: "",
       image: "/img/waxing-bikini.jpg",
     },
   ];
