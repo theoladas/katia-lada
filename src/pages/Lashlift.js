@@ -6,9 +6,9 @@ import Tabs from "../components/Tabs.js";
 import {
   Page,
   PageTitle,
-  HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
+import Accordion from "../components/Accordion.js";
 import lashlift from "../img/lashlift.jpg";
 
 const Lashlift = () => {
@@ -38,8 +38,8 @@ const Lashlift = () => {
     },
     {
       id: 2,
-      title: "",
-      description: "",
+      title: t("lashBrow"),
+      description: t("lashBrowPerigrafi"),
       image: "/img/waxing-arms.webp",
     },
     {
@@ -79,16 +79,15 @@ const Lashlift = () => {
       </motion.div>
 
       <FlexRowHeroContainer>
-        <HeroContent>
-          <motion.div
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={riseIn}
-            ref={ref}
-          >
-            <Tabs tabs={tabData} onTabChange={handleTabChange} />
-          </motion.div>
-        </HeroContent>
+        <motion.div
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={riseIn}
+          ref={ref}
+        >
+          {/* <Tabs tabs={tabData} onTabChange={handleTabChange} /> */}
+          <Accordion data={tabData} />
+        </motion.div>
       </FlexRowHeroContainer>
     </Page>
   );

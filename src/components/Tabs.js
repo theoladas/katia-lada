@@ -63,7 +63,7 @@ const fadeIn = keyframes`
   100% { opacity: 1; }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   animation: 0.5s ${fadeIn} ease-out;
   white-space: pre-line;
 `;
