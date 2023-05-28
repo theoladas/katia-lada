@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 
 const TabContainer = styled.div`
-  /* max-width: 80%; */
   max-width: 55%;
   display: flex;
   flex-direction: column;

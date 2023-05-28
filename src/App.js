@@ -8,6 +8,7 @@ import Gallery from "./pages/Gallery";
 import MakeUp from "./pages/MakeUp";
 import Manicure from "./pages/Manicure";
 import Waxing from "./pages/Waxing";
+import Facial from "./pages/Facial";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Lashlift from "./pages/Lashlift";
@@ -37,6 +38,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/waxing" exact element={<Waxing />} />
+      </Routes>
+      <Routes>
+        <Route path="/facial" exact element={<Facial />} />
       </Routes>
       <Routes>
         <Route path="/lashlift" exact element={<Lashlift />} />

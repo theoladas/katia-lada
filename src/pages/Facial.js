@@ -9,7 +9,7 @@ import {
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
-import makeup from "../img/makeup.jpg";
+import facial from "../img/facial.jpg";
 
 const Facial = () => {
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ const Facial = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.1, // Percentage of the element that is in view before the callback triggers
+    threshold: 0.1,
   });
 
   const tabData = [
@@ -33,7 +33,7 @@ const Facial = () => {
       id: 1,
       title: "Standard",
       description: t("makigiazPerigrafi"),
-      image: "/img/makeup.jpg",
+      image: "/img/facial.jpg",
     },
     {
       id: 2,
@@ -45,7 +45,7 @@ const Facial = () => {
   const [selectedTab, setSelectedTab] = useState(tabData[0].id);
 
   const selectedTabData = tabData.find((tab) => tab.id === selectedTab);
-  const backgroundImage = selectedTabData ? selectedTabData.image : makeup;
+  const backgroundImage = selectedTabData ? selectedTabData.image : facial;
   const handleTabChange = (tabId) => {
     setSelectedTab(tabId);
   };
@@ -66,7 +66,7 @@ const Facial = () => {
         ref={ref}
       >
         <PageTitle className="main-title gallery-title">
-          {t("makigiaz")}
+          {t("peripoihshProsopou")}
         </PageTitle>
       </motion.div>
 
