@@ -40,7 +40,7 @@ const Lashlift = () => {
       id: 2,
       title: t("lashBrow"),
       description: t("lashBrowPerigrafi"),
-      image: "/img/waxing-arms.webp",
+      image: "/img/lash-brow-tint.jpg",
     },
     {
       id: 3,
@@ -54,14 +54,14 @@ const Lashlift = () => {
   const selectedTabData = tabData.find((tab) => tab.id === selectedTab);
   const backgroundImage = selectedTabData ? selectedTabData.image : lashlift;
   const handleTabChange = (tabId) => {
-    setSelectedTab(tabId);
+    setSelectedTab(tabId ? tabId : tabData[0].id);
   };
 
   return (
     <Page
       className="homepage"
       style={{
-        backgroundImage: `url(${lashlift})`,
+        backgroundImage: `url(${backgroundImage})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -85,8 +85,7 @@ const Lashlift = () => {
           variants={riseIn}
           ref={ref}
         >
-          {/* <Tabs tabs={tabData} onTabChange={handleTabChange} /> */}
-          <Accordion data={tabData} />
+          <Accordion data={tabData} onTabChange={handleTabChange} />
         </motion.div>
       </FlexRowHeroContainer>
     </Page>

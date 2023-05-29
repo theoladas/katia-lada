@@ -25,15 +25,20 @@ const AccordionContent = styled.div`
   line-height: 30px;
   padding: 15px;
   border-top: 1px solid #ddd;
+  background-color: white;
+  opacity: 0.6;
   display: ${(props) => (props.open ? "block" : "none")};
   max-width: 50vw;
 `;
 
-const Accordion = ({ data }) => {
+const Accordion = ({ data, onTabChange }) => {
   const [openTab, setOpenTab] = useState(null);
 
   const handleTabClick = (id) => {
     setOpenTab(openTab === id ? null : id);
+    if (onTabChange) {
+      onTabChange(id);
+    }
   };
 
   return (
