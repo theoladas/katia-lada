@@ -136,6 +136,7 @@ const Nav = () => {
   const { t, i18n } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
   const [navActive, setNavActive] = useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
 
   const fadeIn = {
     initial: { opacity: 0 },
@@ -184,6 +185,19 @@ const Nav = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 30;
+      if (isScrolled !== scrolled) {
+        setScrolled(!scrolled);
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
+
   return (
     <AnimatePresence>
       <motion.header
@@ -193,7 +207,7 @@ const Nav = () => {
         style={{ zIndex: 1000 }}
       >
         <header>
-          <nav>
+          <nav className={scrolled ? "nav-shadow" : ""}>
             <NavLink to="/" id="logo">
               <img src={logo} className="logo" alt="Katia Lada logo" />
             </NavLink>

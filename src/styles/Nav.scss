@@ -15,11 +15,13 @@ $breakpoint-tablet: 768px;
 $breakpoint-mobile: 500px;
 $breakpoint-small: 360px;
 
+.nav-shadow {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
 header {
   position: sticky;
   top: 0;
   left: 0;
-  height: 10vh;
   nav {
     position: sticky;
     top: 0;
@@ -30,6 +32,7 @@ header {
     flex-wrap: wrap;
     padding: 0rem 2rem;
     background-color: $color-bg;
+    transition: box-shadow 0.3s ease-in-out;
     @media (max-width: $breakpoint-tablet) {
       justify-content: space-between;
     }
