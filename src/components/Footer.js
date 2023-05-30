@@ -62,7 +62,7 @@ const Footer = () => {
               <Link to="/waxing">{t("apotrixosi")}</Link>
             </li>
             <li>
-              <a href="/">{t("peripoihshProsopou")}</a>
+              <a href="/facial">{t("peripoihshProsopou")}</a>
             </li>
             <li>
               <Link to="/lashlift">{t("lashlift")}</Link>
