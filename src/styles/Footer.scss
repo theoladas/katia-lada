@@ -86,8 +86,18 @@ footer {
         padding: 0.5rem;
         height: auto;
       }
+      .footer-card-attribute {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+      }
       .no-hover {
         pointer-events: none;
+      }
+      .attribute {
+        font-size: 0.55rem;
       }
     }
   }

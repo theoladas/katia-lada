@@ -54,7 +54,7 @@ const MakeUp = () => {
       className="homepage"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundPosition: "center",
+        backgroundPosition: "top",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
