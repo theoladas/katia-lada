@@ -29,6 +29,12 @@ const AccordionContent = styled.div`
   opacity: 0.7;
   display: ${(props) => (props.open ? "block" : "none")};
   max-width: 50vw;
+  @media (max-width: 1024px) {
+    max-width: 60vw;
+  }
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const Accordion = ({ data, onTabChange }) => {
