@@ -48,9 +48,7 @@ const Footer = () => {
         </div>
         <div className="footer-card">
           <ul>
-            <li>
-              <a href="/">{t("ipiresies")}</a>
-            </li>
+            <li className="no-hover">{t("ipiresies")}</li>
             <hr></hr>
             <li>
               <Link to="/manicure-pedicure">{t("manikiour")}</Link>

@@ -214,7 +214,7 @@ const Nav = () => {
             <ul className={`nav-links${navActive ? " nav-active" : ""}`}>
               <li>
                 <ServicesDropdownWrapper>
-                  <ServicesDropdownButton to="/">
+                  <ServicesDropdownButton>
                     <FontAwesomeIcon icon={faStar} className="icon" />
                     {t("ipiresies")}{" "}
                     <FontAwesomeIcon icon={faCaretDown} className="icon" />

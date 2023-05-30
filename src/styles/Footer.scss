@@ -38,6 +38,7 @@ footer {
     &:hover {
       color: #f49ac1;
     }
+
     .footer-icon {
       color: #f49ac1;
       padding-right: 0.5rem;
@@ -64,6 +65,7 @@ footer {
       text-align: center;
     }
   }
+
   .footer-columns {
     width: 100%;
     display: flex;
@@ -76,7 +78,6 @@ footer {
       display: block;
       height: 300px;
       padding: 1rem;
-
       @media (max-width: 1070px) {
         flex-basis: 30%;
       }
@@ -84,6 +85,9 @@ footer {
         flex-basis: 100%;
         padding: 0.5rem;
         height: auto;
+      }
+      .no-hover {
+        pointer-events: none;
       }
     }
   }
