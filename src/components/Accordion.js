@@ -26,7 +26,7 @@ const AccordionContent = styled.div`
   padding: 15px;
   border-top: 1px solid #ddd;
   background-color: white;
-  opacity: 0.6;
+  opacity: 0.7;
   display: ${(props) => (props.open ? "block" : "none")};
   max-width: 50vw;
 `;

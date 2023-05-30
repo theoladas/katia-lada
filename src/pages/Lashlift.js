@@ -26,7 +26,7 @@ const Lashlift = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.1, // Percentage of the element that is in view before the callback triggers
+    threshold: 0.1,
   });
 
   const tabData = [
@@ -44,9 +44,9 @@ const Lashlift = () => {
     },
     {
       id: 3,
-      title: "",
-      description: "",
-      image: "/img/waxing-bikini.jpg",
+      title: t("browShape"),
+      description: t("browShapePerigrafi"),
+      image: "/img/brow-shape.jpg",
     },
   ];
   const [selectedTab, setSelectedTab] = useState(tabData[0].id);
