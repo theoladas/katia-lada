@@ -2,7 +2,6 @@ import React from "react";
 import { FlexCenter } from "./GlobalStyle";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-
 import "../styles/ServicesSection.scss";
 
 export const ServicesSection = ({ cards, servicesInView }) => {
