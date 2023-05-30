@@ -131,20 +131,14 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 3rem;
       font-weight: 700;
       color: #282828; 
-      margin-top: 5rem;
+      margin-top: 2rem;
       @media screen and (max-width: 1024px) {
         line-height: 55px;
         font-size: 2.6rem;
-        margin-top: 5rem;
       }
       @media screen and (max-width: 768px) {
         text-align: center;
       }
-      /* @media only screen and (max-width: 500px) {
-        font-size: 2.5rem;
-        padding-top: 0;
-        margin-top: 1rem;
-      } */
   }
   .katia-logo-text {
       max-width: 100%;
@@ -353,7 +347,7 @@ export const PageTitle = styled.h2`
   font-weight: 700;
   color: #282828;
   @media screen and (max-width: 1330px) {
-    padding-top: 5rem;
+    padding-top: 1rem;
   }
   @media screen and (max-width: 950px) {
     line-height: 55px;
