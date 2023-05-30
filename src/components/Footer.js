@@ -72,7 +72,7 @@ const Footer = () => {
         <div className="footer-card">
           <ul>
             <li>
-              <a href="/contact">{t("epikoinonia")}</a>
+              <Link to="/contact">{t("epikoinonia")}</Link>
             </li>
             <hr></hr>
             <li class="footer-address">
