@@ -2,6 +2,7 @@ import React from "react";
 import { FlexCenter } from "./GlobalStyle";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "../styles/ServicesSection.scss";
 
 export const ServicesSection = ({ cards, servicesInView }) => {
@@ -42,14 +43,16 @@ export const ServicesSection = ({ cards, servicesInView }) => {
               variants={servicesVariants}
               custom={index}
             >
-              <div className="card-content">
-                <div className="card-image">
-                  <img src={card.image} alt={t(card.text)} />
+              <Link to={card.href}>
+                <div className="card-content">
+                  <div className="card-image">
+                    <img src={card.image} alt={t(card.text)} />
+                  </div>
+                  <div>
+                    <p>{t(card.text)}</p>
+                  </div>
                 </div>
-                <div>
-                  <p>{t(card.text)}</p>
-                </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </FlexCenter>

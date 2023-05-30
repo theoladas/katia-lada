@@ -42,10 +42,10 @@ const Homepage = () => {
 
   const cards = [
     { image: nails, text: "peripoihshAkron", href: "/manicure-pedicure" },
-    { image: makeup, text: "makigiaz" },
-    { image: waxing, text: "apotrixosi" },
-    { image: facial, text: "peripoihshProsopou" },
-    { image: lashlift, text: "lashlift" },
+    { image: makeup, text: "makigiaz", href: "/make-up" },
+    { image: waxing, text: "apotrixosi", href: "/waxing" },
+    { image: facial, text: "peripoihshProsopou", href: "/facial" },
+    { image: lashlift, text: "lashlift", href: "/lashlift" },
   ];
 
   useEffect(() => {
