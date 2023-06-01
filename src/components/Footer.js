@@ -7,6 +7,8 @@ import {
   faHouse,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
+import attributesData from "../resources/attributes-data.json";
+import attributesData2 from "../resources/attributes2-data.json";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
@@ -44,26 +46,6 @@ const Footer = () => {
                 </a>
               </div>
             </li>
-            {/* <li className="no-hover attribute">Attribute for the images</li>
-            <hr></hr>
-            <li className="attribute">
-              <a
-                href="https://www.freepik.com/free-photo/pink-nail-design-female-hands-with-glitter-manicure_9129245.htm#page=4&query=pedicure&position=42&from_view=search&track=sph"
-                className="attribute"
-              >
-                Image by devmaryna
-              </a>{" "}
-              on Freepik
-            </li>
-            <li className="attribute">
-              <a
-                href="https://www.freepik.com/free-photo/high-fashion-look-glamor-sexy-sunbathed-model-girl-white-lingerie-bikini-colorful-sunhat-blue-beach-ocean-water_6529436.htm#page=7&query=bikini&position=11&from_view=search&track=sph"
-                className="attribute"
-              >
-                Image by halayalex
-              </a>{" "}
-              on Freepik
-            </li> */}
           </ul>
         </div>
         <div className="footer-card">
@@ -106,70 +88,28 @@ const Footer = () => {
               <a href="mailto:lada.katia@gmail.com">lada.katia@gmail.com</a>
             </li>
             <li></li>
-
             <li className="no-hover attribute">Attribute for the images</li>
             <hr></hr>
           </ul>
           <ul className="footer-card-attribute">
-            <li className="attribute">
-              <a
-                href="https://www.freepik.com/free-photo/pink-nail-design-female-hands-with-glitter-manicure_9129245.htm#page=4&query=pedicure&position=42&from_view=search&track=sph"
-                className="attribute"
-              >
-                Image by devmaryna
-              </a>{" "}
-              on Freepik
-            </li>
-
-            <li className="attribute">
-              <a
-                href="https://www.freepik.com/free-photo/high-fashion-look-glamor-sexy-sunbathed-model-girl-white-lingerie-bikini-colorful-sunhat-blue-beach-ocean-water_6529436.htm#page=7&query=bikini&position=11&from_view=search&track=sph"
-                className="attribute"
-              >
-                Image by halayalex
-              </a>{" "}
-              on Freepik
-            </li>
-            <li className="attribute">
-              Image by{" "}
-              <a
-                href="https://www.freepik.com/free-photo/beautician-with-female-client-salon-face-care-routine_12780848.htm#query=facial%20treatment&position=7&from_view=keyword&track=ais"
-                className="attribute"
-              >
-                Freepik
-              </a>
-            </li>
-            <li className="attribute">
-              <a
-                href="https://www.freepik.com/free-photo/beautiful-woman-portrait-doing-make-up_8300925.htm#query=maquillage&position=0&from_view=search&track=sph"
-                className="attribute"
-              >
-                Image by Racool_studio
-              </a>{" "}
-              on Freepik
-            </li>
-            <li className="attribute">
-              <a
-                href="https://www.freepik.com/free-photo/beautiful-bride-with-white-dress_7220749.htm#query=bride%20makeup&position=45&from_view=search&track=ais"
-                className="attribute"
-              >
-                Image by Racool_studio
-              </a>{" "}
-              on Freepik
-            </li>
+            {attributesData.map((attribute, index) => (
+              <li key={index} className="attribute">
+                <a href={attribute.href} className="attribute">
+                  {attribute.text}
+                </a>{" "}
+                {attribute.source}
+              </li>
+            ))}
           </ul>
           <ul className="footer-card-attribute">
-            <li className="attribute">
-              <a
-                href="https://www.freepik.com/free-photo/beautiful-slender-female-legs-photo-grey-background_10872212.htm#page=2&query=waxing%20legs&position=49&from_view=search&track=ais"
-                className="attribute"
-              >
-                Image by valuavitaly
-              </a>{" "}
-              on Freepik
-            </li>
-            <li className="attribute"></li>
-            <li className="attribute"></li>
+            {attributesData2.map((attribute, index) => (
+              <li key={index} className="attribute">
+                <a href={attribute.href} className="attribute">
+                  {attribute.text}
+                </a>{" "}
+                {attribute.source}
+              </li>
+            ))}
           </ul>
         </div>
       </div>

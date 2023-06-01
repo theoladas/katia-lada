@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
-import Tabs from "../components/Tabs.js";
 import {
   Page,
   PageTitle,
