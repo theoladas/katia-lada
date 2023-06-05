@@ -22,6 +22,19 @@ const FlexStyled = styled.div`
   }
 `;
 
+const FooterStyled = styled.footer`
+  min-height: 40vh;
+  background: #77787b;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 768px) {
+    padding-top: 1rem;
+  }
+`;
+
 const FooterColumns = styled.div`
   width: 100%;
   display: flex;
@@ -30,6 +43,23 @@ const FooterColumns = styled.div`
   justify-content: center;
 `;
 
+const FooterParagraph = styled.p`
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 0.6rem;
+  padding: 0.5rem 0rem;
+`;
+
+const FooterWebsiteByLink = styled.a`
+  font-size: 0.6rem;
+  color: #fff;
+  opacity: 0.8;
+  transition: all 0.4s ease;
+  &:hover {
+    opacity: 1;
+    color: #fff;
+  }
+`;
 const FooterLinkNoClickable = styled.span`
   color: #fff;
   &:hover {
@@ -100,7 +130,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="footer">
+    <FooterStyled>
       <FooterColumns>
         <FooterCard>
           <ul>
@@ -199,18 +229,17 @@ const Footer = () => {
           </FooterCardAttribute>
         </FooterCard>
       </FooterColumns>
-      <p>
+      <FooterParagraph>
         &#169; 2023 Κάτια Λαδά | Website:{" "}
-        <a
+        <FooterWebsiteByLink
           href="https://uk.linkedin.com/in/theodorosladas"
           target="_blank"
           rel="noreferrer"
-          className="website-by"
         >
           Theo Ladas
-        </a>
-      </p>
-    </footer>
+        </FooterWebsiteByLink>
+      </FooterParagraph>
+    </FooterStyled>
   );
 };
 
