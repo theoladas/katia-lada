@@ -37,6 +37,28 @@ const FooterLinkNoClickable = styled.span`
   }
 `;
 
+const FooterIntagramIconLink = styled.a`
+  font-size: 1.2rem;
+  color: #f49ac1;
+  margin-left: 0.5rem;
+  padding-right: 0.5rem;
+  transition: color 0.4s ease;
+  &:hover {
+    color: #f49ac1;
+  }
+  @media (max-width: 915px) {
+    padding-right: 0.3rem;
+  }
+`;
+
+const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
+  color: #f49ac1;
+  padding-right: 0.5rem;
+  @media (max-width: 915px) {
+    padding-right: 0.3rem;
+  }
+`;
+
 const FooterCard = styled.div`
   flex-basis: 27%;
   display: block;
@@ -99,14 +121,13 @@ const Footer = () => {
                     {t("akolouthisteMas")}
                   </a>
                 </li>
-                <a
+                <FooterIntagramIconLink
                   href="https://www.instagram.com/katia_lada"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon footer-icon"
                 >
                   <FaInstagram />
-                </a>
+                </FooterIntagramIconLink>
               </FlexStyled>
             </li>
           </ul>
@@ -139,15 +160,15 @@ const Footer = () => {
             </li>
             <hr></hr>
             <li class="footer-address">
-              <FontAwesomeIcon icon={faHouse} className="footer-icon" />
+              <FontAwesomeIconStyled icon={faHouse} />
               <FooterLinkNoClickable>{t("dieuthinsi")}</FooterLinkNoClickable>
             </li>
             <li>
-              <FontAwesomeIcon icon={faPhone} className="footer-icon" />
+              <FontAwesomeIconStyled icon={faPhone} />
               <a href="tel:+3002374082034">23740 82034</a>
             </li>
             <li>
-              <FontAwesomeIcon icon={faEnvelope} className="footer-icon" />
+              <FontAwesomeIconStyled icon={faEnvelope} />
               <a href="mailto:lada.katia@gmail.com">lada.katia@gmail.com</a>
             </li>
             <li></li>

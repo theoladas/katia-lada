@@ -39,22 +39,6 @@ footer {
       color: #f49ac1;
     }
 
-    .footer-icon {
-      color: #f49ac1;
-      padding-right: 0.5rem;
-      @media (max-width: 915px) {
-        padding-right: 0.3rem;
-      }
-    }
-    .icon {
-      font-size: 1.2rem;
-      color: #f49ac1;
-      margin-left: 0.5rem;
-      transition: color 0.4s ease;
-      &:hover {
-        color: #f49ac1;
-      }
-    }
     @media (max-width: 768px) {
       text-align: center;
     }
