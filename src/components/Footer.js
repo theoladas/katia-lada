@@ -1,4 +1,3 @@
-import "../styles/Footer.scss";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -60,10 +59,50 @@ const FooterWebsiteByLink = styled.a`
     color: #fff;
   }
 `;
+
 const FooterLinkNoClickable = styled.span`
+  list-style: none;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-align: left;
+  letter-spacing: 1.5px;
   color: #fff;
+  padding: 0.5rem 0rem;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+const FooterLink = styled.a`
+  list-style: none;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-align: left;
+  letter-spacing: 1.5px;
+  color: #fff;
+  padding: 0.5rem 0rem;
+  transition: color 0.4s ease;
   &:hover {
-    color: #fff;
+    color: #f49ac1;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+const FooterLinkAttribute = styled.a`
+  font-size: 0.45rem;
+  list-style: none;
+  text-decoration: none;
+  text-align: left;
+  letter-spacing: 1.5px;
+  color: #fff;
+  padding: 0.5rem 0rem;
+  &:hover {
+    color: #f49ac1;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
   }
 `;
 
@@ -109,21 +148,55 @@ const FooterCardAttribute = styled.ul`
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 10px;
+  gap: 30px;
+  padding: 0.3rem 0;
 `;
 
 const FooterAttributeLi = styled.li`
   font-size: 0.45rem;
+  list-style: none;
+  color: #fff;
 `;
-const FooterAttributeLink = styled.a`
-  font-size: 0.45rem;
-`;
+
 const FooterAttributeLiNoHover = styled.li`
-  font-size: 0.45rem;
+  font-size: 0.55rem;
+  list-style: none;
   pointer-events: none;
+  color: #fff;
 `;
-const FooterLiNoHover = styled.li`
-  pointer-events: none;
+
+const LinkStyled = styled(Link)`
+  list-style: none;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-align: left;
+  letter-spacing: 1.5px;
+  color: #fff;
+  padding: 0.5rem 0rem;
+  transition: color 0.4s ease;
+  &:hover {
+    color: #f49ac1;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+const FooterLi = styled.li`
+  list-style: none;
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-align: left;
+  letter-spacing: 1.5px;
+  color: #fff;
+  padding: 0.5rem 0rem;
+  transition: color 0.4s ease;
+  &:hover {
+    color: #f49ac1;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const Footer = () => {
@@ -134,22 +207,22 @@ const Footer = () => {
       <FooterColumns>
         <FooterCard>
           <ul>
-            <li>
-              <Link to="/gallery">Gallery</Link>
-            </li>
-            <li>
-              <a href="/">{t("oXorosMas")}</a>
-            </li>
-            <li>
+            <FooterLi>
+              <LinkStyled to="/gallery">Gallery</LinkStyled>
+            </FooterLi>
+            <FooterLi>
+              <LinkStyled to="/">{t("oXorosMas")}</LinkStyled>
+            </FooterLi>
+            <FooterLi>
               <FlexStyled>
                 <li>
-                  <a
+                  <FooterLink
                     href="https://www.instagram.com/katia_lada"
                     target="_blank"
                     rel="noreferrer"
                   >
                     {t("akolouthisteMas")}
-                  </a>
+                  </FooterLink>
                 </li>
                 <FooterIntagramIconLink
                   href="https://www.instagram.com/katia_lada"
@@ -159,49 +232,49 @@ const Footer = () => {
                   <FaInstagram />
                 </FooterIntagramIconLink>
               </FlexStyled>
-            </li>
+            </FooterLi>
           </ul>
         </FooterCard>
         <FooterCard>
           <ul>
-            <FooterLiNoHover>{t("ipiresies")}</FooterLiNoHover>
+            <FooterLinkNoClickable>{t("ipiresies")}</FooterLinkNoClickable>
             <hr></hr>
-            <li>
-              <Link to="/manicure-pedicure">{t("manikiour")}</Link>
-            </li>
-            <li>
-              <Link to="/make-up">{t("makigiaz")}</Link>
-            </li>
-            <li>
-              <Link to="/waxing">{t("apotrixosi")}</Link>
-            </li>
-            <li>
-              <a href="/facial">{t("peripoihshProsopou")}</a>
-            </li>
-            <li>
-              <Link to="/lashlift">{t("lashlift")}</Link>
-            </li>
+            <FooterLi>
+              <LinkStyled to="/manicure-pedicure">{t("manikiour")}</LinkStyled>
+            </FooterLi>
+            <FooterLi>
+              <LinkStyled to="/make-up">{t("makigiaz")}</LinkStyled>
+            </FooterLi>
+            <FooterLi>
+              <LinkStyled to="/waxing">{t("apotrixosi")}</LinkStyled>
+            </FooterLi>
+            <FooterLi>
+              <LinkStyled href="/facial">{t("peripoihshProsopou")}</LinkStyled>
+            </FooterLi>
+            <FooterLi>
+              <LinkStyled to="/lashlift">{t("lashlift")}</LinkStyled>
+            </FooterLi>
           </ul>
         </FooterCard>
         <FooterCard>
           <ul>
-            <li>
-              <Link to="/contact">{t("epikoinonia")}</Link>
-            </li>
+            <LinkStyled to="/contact">{t("epikoinonia")}</LinkStyled>
             <hr></hr>
-            <li class="footer-address">
+            <FooterLi>
               <FontAwesomeIconStyled icon={faHouse} />
               <FooterLinkNoClickable>{t("dieuthinsi")}</FooterLinkNoClickable>
-            </li>
-            <li>
+            </FooterLi>
+            <FooterLi>
               <FontAwesomeIconStyled icon={faPhone} />
-              <a href="tel:+3002374082034">23740 82034</a>
-            </li>
-            <li>
+              <FooterLink href="tel:+3002374082034">23740 82034</FooterLink>
+            </FooterLi>
+            <FooterLi>
               <FontAwesomeIconStyled icon={faEnvelope} />
-              <a href="mailto:lada.katia@gmail.com">lada.katia@gmail.com</a>
-            </li>
-            <li></li>
+              <FooterLink href="mailto:lada.katia@gmail.com">
+                lada.katia@gmail.com
+              </FooterLink>
+            </FooterLi>
+            <FooterLi></FooterLi>
             <FooterAttributeLiNoHover>
               Attribute for the images
             </FooterAttributeLiNoHover>
@@ -210,9 +283,9 @@ const Footer = () => {
           <FooterCardAttribute>
             {attributesData.map((attribute, index) => (
               <FooterAttributeLi key={index}>
-                <FooterAttributeLink href={attribute.href}>
+                <FooterLinkAttribute href={attribute.href}>
                   {attribute.text}
-                </FooterAttributeLink>{" "}
+                </FooterLinkAttribute>{" "}
                 {attribute.source}
               </FooterAttributeLi>
             ))}
@@ -220,9 +293,9 @@ const Footer = () => {
           <FooterCardAttribute>
             {attributesData2.map((attribute, index) => (
               <FooterAttributeLi key={index}>
-                <FooterAttributeLink href={attribute.href}>
+                <FooterLinkAttribute href={attribute.href}>
                   {attribute.text}
-                </FooterAttributeLink>{" "}
+                </FooterLinkAttribute>{" "}
                 {attribute.source}
               </FooterAttributeLi>
             ))}
