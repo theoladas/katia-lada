@@ -1,4 +1,5 @@
 import "../styles/Footer.scss";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaInstagram } from "react-icons/fa";
@@ -11,13 +12,60 @@ import attributesData from "../resources/attributes-data.json";
 import attributesData2 from "../resources/attributes2-data.json";
 import { useTranslation } from "react-i18next";
 
+const FlexStyled = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+`;
+
+const FooterCard = styled.div`
+  flex-basis: 27%;
+  display: block;
+  height: 300px;
+  padding: 1rem;
+  @media (max-width: 1070px) {
+    flex-basis: 30%;
+  }
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+    padding: 0.5rem;
+    height: auto;
+  }
+`;
+
+const FooterCardAttribute = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+`;
+
+const FooterAttributeLi = styled.li`
+  font-size: 0.45rem;
+`;
+const FooterAttributeLink = styled.a`
+  font-size: 0.45rem;
+`;
+const FooterAttributeLiNoHover = styled.li`
+  font-size: 0.45rem;
+  pointer-events: none;
+`;
+const FooterLiNoHover = styled.li`
+  pointer-events: none;
+`;
+
 const Footer = () => {
   const { t } = useTranslation();
 
   return (
     <footer className="footer">
       <div className="footer-columns">
-        <div className="footer-card">
+        <FooterCard>
           <ul>
             <li>
               <Link to="/gallery">Gallery</Link>
@@ -26,7 +74,7 @@ const Footer = () => {
               <a href="/">{t("oXorosMas")}</a>
             </li>
             <li>
-              <div className="flex">
+              <FlexStyled>
                 <li>
                   <a
                     href="https://www.instagram.com/katia_lada"
@@ -44,13 +92,13 @@ const Footer = () => {
                 >
                   <FaInstagram />
                 </a>
-              </div>
+              </FlexStyled>
             </li>
           </ul>
-        </div>
-        <div className="footer-card">
+        </FooterCard>
+        <FooterCard>
           <ul>
-            <li className="no-hover">{t("ipiresies")}</li>
+            <FooterLiNoHover>{t("ipiresies")}</FooterLiNoHover>
             <hr></hr>
             <li>
               <Link to="/manicure-pedicure">{t("manikiour")}</Link>
@@ -68,8 +116,8 @@ const Footer = () => {
               <Link to="/lashlift">{t("lashlift")}</Link>
             </li>
           </ul>
-        </div>
-        <div className="footer-card ">
+        </FooterCard>
+        <FooterCard>
           <ul>
             <li>
               <Link to="/contact">{t("epikoinonia")}</Link>
@@ -88,30 +136,32 @@ const Footer = () => {
               <a href="mailto:lada.katia@gmail.com">lada.katia@gmail.com</a>
             </li>
             <li></li>
-            <li className="no-hover attribute">Attribute for the images</li>
+            <FooterAttributeLiNoHover>
+              Attribute for the images
+            </FooterAttributeLiNoHover>
             <hr></hr>
           </ul>
-          <ul className="footer-card-attribute">
+          <FooterCardAttribute>
             {attributesData.map((attribute, index) => (
-              <li key={index} className="attribute">
-                <a href={attribute.href} className="attribute">
+              <FooterAttributeLi key={index}>
+                <FooterAttributeLink href={attribute.href}>
                   {attribute.text}
-                </a>{" "}
+                </FooterAttributeLink>{" "}
                 {attribute.source}
-              </li>
+              </FooterAttributeLi>
             ))}
-          </ul>
-          <ul className="footer-card-attribute">
+          </FooterCardAttribute>
+          <FooterCardAttribute>
             {attributesData2.map((attribute, index) => (
-              <li key={index} className="attribute">
-                <a href={attribute.href} className="attribute">
+              <FooterAttributeLi key={index}>
+                <FooterAttributeLink href={attribute.href}>
                   {attribute.text}
-                </a>{" "}
+                </FooterAttributeLink>{" "}
                 {attribute.source}
-              </li>
+              </FooterAttributeLi>
             ))}
-          </ul>
-        </div>
+          </FooterCardAttribute>
+        </FooterCard>
       </div>
       <p>
         &#169; 2023 Κάτια Λαδά | Website:{" "}
