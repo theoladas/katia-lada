@@ -4,6 +4,31 @@ import styled from "styled-components";
 // Base styles
 export const GlobalStyle = createGlobalStyle` 
 
+:root {
+  --color-pink: #f49ac1;
+  --color-pink-strong: #e4389b;
+  --color-text: #282828;
+  --color-white: #fff;
+  --color-bg: #f0e9eb;
+  --color-bg-footer: #77787b;
+
+  --hover-pink-color: #f49ac1;
+
+  --font-size-footer: 0.8rem;
+  --font-size-footer-paragraph: 0.6rem;
+  --font-size-footer-attribute: 0.45rem;
+
+  --transition-primary: all 0.4s ease;
+
+  --spacing-footer-links: 0.5rem 0;
+
+  --breakpoint-large: 1330px;
+  --breakpoint-desktop: 1070px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-mobile: 500px;
+  --breakpoint-small: 360px;
+}
+
 ::-webkit-scrollbar {
   width: 9px;
 }

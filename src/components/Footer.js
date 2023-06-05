@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 const FlexStyled = styled.div`
   display: flex;
   justify-content: flex-start;
-  @media (max-width: 768px) {
+  @media (max-width: var(--breakpoint-tablet)) {
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -23,13 +23,13 @@ const FlexStyled = styled.div`
 
 const FooterStyled = styled.footer`
   min-height: 40vh;
-  background: #77787b;
+  background: var(--color-bg-footer);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media (max-width: 768px) {
+  @media (max-width: var(--breakpoint-tablet)) {
     padding-top: 1rem;
   }
 `;
@@ -43,77 +43,95 @@ const FooterColumns = styled.div`
 `;
 
 const FooterParagraph = styled.p`
-  color: #fff;
+  font-size: var(--font-size-footer-paragraph);
   letter-spacing: 1px;
-  font-size: 0.6rem;
-  padding: 0.5rem 0rem;
+  padding: var(--spacing-footer-links);
+  color: var(--color-white);
 `;
 
 const FooterWebsiteByLink = styled.a`
-  font-size: 0.6rem;
-  color: #fff;
+  font-size: var(--font-size-footer-paragraph);
+  color: var(--color-white);
   opacity: 0.8;
-  transition: all 0.4s ease;
+  transition: var(--transition-primary);
   &:hover {
     opacity: 1;
-    color: #fff;
+    color: var(--color-white);
   }
 `;
 
 const FooterLinkNoClickable = styled.span`
+  font-size: var(--font-size-footer);
+  letter-spacing: 1.5px;
   list-style: none;
-  font-size: 0.8rem;
   text-decoration: none;
   text-align: left;
-  letter-spacing: 1.5px;
-  color: #fff;
-  padding: 0.5rem 0rem;
+  padding: var(--spacing-footer-links);
+  color: var(--color-white);
+  display: block;
   @media (max-width: 768px) {
     text-align: center;
   }
 `;
 
 const FooterLink = styled.a`
+  font-size: var(--font-size-footer);
+  letter-spacing: 1.5px;
   list-style: none;
-  font-size: 0.8rem;
   text-decoration: none;
   text-align: left;
-  letter-spacing: 1.5px;
-  color: #fff;
-  padding: 0.5rem 0rem;
-  transition: color 0.4s ease;
+  padding: var(--spacing-footer-link);
+  color: var(--color-white);
+  transition: var(--transition-primary);
   &:hover {
-    color: #f49ac1;
+    color: var(--hover-pink-color);
   }
   @media (max-width: 768px) {
-    text-align: center;
+    margin: 0 auto;
+  }
+`;
+const FooterLinkInstagram = styled.a`
+  display: flex;
+  font-size: var(--font-size-footer);
+  letter-spacing: 1.5px;
+  list-style: none;
+  text-decoration: none;
+  text-align: left;
+  padding: var(--spacing-footer-link);
+  color: var(--color-white);
+  transition: var(--transition-primary);
+  &:hover {
+    color: var(--hover-pink-color);
+  }
+  @media (max-width: 768px) {
+    margin: 0 auto;
   }
 `;
 
 const FooterLinkAttribute = styled.a`
-  font-size: 0.45rem;
+  font-size: var(--font-size-footer-attribute);
+  letter-spacing: 1.5px;
   list-style: none;
   text-decoration: none;
   text-align: left;
-  letter-spacing: 1.5px;
-  color: #fff;
-  padding: 0.5rem 0rem;
+  padding: var(--spacing-footer-links);
+  color: var(--color-white);
   &:hover {
-    color: #f49ac1;
+    color: var(--hover-pink-color);
   }
-  @media (max-width: 768px) {
+  @media (max-width: var(--breakpoint-tablet)) {
     text-align: center;
   }
 `;
 
 const FooterIntagramIconLink = styled.a`
   font-size: 1.2rem;
-  color: #f49ac1;
   margin-left: 0.5rem;
   padding-right: 0.5rem;
-  transition: color 0.4s ease;
+  color: var(--color-pink);
+  transition: var(--transition-primary);
   &:hover {
-    color: #f49ac1;
+    color: var(--hover-pink-color);
   }
   @media (max-width: 915px) {
     padding-right: 0.3rem;
@@ -121,7 +139,7 @@ const FooterIntagramIconLink = styled.a`
 `;
 
 const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
-  color: #f49ac1;
+  color: var(--color-pink);
   padding-right: 0.5rem;
   @media (max-width: 915px) {
     padding-right: 0.3rem;
@@ -153,46 +171,53 @@ const FooterCardAttribute = styled.ul`
 `;
 
 const FooterAttributeLi = styled.li`
-  font-size: 0.45rem;
+  font-size: var(--font-size-footer-attribute);
   list-style: none;
-  color: #fff;
+  color: var(--color-white);
 `;
 
 const FooterAttributeLiNoHover = styled.li`
   font-size: 0.55rem;
   list-style: none;
   pointer-events: none;
-  color: #fff;
-`;
-
-const LinkStyled = styled(Link)`
-  list-style: none;
-  font-size: 0.8rem;
-  text-decoration: none;
-  text-align: left;
-  letter-spacing: 1.5px;
-  color: #fff;
-  padding: 0.5rem 0rem;
-  transition: color 0.4s ease;
-  &:hover {
-    color: #f49ac1;
-  }
+  color: var(--color-white);
   @media (max-width: 768px) {
     text-align: center;
   }
 `;
 
-const FooterLi = styled.li`
+const LinkStyled = styled(Link)`
+  font-size: var(--font-size-footer);
+  letter-spacing: 1.5px;
   list-style: none;
-  font-size: 0.8rem;
   text-decoration: none;
   text-align: left;
-  letter-spacing: 1.5px;
-  color: #fff;
-  padding: 0.5rem 0rem;
-  transition: color 0.4s ease;
+  padding: var(--spacing-footer-links);
+  color: var(--color-white);
+  transition: var(--transition-primary);
+
   &:hover {
-    color: #f49ac1;
+    color: var(--hover-pink-color);
+  }
+  @media (max-width: 768px) {
+    display: block;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+`;
+
+const FooterLi = styled.li`
+  font-size: var(--font-size-footer);
+  letter-spacing: 1.5px;
+  list-style: none;
+  text-decoration: none;
+  text-align: left;
+  padding: var(--spacing-footer-links);
+  color: var(--color-white);
+  transition: var(--transition-primary);
+  &:hover {
+    color: var(--hover-pink-color);
   }
   @media (max-width: 768px) {
     text-align: center;
@@ -215,7 +240,7 @@ const Footer = () => {
             </FooterLi>
             <FooterLi>
               <FlexStyled>
-                <li>
+                <FooterLinkInstagram>
                   <FooterLink
                     href="https://www.instagram.com/katia_lada"
                     target="_blank"
@@ -223,18 +248,19 @@ const Footer = () => {
                   >
                     {t("akolouthisteMas")}
                   </FooterLink>
-                </li>
-                <FooterIntagramIconLink
-                  href="https://www.instagram.com/katia_lada"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaInstagram />
-                </FooterIntagramIconLink>
+                  <FooterIntagramIconLink
+                    href="https://www.instagram.com/katia_lada"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaInstagram />
+                  </FooterIntagramIconLink>
+                </FooterLinkInstagram>
               </FlexStyled>
             </FooterLi>
           </ul>
         </FooterCard>
+
         <FooterCard>
           <ul>
             <FooterLinkNoClickable>{t("ipiresies")}</FooterLinkNoClickable>
@@ -262,7 +288,7 @@ const Footer = () => {
             <hr></hr>
             <FooterLi>
               <FontAwesomeIconStyled icon={faHouse} />
-              <FooterLinkNoClickable>{t("dieuthinsi")}</FooterLinkNoClickable>
+              <FooterLink>{t("dieuthinsi")}</FooterLink>
             </FooterLi>
             <FooterLi>
               <FontAwesomeIconStyled icon={faPhone} />
