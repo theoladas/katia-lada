@@ -55,44 +55,8 @@ footer {
         color: #f49ac1;
       }
     }
-    .footer-link-no-clickable {
-      color: #fff;
-      &:hover {
-        color: #fff;
-      }
-    }
     @media (max-width: 768px) {
       text-align: center;
-    }
-  }
-
-  .footer-columns {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-
-    .footer-card {
-      flex-basis: 27%;
-      display: block;
-      height: 300px;
-      padding: 1rem;
-      @media (max-width: 1070px) {
-        flex-basis: 30%;
-      }
-      @media (max-width: 768px) {
-        flex-basis: 100%;
-        padding: 0.5rem;
-        height: auto;
-      }
-      .footer-card-attribute {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 10px;
-      }
     }
   }
 }

@@ -22,6 +22,21 @@ const FlexStyled = styled.div`
   }
 `;
 
+const FooterColumns = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
+
+const FooterLinkNoClickable = styled.span`
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+`;
+
 const FooterCard = styled.div`
   flex-basis: 27%;
   display: block;
@@ -64,7 +79,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="footer-columns">
+      <FooterColumns>
         <FooterCard>
           <ul>
             <li>
@@ -125,7 +140,7 @@ const Footer = () => {
             <hr></hr>
             <li class="footer-address">
               <FontAwesomeIcon icon={faHouse} className="footer-icon" />
-              <span class="footer-link-no-clickable">{t("dieuthinsi")}</span>
+              <FooterLinkNoClickable>{t("dieuthinsi")}</FooterLinkNoClickable>
             </li>
             <li>
               <FontAwesomeIcon icon={faPhone} className="footer-icon" />
@@ -162,7 +177,7 @@ const Footer = () => {
             ))}
           </FooterCardAttribute>
         </FooterCard>
-      </div>
+      </FooterColumns>
       <p>
         &#169; 2023 Κάτια Λαδά | Website:{" "}
         <a
