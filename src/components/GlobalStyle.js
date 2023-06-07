@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
@@ -12,8 +13,14 @@ export const GlobalStyle = createGlobalStyle`
   --color-bg: #f0e9eb;
   --color-bg-footer: #77787b;
 
+  --border-primary-button: 1px solid #f49ac1;
+  --border-radius-primary: 10px;
+
   --hover-pink-color: #f49ac1;
 
+  --font-family-hero: "Arima", cursive;
+  --font-size-hero-title: 3rem;
+  --font-size-primary-button:  1.1rem;
   --font-size-footer: 0.8rem;
   --font-size-footer-paragraph: 0.6rem;
   --font-size-footer-attribute: 0.45rem;
@@ -66,6 +73,7 @@ export const GlobalStyle = createGlobalStyle`
   a {
         text-decoration: none;
   }
+
   
   /* Utility Classes */
   .flex {
@@ -359,10 +367,51 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 // Styled Components
+
+export const HeroTitle = styled.div`
+  font-family: var(--font-family-hero);
+  font-size: var(--font-size-hero-title);
+  font-weight: 700;
+  color: var(--font-text);
+  margin-top: 2rem;
+  @media (max-width: 1024px) {
+    line-height: 55px;
+    font-size: 2.6rem;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+// Check if we use that!!!!!!
 export const Page = styled.main`
   padding: 2rem 5rem;
   @media (max-width: 768px) {
     padding: 2rem 2rem;
+  }
+`;
+
+export const PrimaryButtonContainer = styled.div`
+  padding: 2rem 0;
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+export const PrimaryButton = styled(Link)`
+  font-size: var(--font-size-primary-button);
+  text-decoration: none;
+  letter-spacing: 1px;
+  background: var(--color-pink);
+  color: var(--color-white);
+  border: var(--border-primary-button);
+  border-radius: var(--border-radius-primary);
+  padding: 10px 12px;
+  opacity: 1;
+  transition: var(--transition-primary);
+  &:hover,
+  &:focus {
+    opacity: 0.8;
   }
 `;
 

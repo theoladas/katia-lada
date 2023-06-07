@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
-export const StyledPrimary = styled.div`
+export const PrimaryButton = styled.div`
   @media screen and (max-width: 768px) {
     text-align: center;
   }
@@ -30,10 +30,10 @@ export const PrimaryBtn = () => {
   const { t } = useTranslation();
 
   return (
-    <StyledPrimary>
+    <PrimaryButton>
       <a href="tel:+302374082034" rel="noreferrer">
         {t("kleisteRantebou")}
       </a>
-    </StyledPrimary>
+    </PrimaryButton>
   );
 };
