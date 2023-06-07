@@ -1,4 +1,11 @@
-import { Paragraph } from "./GlobalStyle";
+import { Link } from "react-router-dom";
+import {
+  HeroSection,
+  HeroTitle,
+  Paragraph,
+  PrimaryButtonContainer,
+  PrimaryButton,
+} from "./GlobalStyle";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +14,124 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const ContactSectionStyled = styled(HeroSection)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @media (max-width: 850px) {
+    justify-content: center;
+  }
+`;
+
+const ContactContent = styled(motion.div)`
+  width: 50%;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+  @media only screen and (max-width: 850px) {
+    width: 100%;
+    text-align: center;
+    padding-right: 0rem;
+    p {
+      text-align: center;
+    }
+  }
+`;
+
+const ContactIcon = styled(FontAwesomeIcon)`
+  font-size: 1.2rem;
+  color: var(--color-pink);
+  margin-right: 0.5rem;
+  transition: var(--transition-primary);
+  @media (max-width: 390px) {
+    font-size: 1rem;
+    margin-right: 0.3rem;
+  }
+  &:hover {
+    color: var(--hover-pink-color);
+  }
+`;
+
+const ContactLinks = styled.a`
+  color: var(--color-text);
+  transition: var(--transition-primary);
+  &:hover {
+    color: var(--hover-pink-color);
+  }
+`;
+
+const ContantLinkCallUs = styled.a`
+  color: var(--color-pink);
+  transition: var(--transition-primary);
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const FormContainer = styled(motion.div)`
+  width: 50%;
+  padding-right: 2rem;
+  margin-right: -5rem;
+  @media (max-width: 950px) {
+    margin-right: -2rem;
+    padding-right: 0rem;
+  }
+  @media (max-width: 850px) {
+    width: 100%;
+    margin-right: 0rem;
+    padding-right: 0rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 500px;
+    @media only screen and (max-width: 850px) {
+      margin: auto;
+    }
+    input,
+    textarea {
+      padding: 0.5rem;
+      border: 1px solid #f0f0f0;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      margin: 0.5rem 0;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.1rem;
+    }
+    textarea {
+      resize: none;
+    }
+  }
+`;
+
+const FormSubmitButton = styled.button`
+  font-family: var(--font-family-contact-form);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-left: auto;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background: var(--color-pink);
+  border: var(--border-primary-button);
+  border-radius: var(--border-radius-primary);
+  color: var(--color-white);
+  cursor: pointer;
+  opacity: 1;
+  transition: var(--transition-primary);
+  &:hover {
+    opacity: 0.8;
+  }
+`;
 
 export const ContactSection = ({ animate }) => {
   const { t } = useTranslation();
@@ -22,60 +146,50 @@ export const ContactSection = ({ animate }) => {
   const fadeIn = useFadeInAnimation();
 
   return (
-    <section className="hero-section contact-section ">
+    <ContactSectionStyled>
       {animate && (
         <>
-          <motion.div
-            className="contact-content"
+          <ContactContent
             initial={{ x: -200 }}
             animate={{ x: 0, ...fadeIn.visible }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
           >
-            <div className="main-title">{t("epikoinonia")}</div>
+            <HeroTitle>{t("epikoinonia")}</HeroTitle>
             <Paragraph>{t("plirofories")}</Paragraph>
             <Paragraph>
               {t("forAppointments")}{" "}
-              <a href="tel:+302374082034" className="call-us-link">
+              <ContantLinkCallUs href="tel:+302374082034">
                 23740 82034
-              </a>
+              </ContantLinkCallUs>
               {", "}
               {t("workingHoursContant")}
             </Paragraph>
-            <div className="contact-details">
+            <div>
               <ul>
                 <Paragraph>
-                  <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
-                  <a
-                    href="mailto:lada.katia@gmail.com"
-                    className="contact-links"
-                  >
+                  <ContactIcon icon={faEnvelope} />
+                  <ContactLinks href="mailto:lada.katia@gmail.com">
                     lada.katia@gmail.com
-                  </a>
+                  </ContactLinks>
                 </Paragraph>
                 <Paragraph>
-                  <FontAwesomeIcon icon={faPhone} className="contact-icon" />
-                  <a href="tel:+3002374082034" className="contact-links">
+                  <ContactIcon icon={faPhone} />
+                  <ContactLinks href="tel:+3002374082034">
                     23740 82034
-                  </a>
+                  </ContactLinks>
                 </Paragraph>
                 <Paragraph>
-                  <FontAwesomeIcon icon={faHouse} className="contact-icon" />
-                  <span class="footer-link-no-clickable">
-                    {t("dieuthinsi")}
-                  </span>
+                  <ContactIcon icon={faHouse} />
+                  <span>{t("dieuthinsi")}</span>
                 </Paragraph>
               </ul>
             </div>
-            <div className="primary-btn-container">
-              <Link to="/contact" className="primary-btn">
-                {t("perisotera")}
-              </Link>
-            </div>
-          </motion.div>
+            <PrimaryButtonContainer>
+              <PrimaryButton to="/contact">{t("perisotera")}</PrimaryButton>
+            </PrimaryButtonContainer>
+          </ContactContent>
 
-          {/* Form */}
-          <motion.div
-            className="form-container"
+          <FormContainer
             initial={{ x: 200 }}
             animate={{ x: 0, ...fadeIn.visible }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
@@ -87,13 +201,13 @@ export const ContactSection = ({ animate }) => {
               <input type="email" name="email" required />
               <label htmlFor="">{t("minima")}</label>
               <textarea rows="4" cols="20" name="message" required></textarea>
-              <button type="submit" className="form-btn">
+              <FormSubmitButton type="submit">
                 {t("steilteMinima")}
-              </button>
+              </FormSubmitButton>
             </form>
-          </motion.div>
+          </FormContainer>
         </>
       )}
-    </section>
+    </ContactSectionStyled>
   );
 };
