@@ -120,7 +120,7 @@ const FooterLinkAttribute = styled.a`
   &:hover {
     color: var(--hover-pink-color);
   }
-  @media (max-width: var(--breakpoint-tablet)) {
+  @media (max-width: 768px) {
     text-align: center;
   }
 `;
@@ -152,6 +152,9 @@ const FooterCard = styled.div`
   display: block;
   height: 300px;
   padding: 1rem;
+  @media (max-width: 905px) {
+    margin: 0 auto;
+  }
   @media (max-width: 768px) {
     flex-basis: 100%;
     padding: 0.5rem;
@@ -167,6 +170,13 @@ const FooterCardAttribute = styled.ul`
   text-align: center;
   gap: 30px;
   padding: 0.3rem 0;
+  @media (max-width: 905px) {
+    display: block;
+    margin-right: auto;
+  }
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `;
 
 const FooterAttributeLi = styled.li`
