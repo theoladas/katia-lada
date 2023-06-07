@@ -68,8 +68,8 @@ const FooterLinkNoClickable = styled.span`
   text-align: left;
   padding: var(--spacing-footer-links);
   color: var(--color-white);
-  display: block;
   @media (max-width: 768px) {
+    display: block;
     text-align: center;
   }
 `;
@@ -90,6 +90,7 @@ const FooterLink = styled.a`
     margin: 0 auto;
   }
 `;
+
 const FooterLinkInstagram = styled.a`
   display: flex;
   font-size: var(--font-size-footer);
@@ -151,13 +152,11 @@ const FooterCard = styled.div`
   display: block;
   height: 300px;
   padding: 1rem;
-  @media (max-width: 1070px) {
-    flex-basis: 30%;
-  }
   @media (max-width: 768px) {
     flex-basis: 100%;
     padding: 0.5rem;
     height: auto;
+    padding-bottom: 1rem;
   }
 `;
 
@@ -288,7 +287,7 @@ const Footer = () => {
             <hr></hr>
             <FooterLi>
               <FontAwesomeIconStyled icon={faHouse} />
-              <FooterLink>{t("dieuthinsi")}</FooterLink>
+              <FooterLinkNoClickable>{t("dieuthinsi")}</FooterLinkNoClickable>
             </FooterLi>
             <FooterLi>
               <FontAwesomeIconStyled icon={faPhone} />
