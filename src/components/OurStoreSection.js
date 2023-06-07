@@ -1,8 +1,103 @@
-import { Paragraph } from "../components/GlobalStyle";
+import {
+  HeroSection,
+  HeroTitle,
+  HeroTitleSecondary,
+  Paragraph,
+  PrimaryButtonContainer,
+  PrimaryButton,
+} from "../components/GlobalStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import styled from "styled-components";
+
+const AddressContainer = styled(motion.div)`
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+const AddressIcon = styled(FontAwesomeIcon)`
+  color: var(--color-pink);
+  padding-right: 10px;
+`;
+
+const MapContainer = styled(motion.div)`
+  width: 50%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  iframe {
+    width: 90%;
+    border: 0;
+    border-radius: 20px;
+    @media (max-width: 768px) {
+      width: 100%;
+      padding-bottom: 1rem;
+    }
+  }
+`;
+
+const OurStoreSectionStyled = styled(HeroSection)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: var(--color-white);
+`;
+
+const OurStoreContent = styled.div`
+  width: 50%;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-right: 0rem;
+  }
+`;
+
+const OpenStoreContainer = styled.div`
+  display: flex;
+  gap: 1.4rem;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
+  @media screen and (max-width: 450px) {
+    gap: 10px;
+  }
+`;
+
+const OpenStoreDays = styled(motion.div)`
+  font-size: 1.1rem;
+  line-height: 27px;
+  @media screen and (max-width: 849px) {
+    font-size: 0.97rem;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+  @media screen and (max-width: 550px) {
+    font-size: 1rem;
+  }
+`;
+
+const OpenStoreHours = styled(motion.div)`
+  font-size: 1.1rem;
+  line-height: 27px;
+  color: var(--color-pink);
+  span {
+    color: var(--color-text);
+  }
+  @media screen and (max-width: 849px) {
+    font-size: 0.97rem;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+  @media screen and (max-width: 550px) {
+    font-size: 1rem;
+  }
+`;
 
 export const OurStoreSection = ({ animate }) => {
   const { t } = useTranslation();
@@ -23,59 +118,43 @@ export const OurStoreSection = ({ animate }) => {
   };
 
   return (
-    <section className="hero-section our-store">
+    <OurStoreSectionStyled>
       {animate && (
         <>
-          <motion.div
-            className="map-container"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-          >
+          <MapContainer initial="hidden" animate="visible" variants={fadeIn}>
             <iframe
-              className="map"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1769.487232705234!2d23.3960987!3d40.132723!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a881778cf28ea5%3A0xdcf47ad774598ca3!2zzprOkc6kzpnOkSDOm86RzpTOkQ!5e1!3m2!1sen!2suk!4v1670526803894!5m2!1sen!2suk"
               width="500"
               height="450"
-              style={{ border: 0, borderRadius: "20px" }}
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Katia Lada map"
             ></iframe>
-          </motion.div>
-
-          <div className="our-store-content">
-            <motion.div
-              className="main-title"
-              initial="hidden"
-              animate="visible"
-              variants={fromTop}
-            >
+          </MapContainer>
+          <OurStoreContent>
+            <HeroTitle initial="hidden" animate="visible" variants={fromTop}>
               {t("oXorosMas")}
-            </motion.div>
+            </HeroTitle>
             <Paragraph>
-              <motion.div
-                className="address-container"
+              <AddressContainer
                 initial="hidden"
                 animate="visible"
                 variants={fromTop}
               >
-                <FontAwesomeIcon icon={faHouse} className="address-icon" />
+                <AddressIcon icon={faHouse} />
                 {t("dieuthinsi")}
-              </motion.div>
+              </AddressContainer>
             </Paragraph>
-            <motion.h2
-              className="opening-hours-title"
+            <HeroTitleSecondary
               initial="hidden"
               animate="visible"
               variants={fadeIn}
             >
               {t("oresLitourgias")}
-            </motion.h2>
-            <div className="flex-open-store">
-              <motion.div
-                className="open-days"
+            </HeroTitleSecondary>
+            <OpenStoreContainer>
+              <OpenStoreDays
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
@@ -88,9 +167,8 @@ export const OurStoreSection = ({ animate }) => {
                 <p>{t("paraskeui")}</p>
                 <p>{t("sabato")}</p>
                 <p>{t("kiriaki")}</p>
-              </motion.div>
-              <motion.div
-                className="open-hours"
+              </OpenStoreDays>
+              <OpenStoreHours
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
@@ -112,22 +190,18 @@ export const OurStoreSection = ({ animate }) => {
                 </p>
                 <p>{t("kleista")}</p>
                 <p>{t("kleista")}</p>
-              </motion.div>
-            </div>
-
-            <motion.div
-              className="primary-btn-container"
+              </OpenStoreHours>
+            </OpenStoreContainer>
+            <PrimaryButtonContainer
               initial="hidden"
               animate="visible"
               variants={fromBottom}
             >
-              <a href="/" className="primary-btn">
-                {t("perisotera")}
-              </a>
-            </motion.div>
-          </div>
+              <PrimaryButton to="/contact">{t("perisotera")}</PrimaryButton>
+            </PrimaryButtonContainer>
+          </OurStoreContent>
         </>
       )}
-    </section>
+    </OurStoreSectionStyled>
   );
 };

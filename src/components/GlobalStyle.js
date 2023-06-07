@@ -21,7 +21,8 @@ export const GlobalStyle = createGlobalStyle`
 
   --font-family-hero: "Arima", cursive;
   --font-size-hero-title: 3rem;
-  --font-size-primary-button:  1.1rem;
+  --font-size-hero-title-secondary: 1.8rem;
+  --font-size-primary-button: 1.1rem;
   --font-size-footer: 0.8rem;
   --font-size-footer-paragraph: 0.6rem;
   --font-size-footer-attribute: 0.45rem;
@@ -191,91 +192,6 @@ export const GlobalStyle = createGlobalStyle`
       }
   }
 
-  /* Our Store Section */
-  .our-store {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      background: #fff;
-      .map-container {
-       width: 50%; 
-       @media only screen and (max-width: 850px) {
-          width: 100%;
-        }
-       iframe {
-        width: 90%;
-       }
-      .map {
-       @media only screen and (max-width: 850px) {
-        width: 100%;
-        padding-bottom: 1rem;
-       }    
-        }
-      }
-      .our-store-content {
-        width: 50%; 
-        margin-right: -5rem;
-        @media only screen and (max-width: 850px) {
-          width: 100%;
-          margin-right: 0rem;
-        }
-      .primary-btn-container {
-      @media screen and (max-width: 850px) {
-        text-align: center;
-      }
-      }
-      .main-title {
-      @media screen and (max-width: 850px) {
-        text-align: center;
-        padding-top: 1rem;
-      }
-      }
-      .address-container {
-       @media screen and (max-width: 850px) {
-        text-align: center;
-      } 
-      }
-    }   
-
-    .address-icon {
-      color: #f49ac1;
-      padding-right: 10px;
-    }
-    .opening-hours-title {
-      font-family: 'Arima', cursive;
-      font-size: 1.8rem;
-      padding: 1rem 0rem .5rem 0rem;
-      @media screen and (max-width: 850px){
-        text-align: center;
-      }
-    }
-    .flex-open-store {
-      display: flex;
-      gap: 1.4rem;
-      @media screen and (max-width: 850px){
-        align-items: center;
-        justify-content: center;
-      }
-       @media screen and (max-width: 450px){
-        gap: 10px;
-      }
-      .open-days, .open-hours {
-        font-size: 1.1rem;
-        line-height: 27px;
-        @media screen and (max-width: 550px){
-        font-size: 1rem;
-      }
-      }
-      .open-hours {
-        color: #f49ac1;
-        span {
-          color: #282828;
-        }
-      }
-    }
-  }
-  
   /* Contact Section */
   .contact-section {
       display: flex;
@@ -381,6 +297,16 @@ export const HalfContainer = styled.div`
   }
 `;
 
+export const HeroSection = styled.section`
+  min-height: 90vh;
+  padding: 5rem;
+  @media only screen and (max-width: 500px) {
+    padding: 4rem 2rem;
+  }
+  @media only screen and (max-width: 390px) {
+    padding: 2rem 1rem;
+  }
+`;
 export const HeroTitle = styled(motion.div)`
   font-family: var(--font-family-hero);
   font-size: var(--font-size-hero-title);
@@ -396,7 +322,16 @@ export const HeroTitle = styled(motion.div)`
   }
 `;
 
-export const PrimaryButtonContainer = styled.div`
+export const HeroTitleSecondary = styled(motion.h2)`
+  font-family: var(--font-family-hero);
+  font-size: var(--font-size-hero-title-secondary);
+  padding: 1rem 0rem 0.5rem 0rem;
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+export const PrimaryButtonContainer = styled(motion.div)`
   padding: 2rem 0;
   @media screen and (max-width: 768px) {
     text-align: center;
