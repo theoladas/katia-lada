@@ -6,7 +6,6 @@ import {
   PrimaryButtonContainer,
   PrimaryButton,
 } from "../components/GlobalStyle";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import gallerySectionData from "../resources/gallerySection-data.json";

@@ -1,9 +1,69 @@
 import React from "react";
-import { FlexCenter } from "./GlobalStyle";
+import { HalfContainer, FlexCenter, HeroTitle } from "./GlobalStyle";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import "../styles/ServicesSection.scss";
+import styled from "styled-components";
+
+const ServiceSection = styled.div`
+  padding-top: 2rem;
+`;
+
+const Card = styled(motion.div)`
+  padding: 1rem;
+  @media screen and (max-width: 768px) {
+    padding: 0.5rem;
+  }
+`;
+
+const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  padding: 0.8rem;
+  background-color: #f49ac1;
+  border: 1px solid #f49ac1;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s all ease;
+  @media screen and (max-width: 1070px) {
+    width: 180px;
+    height: 180px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 130px;
+    height: 130px;
+  }
+  &:hover,
+  &:focus {
+    color: #282828;
+    background-color: #f0e9eb;
+    border: 1px solid #f49ac1;
+    box-shadow: 0 10px 25px rgba(244, 154, 193, 0.7);
+  }
+`;
+
+const CardParagraph = styled.p`
+  padding: 0 1rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+`;
+
+const CardImage = styled.div`
+  padding: 0.5rem 0;
+  width: 80px;
+  height: auto;
+  background-color: fff;
+  @media screen and (max-width: 768px) {
+    width: 40px;
+  }
+`;
 
 export const ServicesSection = ({ cards, servicesInView }) => {
   const { t } = useTranslation();
@@ -23,40 +83,38 @@ export const ServicesSection = ({ cards, servicesInView }) => {
   };
 
   return (
-    <div className="half-container">
-      <motion.div
-        className="main-title"
+    <HalfContainer>
+      <HeroTitle
         initial="hidden"
         animate={servicesInView ? "visible" : "hidden"}
         variants={fadeIn}
       >
         <FlexCenter>{t("ipiresies")}</FlexCenter>
-      </motion.div>
-      <div className="serviceSection">
+      </HeroTitle>
+      <ServiceSection>
         <FlexCenter>
           {cards.map((card, index) => (
-            <motion.div
+            <Card
               key={index}
-              className="card"
               initial="hidden"
               animate={servicesInView ? "visible" : "hidden"}
               variants={servicesVariants}
               custom={index}
             >
               <Link to={card.href}>
-                <div className="card-content">
-                  <div className="card-image">
+                <CardContent>
+                  <CardImage>
                     <img src={card.image} alt={t(card.text)} />
-                  </div>
+                  </CardImage>
                   <div>
-                    <p>{t(card.text)}</p>
+                    <CardParagraph>{t(card.text)}</CardParagraph>
                   </div>
-                </div>
+                </CardContent>
               </Link>
-            </motion.div>
+            </Card>
           ))}
         </FlexCenter>
-      </div>
-    </div>
+      </ServiceSection>
+    </HalfContainer>
   );
 };

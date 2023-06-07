@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
@@ -368,7 +369,19 @@ export const GlobalStyle = createGlobalStyle`
 
 // Styled Components
 
-export const HeroTitle = styled.div`
+export const HalfContainer = styled.div`
+  padding: 5rem;
+  min-height: 45vh;
+  background-color: #fff;
+  @media only screen and (max-width: 500px) {
+    padding: 4rem 2rem;
+  }
+  @media only screen and (max-width: 390px) {
+    padding: 2rem 1rem;
+  }
+`;
+
+export const HeroTitle = styled(motion.div)`
   font-family: var(--font-family-hero);
   font-size: var(--font-size-hero-title);
   font-weight: 700;
@@ -380,14 +393,6 @@ export const HeroTitle = styled.div`
   }
   @media (max-width: 768px) {
     text-align: center;
-  }
-`;
-
-// Check if we use that!!!!!!
-export const Page = styled.main`
-  padding: 2rem 5rem;
-  @media (max-width: 768px) {
-    padding: 2rem 2rem;
   }
 `;
 
@@ -412,6 +417,14 @@ export const PrimaryButton = styled(Link)`
   &:hover,
   &:focus {
     opacity: 0.8;
+  }
+`;
+
+// Check if we use that!!!!!!
+export const Page = styled.main`
+  padding: 2rem 5rem;
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
   }
 `;
 
