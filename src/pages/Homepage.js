@@ -33,11 +33,12 @@ const HeroHomepage = styled(Flex)`
 const HeroContent = styled.div`
   width: 50%;
   padding: 0rem 0.5rem;
-  @media screen and (max-width: 1070px) {
+
+  @media (max-width: 1070px) {
     width: 60%;
     padding-right: 1rem;
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     width: 100%;
     margin: auto;
   }
@@ -48,14 +49,14 @@ const KatiaLadaLogoTextImage = styled(motion.img)`
   display: block;
   padding: 1rem 0 2rem;
 
-  @media screen and (max-width: 990px) {
+  @media (max-width: 990px) {
     padding: 0.5rem 0;
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     margin: auto;
     padding: 1rem;
   }
-  @media screen and (max-width: 500px) {
+  @media (max-width: 500px) {
     max-width: 60%;
   }
 `;

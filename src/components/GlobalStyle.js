@@ -20,6 +20,8 @@ export const GlobalStyle = createGlobalStyle`
   --hover-pink-color: #f49ac1;
 
   --font-family-contact-form: "Manrope", sans-serif;
+  --font-family-paragraph-styled: "Comfortaa", cursive;
+  --font-size-paragraph-styled: 1.135rem;
   --font-family-hero: "Arima", cursive;
   --font-size-hero-title: 3rem;
   --font-size-hero-title-secondary: 1.8rem;
@@ -82,54 +84,31 @@ export const GlobalStyle = createGlobalStyle`
   .flex {
       display: flex;
   }
-  .half-container {
-      padding: 5rem;
-      min-height: 45vh;
-      background-color: #fff;
-      @media only screen and (max-width: 500px) {
-        padding: 4rem 2rem;
-      }
-      @media only screen and (max-width: 390px) {
-        padding: 2rem 1rem;
-      }
-  }
-  .hero-section {
-      min-height: 90vh;
-      padding: 5rem;
-
-      @media only screen and (max-width: 500px) {
-        padding: 4rem 2rem;
-      }
-       @media only screen and (max-width: 390px) {
-        padding: 2rem 1rem;
-      }
-  }
-  .primary-btn-container {
-      padding: 2rem 0;
-      @media screen and (max-width: 768px) {
-        text-align: center;
-      }
-      .primary-btn {
-        font-size: 1.1rem;
-        text-decoration: none;
-        letter-spacing: 1px;
-        color: #e4389b;
-        padding: 10px 12px;
-        color: #fff;
-        background: #f49ac1;
-        border: 1px solid #f49ac1;
-        border-radius: 10px;
-        opacity: 1;
-        transition: all 0.4s ease;
-        &:hover,
-        &:focus {
-          opacity: 0.7;
-        }
-      }
-  }
 `;
 
 // Styled Components
+
+export const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
+export const CTACall = styled.a`
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-pink);
+  opacity: 1;
+  transition: var(--transition-primary);
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+`;
 
 export const HalfContainer = styled.div`
   padding: 5rem;
@@ -153,6 +132,7 @@ export const HeroSection = styled.section`
     padding: 2rem 1rem;
   }
 `;
+
 export const HeroTitle = styled(motion.div)`
   font-family: var(--font-family-hero);
   font-size: var(--font-size-hero-title);
@@ -174,6 +154,28 @@ export const HeroTitleSecondary = styled(motion.h2)`
   padding: 1rem 0rem 0.5rem 0rem;
   @media screen and (max-width: 768px) {
     text-align: center;
+  }
+`;
+
+export const Paragraph = styled.p`
+  font-family: var(--font-family-paragraph-styled);
+  font-size: var(--font-size-paragraph-styled);
+  text-align: left;
+  line-height: 30px;
+  color: var(--color-text);
+  max-width: 80%;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  @media (max-width: 990px) {
+    font-size: 1.125rem;
+    max-width: 100%;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+    max-width: 100%;
+  }
+  @media (max-width: 390px) {
+    font-size: 1rem;
   }
 `;
 
@@ -255,15 +257,6 @@ export const HeroImage = styled.div`
   }
 `;
 
-export const Flex = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  @media screen and (max-width: 768px) {
-    justify-content: center;
-  }
-`;
 export const FlexCenter = styled.div`
   display: flex;
   align-items: center;
@@ -273,27 +266,7 @@ export const FlexCenter = styled.div`
     justify-content: center;
   }
 `;
-export const Paragraph = styled.p`
-  font-family: "Comfortaa", cursive;
-  font-size: 1.135rem;
-  text-align: left;
-  line-height: 30px;
-  color: #282828;
-  max-width: 80%;
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
-  @media screen and (max-width: 990px) {
-    font-size: 1.125rem;
-    max-width: 100%;
-  }
-  @media screen and (max-width: 768px) {
-    text-align: center;
-    max-width: 100%;
-  }
-  @media only screen and (max-width: 390px) {
-    font-size: 1rem;
-  }
-`;
+
 export const CTAButton = styled.a`
   border: 1px solid #e4389b;
   border-radius: 20px;
@@ -307,6 +280,7 @@ export const CTAButton = styled.a`
     background: #e4389b;
   }
 `;
+
 export const HeroImg = styled.img`
   height: auto;
   margin-left: auto;
@@ -314,15 +288,5 @@ export const HeroImg = styled.img`
     margin: auto;
   }
 `;
-export const CTACall = styled.a`
-  color: #f49ac1;
-  letter-spacing: 1px;
-  font-weight: 600;
-  opacity: 1;
-  transition: all 0.4s ease;
-  &:hover,
-  &:focus {
-    opacity: 0.7;
-  }
-`;
+
 export default GlobalStyle;
