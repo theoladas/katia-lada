@@ -93,9 +93,6 @@ export const GlobalStyle = createGlobalStyle`
         padding: 2rem 1rem;
       }
   }
-  .homepage{
-      min-height: 90vh;
-  }
   .hero-section {
       min-height: 90vh;
       padding: 5rem;
@@ -105,18 +102,6 @@ export const GlobalStyle = createGlobalStyle`
       }
        @media only screen and (max-width: 390px) {
         padding: 2rem 1rem;
-      }
-  }
-  .hero-content {
-      width: 50%;
-      padding: 0rem .5rem;
-      @media screen and (max-width: 1070px) {
-        width: 60%;
-        padding-right: 1rem;
-      }
-      @media screen and (max-width: 768px) {
-        width: 100%;
-        margin: auto;
       }
   }
   .primary-btn-container {
@@ -140,37 +125,6 @@ export const GlobalStyle = createGlobalStyle`
         &:focus {
           opacity: 0.7;
         }
-      }
-  }
-
-  .main-title {
-      font-family: "Arima", cursive;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #282828; 
-      margin-top: 2rem;
-      @media screen and (max-width: 1024px) {
-        line-height: 55px;
-        font-size: 2.6rem;
-      }
-      @media screen and (max-width: 768px) {
-        text-align: center;
-      }
-  }
-  .katia-logo-text {
-      max-width: 100%;
-      display: block;
-      padding: 1rem 0 2rem;
-      
-      @media screen and (max-width: 990px) {
-        padding: .5rem 0;
-      }
-      @media screen and (max-width: 768px) {
-        margin: auto;
-        padding: 1rem;
-      }
-      @media screen and (max-width: 500px) {
-        max-width: 60%;
       }
   }
 `;

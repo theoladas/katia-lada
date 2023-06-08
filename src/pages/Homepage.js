@@ -2,12 +2,18 @@ import { React, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
-import { Paragraph, CTACall, Flex } from "../components/GlobalStyle.js";
+import {
+  Flex,
+  HeroTitle,
+  Paragraph,
+  CTACall,
+} from "../components/GlobalStyle.js";
 import { PrimaryBtn } from "../components/PrimaryBtn.js";
 import { ServicesSection } from "../components/ServicesSection.js";
 import { GallerySection } from "../components/GallerySection.js";
 import { OurStoreSection } from "../components/OurStoreSection.js";
 import { ContactSection } from "../components/ContactSection";
+import styled from "styled-components";
 import facial from "../img/icons/facial-200.png";
 import makeup from "../img/icons/makeup-200.png";
 import lashlift from "../img/icons/lashlift-200.png";
@@ -15,6 +21,44 @@ import nails from "../img/icons/nails-200.png";
 import waxing from "../img/icons/waxing-200.png";
 import homepageBanner from "../img/homepage-banner.png";
 import katiaLogo from "../img/katia-lada-text.png";
+
+const HeroHomepage = styled(Flex)`
+  min-height: 90vh;
+  background-image: url(${homepageBanner});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
+const HeroContent = styled.div`
+  width: 50%;
+  padding: 0rem 0.5rem;
+  @media screen and (max-width: 1070px) {
+    width: 60%;
+    padding-right: 1rem;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: auto;
+  }
+`;
+
+const KatiaLadaLogoTextImage = styled(motion.img)`
+  max-width: 100%;
+  display: block;
+  padding: 1rem 0 2rem;
+
+  @media screen and (max-width: 990px) {
+    padding: 0.5rem 0;
+  }
+  @media screen and (max-width: 768px) {
+    margin: auto;
+    padding: 1rem;
+  }
+  @media screen and (max-width: 500px) {
+    max-width: 60%;
+  }
+`;
 
 const Homepage = () => {
   const { t, i18n } = useTranslation();
@@ -56,39 +100,24 @@ const Homepage = () => {
 
   return (
     <main>
-      <Flex
-        className="homepage"
-        style={{
-          backgroundImage: `url(${homepageBanner})`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="hero-image"></div>
-        <motion.div
-          className="hero-image"
-          initial="hidden"
-          animate="visible"
-        ></motion.div>
-        <div className="hero-content">
-          <motion.div
-            className="main-title"
+      <HeroHomepage>
+        <motion.div initial="hidden" animate="visible"></motion.div>
+        <HeroContent>
+          <HeroTitle
             initial="hidden"
             animate="visible"
             variants={dropIn}
             custom={1}
           >
             {t("institutoAisthitikis")}
-          </motion.div>
-          <motion.img
+          </HeroTitle>
+          <KatiaLadaLogoTextImage
             src={katiaLogo}
-            className="katia-logo-text"
             initial="hidden"
             animate="visible"
             variants={dropIn}
             custom={2}
-          ></motion.img>
+          ></KatiaLadaLogoTextImage>
           <motion.div
             initial="hidden"
             animate="visible"
@@ -114,14 +143,14 @@ const Homepage = () => {
           >
             <PrimaryBtn />
           </motion.div>
-        </div>
-      </Flex>
+        </HeroContent>
+      </HeroHomepage>
       <InView
         as="div"
         threshold={0.1}
         onChange={(inView) => setServicesInView(inView)}
       >
-        <div className="services-wrapper">
+        <div>
           {ready && (
             <ServicesSection cards={cards} servicesInView={servicesInView} />
           )}
