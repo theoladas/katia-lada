@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
-// Base styles
 export const GlobalStyle = createGlobalStyle` 
 
 :root {
@@ -13,9 +12,12 @@ export const GlobalStyle = createGlobalStyle`
   --color-white: #fff;
   --color-bg: #f0e9eb;
   --color-bg-footer: #77787b;
+  --color-dropdown: #f1f1f1;
 
   --border-primary-button: 1px solid #f49ac1;
   --border-radius-primary: 10px;
+
+  --box-shadow-navigation: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
   --hover-pink-color: #f49ac1;
 
@@ -65,21 +67,18 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
   body {
-        background-color: #f0e9eb;
-        color: #282828;
-        font-family: 'Manrope', sans-serif;
-        /* font-family: 'Dancing Script', cursive; */
-        /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
   }
   img {
-        display: block;
-        max-width: 100%;
+    max-width: 100%;
+    display: block;
   }
   a {
-        text-decoration: none;
+    text-decoration: none;
   }
 
-  
   /* Utility Classes */
   .flex {
       display: flex;

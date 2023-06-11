@@ -18,13 +18,13 @@ import "../styles/Nav.scss";
 
 const DropdownButton = styled.button`
   background-color: transparent;
-  color: #282828;
+  color: var(--color-text);
   padding: 10px;
   font-size: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--border-radius-primary);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition-primary);
   .translate-icon {
     padding-right: 4px;
   }
@@ -32,11 +32,11 @@ const DropdownButton = styled.button`
     padding-left: 3px;
   }
   &:hover {
-    background-color: #f49ac1;
-    color: white;
+    background-color: var(--color-pink);
+    color: var(--color-white);
   }
   .translate-icon-hover:hover {
-    color: #f49ac1;
+    color: var(--color-pink);
   }
 `;
 
@@ -45,10 +45,10 @@ const DropdownContent = styled.div.attrs((props) => ({
 }))`
   display: ${({ open }) => (open ? "block" : "none")};
   position: absolute;
-  background-color: #f1f1f1;
   min-width: 70px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  background-color: var(--color-dropdown);
+  border-radius: var(--border-radius-primary);
+  box-shadow: var(--box-shadow-navigation);
   z-index: 1;
 `;
 
@@ -61,27 +61,27 @@ const DropdownWrapper = styled.div`
 `;
 
 const DropdownItem = styled.button`
-  color: #282828;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
   width: 100%;
-  text-align: center;
-  border: none;
+  display: block;
+  font-family: var(--font-family-contact-form);
   font-size: 1rem;
-  font-family: "Manrope", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 16px;
+  border: none;
+  color: var(--color-text);
   cursor: pointer;
   &:hover {
-    background-color: #f49ac1;
-    color: white;
+    background-color: var(--color-pink);
+    color: var(--color-white);
   }
   &:first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: var(--border-radius-primary);
+    border-top-right-radius: var(--border-radius-primary);
   }
   &:last-child {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: var(--border-radius-primary);
+    border-bottom-right-radius: var(--border-radius-primary);
   }
 `;
 
@@ -94,41 +94,63 @@ const ServicesDropdownWrapper = styled.div`
 `;
 
 const ServicesDropdownButton = styled(NavLink)`
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
-  color: #282828;
-  border-radius: 10px;
-  transition: all 0.3s ease;
+  color: var(--color-text);
+  border-radius: var(--border-radius-primary);
+  transition: var(--transition-primary);
   cursor: pointer;
   .icon {
     margin-left: 5px;
-    transition: color 0.3s ease;
+    transition: var(--transition-primary);
   }
 `;
 
 const ServicesDropdownItem = styled(Link)`
-  color: #282828;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
   width: 100%;
-  text-align: center;
-  border: none;
+  display: block;
+  font-family: var(--font-family-contact-form);
   font-size: 1rem;
-  font-family: "Manrope", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 16px;
+  border: none;
+  color: var(--color-text);
   cursor: pointer;
   &:hover {
-    background-color: #f49ac1;
-    color: white;
+    background-color: var(--color-pink);
+    color: var(--color-white);
   }
   &:first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: var(--border-radius-primary);
+    border-top-right-radius: var(--border-radius-primary);
   }
   &:last-child {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: var(--border-radius-primary);
+    border-bottom-right-radius: var(--border-radius-primary);
+  }
+`;
+
+const Header = styled.header`
+  position: sticky;
+  top: 0;
+  left: 0;
+`;
+
+const NavStyled = styled.nav`
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0rem 2rem;
+  background-color: var(--color-bg);
+  transition: box-shadow var(--transition-primary);
+  @media (max-width: 768px) {
+    justify-content: space-between;
   }
 `;
 
@@ -206,8 +228,8 @@ const Nav = () => {
         animate={fadeIn.animate}
         style={{ zIndex: 1000 }}
       >
-        <header>
-          <nav className={scrolled ? "nav-shadow" : ""}>
+        <Header>
+          <NavStyled className={scrolled ? "nav-shadow" : ""}>
             <NavLink to="/" id="logo">
               <img src={logo} className="logo" alt="Katia Lada logo" />
             </NavLink>
@@ -318,8 +340,8 @@ const Nav = () => {
               <div className="line2"></div>
               <div className="line3"></div>
             </div>
-          </nav>
-        </header>
+          </NavStyled>
+        </Header>
       </motion.header>
     </AnimatePresence>
   );
