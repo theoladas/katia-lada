@@ -3,7 +3,7 @@ import {
   Paragraph,
   CTACall,
   Page,
-  PageTitle,
+  HeroTitle,
   HeroContent,
   HeroImage,
 } from "../components/GlobalStyle.js";
@@ -124,14 +124,18 @@ const InstagramBanner = styled.section`
 const ContactSection = styled.section`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
   padding: 2rem 0;
-  margin: auto 0;
+  /* margin: auto 0; */
   @media (max-width: 768px) {
     flex-direction: column;
     padding-top: 0;
   }
+`;
+
+const FormContainerStyled = styled(FormContainer)`
+  padding: 0 2rem;
 `;
 
 const Contact = () => {
@@ -147,8 +151,13 @@ const Contact = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
+  const fromTop = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1,
   });
 
@@ -163,9 +172,9 @@ const Contact = () => {
 
   return (
     <Page>
-      <PageTitle className="main-title gallery-title">
+      <HeroTitle initial="hidden" animate="visible" variants={fromTop}>
         {t("epikoinonia")}
-      </PageTitle>
+      </HeroTitle>
 
       <HeroImage>
         <motion.div initial="hidden" animate="visible">
@@ -180,12 +189,9 @@ const Contact = () => {
           variants={riseIn}
           ref={ref}
         >
-          {" "}
           <Paragraph>
-            {" "}
             <h2>
-              <Beauty class="beauty">
-                {" "}
+              <Beauty>
                 Beauty Salon <hr />
               </Beauty>
             </h2>
@@ -301,9 +307,7 @@ const Contact = () => {
               <Title>Email</Title>
               <Content>
                 {" "}
-                <a href="mailto:lada.katia@gmail.com" className="contact-links">
-                  lada.katia@gmail.com
-                </a>
+                <a href="mailto:lada.katia@gmail.com">lada.katia@gmail.com</a>
               </Content>
             </Card>
           </CardContainer>
@@ -372,7 +376,7 @@ const Contact = () => {
               <Paragraph>{t("plirofories")}</Paragraph>
             </motion.div>
 
-            <FormContainer
+            <FormContainerStyled
               initial={{ x: "100vw" }}
               animate={{ x: "0vw", ...fadeIn.visible }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
@@ -388,7 +392,7 @@ const Contact = () => {
                   {t("steilteMinima")}
                 </FormSubmitButton>
               </form>
-            </FormContainer>
+            </FormContainerStyled>
           </>
         )}
       </ContactSection>

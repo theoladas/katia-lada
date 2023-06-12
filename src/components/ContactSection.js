@@ -72,7 +72,7 @@ const ContantLinkCallUs = styled.a`
 export const FormContainer = styled(motion.div)`
   width: 50%;
   padding-right: 2rem;
-  margin-right: -5rem;
+  /* margin-right: -5rem; */
   @media (max-width: 950px) {
     margin-right: -2rem;
     padding-right: 0rem;
