@@ -69,7 +69,7 @@ const ContantLinkCallUs = styled.a`
   }
 `;
 
-const FormContainer = styled(motion.div)`
+export const FormContainer = styled(motion.div)`
   width: 50%;
   padding-right: 2rem;
   margin-right: -5rem;
@@ -113,7 +113,7 @@ const FormContainer = styled(motion.div)`
   }
 `;
 
-const FormSubmitButton = styled.button`
+export const FormSubmitButton = styled.button`
   font-family: var(--font-family-contact-form);
   font-size: 1rem;
   letter-spacing: 1px;

@@ -18,19 +18,23 @@ export const GlobalStyle = createGlobalStyle`
   --border-radius-primary: 10px;
 
   --box-shadow-navigation: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  --box-shadow-contact-cards: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   --hover-pink-color: #f49ac1;
 
   --font-family-contact-form: "Manrope", sans-serif;
+  --font-family-beauty: "Dancing Script", cursive;
   --font-family-paragraph-styled: "Comfortaa", cursive;
-  --font-size-paragraph-styled: 1.135rem;
   --font-family-hero: "Arima", cursive;
   --font-size-hero-title: 3rem;
   --font-size-hero-title-secondary: 1.8rem;
+  --font-size-paragraph-styled: 1.135rem;
   --font-size-primary-button: 1.1rem;
+  --font-size-beauty: 3rem;
   --font-size-footer: 0.8rem;
   --font-size-footer-paragraph: 0.6rem;
   --font-size-footer-attribute: 0.45rem;
+  --font-weight-beauty: 400;
 
   --transition-primary: all 0.4s ease;
 

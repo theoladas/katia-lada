@@ -7,6 +7,10 @@ import {
   HeroContent,
   HeroImage,
 } from "../components/GlobalStyle.js";
+import {
+  FormContainer,
+  FormSubmitButton,
+} from "../components/ContactSection.js";
 import { motion, animate } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
@@ -14,10 +18,10 @@ import magazi from "../img/magazi.png";
 import styled from "styled-components";
 
 const Beauty = styled.span`
-  font-family: "Dancing Script", cursive;
-  font-weight: 400;
-  font-size: 3rem;
-  color: #f49ac1;
+  font-family: var(--font-family-beauty);
+  font-weight: var(--font-weight-beauty);
+  font-size: var(--font-size-beauty);
+  color: var(--color-pink);
   hr {
     margin: 1rem 0rem;
     opacity: 0.3;
@@ -37,8 +41,8 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 1rem;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid var(--color-white);
+  box-shadow: var(--box-shadow-contact-cards);
   border-radius: 10px;
   padding: 1rem;
   box-sizing: border-box;
@@ -76,11 +80,11 @@ const Content = styled.p`
     font-size: 1.1rem;
     text-decoration: none;
     letter-spacing: 1px;
-    color: #f49ac1;
+    color: var(--color-pink);
     padding: 10px 12px;
     border-radius: 10px;
     opacity: 1;
-    transition: all 0.4s ease;
+    transition: var(--transition-primary);
     @media (max-width: 768px) {
       font-size: 0.8rem;
     }
@@ -98,8 +102,8 @@ const InstagramBanner = styled.section`
   text-align: center;
   padding: 1rem;
   margin: 2rem 0;
-  background-color: #f49ac1;
-  border-radius: 10px;
+  background-color: var(--color-pink);
+  border-radius: var(--border-radius-primary);
   a {
     display: flex;
     align-items: center;
@@ -107,11 +111,11 @@ const InstagramBanner = styled.section`
     gap: 10px;
   }
   h2 {
-    font-family: "Comfortaa", cursive;
-    font-size: 1.135rem;
+    font-family: var(--font-family-paragraph-styled);
+    font-size: var(--font-size-paragraph-styled);
     line-height: 22px;
-    color: white;
-    @media screen and (max-width: 768px) {
+    color: var(--color-white);
+    @media (max-width: 768px) {
       font-size: 1rem;
     }
   }
@@ -125,6 +129,7 @@ const ContactSection = styled.section`
   padding: 2rem 0;
   margin: auto 0;
   @media (max-width: 768px) {
+    flex-direction: column;
     padding-top: 0;
   }
 `;
@@ -144,7 +149,7 @@ const Contact = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.1, // Percentage of the element that is in view before the callback triggers
+    threshold: 0.1,
   });
 
   const useFadeInAnimation = () => {
@@ -302,8 +307,6 @@ const Contact = () => {
               </Content>
             </Card>
           </CardContainer>
-
-          {/* <PrimaryBtn /> */}
         </motion.div>
 
         <motion.div
@@ -358,19 +361,18 @@ const Contact = () => {
         </motion.div>
       </HeroContent>
 
-      <ContactSection className="contact-section ">
+      <ContactSection>
         {animate && (
           <>
             <motion.div
-              className="form-container"
-              initial={{ x: "100vw" }}
+              initial={{ x: "-100vw" }}
               animate={{ x: "0vw", ...fadeIn.visible }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
             >
               <Paragraph>{t("plirofories")}</Paragraph>
             </motion.div>
-            <motion.div
-              className="form-container"
+
+            <FormContainer
               initial={{ x: "100vw" }}
               animate={{ x: "0vw", ...fadeIn.visible }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
@@ -382,11 +384,11 @@ const Contact = () => {
                 <input type="email" name="email" required />
                 <label htmlFor="">{t("minima")}</label>
                 <textarea rows="4" cols="20" name="message" required></textarea>
-                <button type="submit" className="form-btn">
+                <FormSubmitButton type="submit">
                   {t("steilteMinima")}
-                </button>
+                </FormSubmitButton>
               </form>
-            </motion.div>
+            </FormContainer>
           </>
         )}
       </ContactSection>
