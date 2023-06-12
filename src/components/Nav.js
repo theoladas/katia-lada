@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { NavLink, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styled from "styled-components";
 import logo from "../img/logo.png";
 import {
   faPhone,
@@ -14,6 +13,7 @@ import {
   faCaretDown,
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 import "../styles/Nav.scss";
 
 const DropdownButton = styled.button`

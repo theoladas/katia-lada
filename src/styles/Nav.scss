@@ -3,20 +3,20 @@
   animation: none !important;
 }
 
-// Variables
-$color-primary: #f49ac1;
-$color-secondary: #e4389b;
-$color-text: #282828;
-$color-bg: #f0e9eb;
+// // Variables
+// $color-primary: #f49ac1;
+// $color-secondary: #e4389b;
+// $color-text: #282828;
+// $color-bg: #f0e9eb;
 
-$breakpoint-large: 1330px;
-$breakpoint-desktop: 1070px;
-$breakpoint-tablet: 768px;
-$breakpoint-mobile: 500px;
-$breakpoint-small: 360px;
+// $breakpoint-large: 1330px;
+// $breakpoint-desktop: 1070px;
+// $breakpoint-tablet: 768px;
+// $breakpoint-mobile: 500px;
+// $breakpoint-small: 360px;
 
 .nav-shadow {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow-navigation);
 }
 header {
   position: sticky;
@@ -31,9 +31,9 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 0rem 2rem;
-    background-color: $color-bg;
-    transition: box-shadow 0.3s ease-in-out;
-    @media (max-width: $breakpoint-tablet) {
+    background-color: var(--color-bg);
+    transition: var(--transition-primary);
+    @media (max-width: var(--breakpoint-tablet)) {
       justify-content: space-between;
     }
 
@@ -41,13 +41,13 @@ header {
       width: 300px;
       height: auto;
       object-fit: cover;
-      @media only screen and (max-width: $breakpoint-tablet) {
+      @media (max-width: var(--breakpoint-tablet)) {
         max-width: auto;
       }
-      @media only screen and (max-width: $breakpoint-mobile) {
+      @media (max-width: var(--breakpoint-mobile)) {
         width: 250px;
       }
-      @media only screen and (max-width: $breakpoint-small) {
+      @media (max-width: var(--breakpoint-small)) {
         max-width: 200px;
       }
     }
@@ -58,58 +58,58 @@ header {
       flex-wrap: wrap;
       margin-left: auto;
       list-style: none;
-      @media screen and (max-width: $breakpoint-large) {
+      @media (max-width: var(--breakpoint-large)) {
         width: 100%;
         justify-content: center;
         padding-bottom: 1rem;
       }
       li {
-        padding-left: 2rem;
         font-size: 1.2rem;
-        @media (max-width: $breakpoint-large) {
+        padding-left: 2rem;
+        @media (max-width: var(--breakpoint-large)) {
           padding: 0 1rem 0.5rem 0rem;
         }
         .cta-call {
           padding: 10px 12px;
-          color: $color-secondary;
-          border: 1px solid $color-primary;
+          color: var(--color-pink);
+          border: 1px solid var(--color-pink);
           border-radius: 10px;
-          transition: all 0.3s ease;
+          transition: var(--transition-primary);
           @media (max-width: 950px) {
             display: none;
           }
-          @media (max-width: $breakpoint-tablet) {
+          @media (max-width: var(--breakpoint-tablet)) {
             display: block;
           }
           &:hover,
           &:focus {
-            color: #fff;
-            background: $color-primary;
+            color: var(--color-white);
+            background: var(--color-pink);
           }
           .phone-icon {
             margin-right: 10px;
           }
         }
         a {
-          color: $color-text;
+          color: var(--color-text);
           text-decoration: none;
-          transition: all 0.3s ease;
+          transition: var(--transition-primary);
           &:hover,
           &:focus {
-            color: $color-primary;
+            color: var(--color-pink);
             &.dropNavLink {
               color: white;
             }
             cursor: pointer;
             .icon {
-              color: $color-primary;
+              color: var(--color-pink);
             }
           }
         }
         .icon {
-          color: $color-text;
+          color: var(--color-text);
           margin-right: 5px;
-          transition: all 0.3s ease;
+          transition: var(--transition-primary);
         }
       }
     }
@@ -117,9 +117,9 @@ header {
       width: 25px;
       height: 3px;
       margin: 5px;
-      background-color: $color-secondary;
-      transition: all 0.3s ease;
-      @media only screen and (max-width: $breakpoint-small) {
+      background-color: var(--color-pink-strong);
+      transition: var(--transition-primary);
+      @media only screen and (max-width: var(--breakpoint-small)) {
         width: 20px;
         margin: 3px;
       }
@@ -133,7 +133,7 @@ header {
   }
 }
 
-@media screen and (max-width: $breakpoint-tablet) {
+@media screen and (max-width: var(--breakpoint-tablet)) {
   body {
     overflow-x: hidden;
   }
@@ -148,10 +148,10 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        background-color: $color-bg;
+        background-color: var(--color-bg);
         transform: translateX(100%);
-        transition: all 0.3s ease;
-        @media (max-width: $breakpoint-mobile) {
+        transition: var(--transition-primary);
+        @media (max-width: var(--breakpoint-mobile)) {
           width: 100%;
           justify-content: center;
           gap: 5rem;
@@ -168,7 +168,7 @@ header {
       }
       .toggle-burger .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
-        @media only screen and (max-width: $breakpoint-small) {
+        @media (max-width: var(--breakpoint-small)) {
           transform: rotate(-45deg) translate(-5px, 3px);
         }
       }
@@ -177,7 +177,7 @@ header {
       }
       .toggle-burger .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
-        @media only screen and (max-width: $breakpoint-small) {
+        @media (max-width: var(--breakpoint-small)) {
           transform: rotate(45deg) translate(-5px, -3px);
         }
       }
