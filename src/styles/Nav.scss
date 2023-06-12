@@ -3,18 +3,6 @@
   animation: none !important;
 }
 
-// // Variables
-// $color-primary: #f49ac1;
-// $color-secondary: #e4389b;
-// $color-text: #282828;
-// $color-bg: #f0e9eb;
-
-// $breakpoint-large: 1330px;
-// $breakpoint-desktop: 1070px;
-// $breakpoint-tablet: 768px;
-// $breakpoint-mobile: 500px;
-// $breakpoint-small: 360px;
-
 .nav-shadow {
   box-shadow: var(--box-shadow-navigation);
 }
@@ -33,7 +21,7 @@ header {
     padding: 0rem 2rem;
     background-color: var(--color-bg);
     transition: var(--transition-primary);
-    @media (max-width: var(--breakpoint-tablet)) {
+    @media (max-width: 768px) {
       justify-content: space-between;
     }
 
@@ -41,13 +29,13 @@ header {
       width: 300px;
       height: auto;
       object-fit: cover;
-      @media (max-width: var(--breakpoint-tablet)) {
+      @media (max-width: 768px) {
         max-width: auto;
       }
-      @media (max-width: var(--breakpoint-mobile)) {
+      @media (max-width: 500px) {
         width: 250px;
       }
-      @media (max-width: var(--breakpoint-small)) {
+      @media (max-width: 360px) {
         max-width: 200px;
       }
     }
@@ -58,7 +46,7 @@ header {
       flex-wrap: wrap;
       margin-left: auto;
       list-style: none;
-      @media (max-width: var(--breakpoint-large)) {
+      @media (max-width: 1330px) {
         width: 100%;
         justify-content: center;
         padding-bottom: 1rem;
@@ -66,7 +54,7 @@ header {
       li {
         font-size: 1.2rem;
         padding-left: 2rem;
-        @media (max-width: var(--breakpoint-large)) {
+        @media (max-width: 1330px) {
           padding: 0 1rem 0.5rem 0rem;
         }
         .cta-call {
@@ -78,7 +66,7 @@ header {
           @media (max-width: 950px) {
             display: none;
           }
-          @media (max-width: var(--breakpoint-tablet)) {
+          @media (max-width: 768px) {
             display: block;
           }
           &:hover,
@@ -119,7 +107,7 @@ header {
       margin: 5px;
       background-color: var(--color-pink-strong);
       transition: var(--transition-primary);
-      @media only screen and (max-width: var(--breakpoint-small)) {
+      @media (max-width: 360px) {
         width: 20px;
         margin: 3px;
       }
@@ -133,7 +121,7 @@ header {
   }
 }
 
-@media screen and (max-width: var(--breakpoint-tablet)) {
+@media (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
@@ -151,7 +139,7 @@ header {
         background-color: var(--color-bg);
         transform: translateX(100%);
         transition: var(--transition-primary);
-        @media (max-width: var(--breakpoint-mobile)) {
+        @media (max-width: 500px) {
           width: 100%;
           justify-content: center;
           gap: 5rem;
@@ -168,7 +156,7 @@ header {
       }
       .toggle-burger .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
-        @media (max-width: var(--breakpoint-small)) {
+        @media (max-width: 360px) {
           transform: rotate(-45deg) translate(-5px, 3px);
         }
       }
@@ -177,7 +165,7 @@ header {
       }
       .toggle-burger .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
-        @media (max-width: var(--breakpoint-small)) {
+        @media (max-width: 360px) {
           transform: rotate(45deg) translate(-5px, -3px);
         }
       }
