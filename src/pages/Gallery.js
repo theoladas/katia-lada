@@ -1,30 +1,23 @@
 import React from "react";
+import { Page, HeroTitle } from "../components/GlobalStyle";
+import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import styled from "styled-components";
 import galleryData from "../resources/gallery-data.json";
 
-const GalleryPage = styled.main`
-  padding: 2rem 5rem;
-  @media (max-width: 768px) {
-    padding: 2rem 2rem;
-  }
-`;
-const GalleryTitle = styled.h2`
+const HeroTitleStyled = styled(HeroTitle)`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const GalleryWrapper = styled.div`
-  --primary: #e4389b;
   --dot-width: 15px;
   --dot-height: 15px;
   padding: 2rem 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
   @media (max-width: 768px) {
     padding: 0rem;
   }
@@ -43,19 +36,19 @@ const GalleryWrapper = styled.div`
   }
 
   .carousel .control-next.control-arrow:before {
-    border-left: 8px solid var(--primary);
+    border-left: 8px solid var(--color-pink-strong);
   }
 
   .carousel .control-prev.control-arrow:before {
-    border-right: 8px solid var(--primary);
+    border-right: 8px solid var(--color-pink-strong);
   }
 
   .carousel .control-arrow {
-    color: var(--primary);
+    color: var(--color-pink-strong);
   }
 
   .carousel .control-dots .dot {
-    background: white;
+    background: var(--color-white);
     width: var(--dot-width);
     height: var(--dot-height);
     @media (max-width: 768px) {
@@ -65,7 +58,7 @@ const GalleryWrapper = styled.div`
   }
 
   .carousel .control-dots .dot.selected {
-    background: var(--primary);
+    background: var(--color-pink-strong);
     width: var(--dot-width);
     height: var(--dot-height);
     @media (max-width: 768px) {
@@ -88,8 +81,8 @@ const Gallery = () => {
   const images = galleryData.images;
 
   return (
-    <GalleryPage>
-      <GalleryTitle className="main-title gallery-title">Gallery</GalleryTitle>
+    <Page>
+      <HeroTitleStyled>Gallery</HeroTitleStyled>
       <GalleryWrapper>
         <Carousel
           showThumbs={true}
@@ -108,7 +101,7 @@ const Gallery = () => {
           })}
         </Carousel>
       </GalleryWrapper>
-    </GalleryPage>
+    </Page>
   );
 };
 
