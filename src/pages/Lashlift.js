@@ -9,6 +9,14 @@ import {
 } from "../components/GlobalStyle.js";
 import Accordion from "../components/Accordion.js";
 import lashlift from "../img/lashlift.jpg";
+import styled from "styled-components";
+
+const PageStyled = styled(Page)`
+  background-image: url(${(props) => props.backgroundImage});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
 
 const Lashlift = () => {
   const { t } = useTranslation();
@@ -57,15 +65,7 @@ const Lashlift = () => {
   };
 
   return (
-    <Page
-      className="homepage"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+    <PageStyled backgroundImage={backgroundImage}>
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -87,7 +87,7 @@ const Lashlift = () => {
           <Accordion data={tabData} onTabChange={handleTabChange} />
         </motion.div>
       </FlexRowHeroContainer>
-    </Page>
+    </PageStyled>
   );
 };
 
