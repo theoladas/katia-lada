@@ -9,7 +9,15 @@ import {
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
+import styled from "styled-components";
 import waxing from "../img/waxing.jpg";
+
+const PageStyled = styled(Page)`
+  background-image: url(${(props) => props.backgroundImage});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
 
 const Waxing = () => {
   const { t } = useTranslation();
@@ -58,15 +66,7 @@ const Waxing = () => {
   };
 
   return (
-    <Page
-      className="homepage"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+    <PageStyled backgroundImage={backgroundImage}>
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -90,7 +90,7 @@ const Waxing = () => {
           </motion.div>
         </HeroContent>
       </FlexRowHeroContainer>
-    </Page>
+    </PageStyled>
   );
 };
 
