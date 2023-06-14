@@ -9,7 +9,15 @@ import {
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
+import styled from "styled-components";
 import makeup from "../img/makeup.jpg";
+
+const PageStyled = styled(Page)`
+  background-image: url(${(props) => props.backgroundImage});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
 
 const MakeUp = () => {
   const { t } = useTranslation();
@@ -50,15 +58,7 @@ const MakeUp = () => {
     setSelectedTab(tabId);
   };
   return (
-    <Page
-      className="homepage"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundPosition: "top",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+    <PageStyled backgroundImage={backgroundImage}>
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -82,7 +82,7 @@ const MakeUp = () => {
           </motion.div>
         </HeroContent>
       </FlexRowHeroContainer>
-    </Page>
+    </PageStyled>
   );
 };
 
