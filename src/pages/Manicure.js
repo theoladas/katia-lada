@@ -9,7 +9,15 @@ import {
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
+import styled from "styled-components";
 import manicure from "../img/manicure.jpg";
+
+const PageStyled = styled(Page)`
+  background-image: url(${(props) => props.backgroundImage});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
 
 const Manicure = () => {
   const { t } = useTranslation();
@@ -51,15 +59,7 @@ const Manicure = () => {
   };
 
   return (
-    <Page
-      className="homepage"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+    <PageStyled backgroundImage={backgroundImage}>
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -83,7 +83,7 @@ const Manicure = () => {
           </motion.div>
         </HeroContent>
       </FlexRowHeroContainer>
-    </Page>
+    </PageStyled>
   );
 };
 
