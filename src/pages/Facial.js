@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 import Tabs from "../components/Tabs.js";
 import {
   Page,
@@ -10,6 +11,13 @@ import {
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
 import facial from "../img/facial.jpg";
+
+const PageStyled = styled(Page)`
+  background-image: url(${(props) => props.backgroundImage});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
 
 const Facial = () => {
   const { t } = useTranslation();
@@ -50,24 +58,14 @@ const Facial = () => {
     setSelectedTab(tabId);
   };
   return (
-    <Page
-      className="homepage"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+    <PageStyled backgroundImage={backgroundImage}>
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         variants={dropIn}
         ref={ref}
       >
-        <PageTitle className="main-title gallery-title">
-          {t("peripoihshProsopou")}
-        </PageTitle>
+        <PageTitle>{t("peripoihshProsopou")}</PageTitle>
       </motion.div>
 
       <FlexRowHeroContainer>
@@ -82,7 +80,7 @@ const Facial = () => {
           </motion.div>
         </HeroContent>
       </FlexRowHeroContainer>
-    </Page>
+    </PageStyled>
   );
 };
 
