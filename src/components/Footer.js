@@ -22,7 +22,10 @@ const FlexStyled = styled.div`
 `;
 
 const FooterStyled = styled.footer`
-  min-height: 40vh;
+  /* position: absolute;
+  bottom: 0;
+  right: 0; */
+  width: 100%;
   background: var(--color-bg-footer);
   display: flex;
   flex-wrap: wrap;
