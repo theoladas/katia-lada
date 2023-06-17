@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 const FlexStyled = styled.div`
   display: flex;
   justify-content: flex-start;
-  @media (max-width: var(--breakpoint-tablet)) {
+  @media (max-width: 768px) {
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -29,7 +29,7 @@ const FooterStyled = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media (max-width: var(--breakpoint-tablet)) {
+  @media (max-width: 768px) {
     padding-top: 1rem;
   }
 `;
