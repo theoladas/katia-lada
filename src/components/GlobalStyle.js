@@ -208,7 +208,8 @@ export const PrimaryButton = styled(Link)`
 
 // Check if we use that!!!!!!
 export const Page = styled.main`
-  padding: 2rem 5rem 10rem 5rem;
+  padding: 2rem 5rem;
+  min-height: 100vh;
   @media (max-width: 768px) {
     padding: 2rem 2rem;
   }
