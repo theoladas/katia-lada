@@ -2,21 +2,10 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
-import {
-  Page,
-  PageTitle,
-  FlexRowHeroContainer,
-} from "../components/GlobalStyle.js";
+import { PageTitle, FlexRowHeroContainer } from "../components/GlobalStyle.js";
+import { PageStyled } from "./Facial.js";
 import Accordion from "../components/Accordion.js";
 import lashlift from "../img/lashlift.jpg";
-import styled from "styled-components";
-
-const PageStyled = styled(Page)`
-  background-image: url(${(props) => props.backgroundImage});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
 
 const Lashlift = () => {
   const { t } = useTranslation();

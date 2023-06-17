@@ -12,7 +12,7 @@ import {
 } from "../components/GlobalStyle.js";
 import facial from "../img/facial.jpg";
 
-const PageStyled = styled(Page)`
+export const PageStyled = styled(Page)`
   background-image: url(${(props) => props.backgroundImage});
   background-position: center;
   background-repeat: no-repeat;

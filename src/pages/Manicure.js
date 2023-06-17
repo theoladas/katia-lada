@@ -4,20 +4,12 @@ import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import Tabs from "../components/Tabs.js";
 import {
-  Page,
   PageTitle,
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
-import styled from "styled-components";
+import { PageStyled } from "./Facial.js";
 import manicure from "../img/manicure.jpg";
-
-const PageStyled = styled(Page)`
-  background-image: url(${(props) => props.backgroundImage});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
 
 const Manicure = () => {
   const { t } = useTranslation();

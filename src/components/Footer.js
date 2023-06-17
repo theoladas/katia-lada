@@ -22,9 +22,6 @@ const FlexStyled = styled.div`
 `;
 
 const FooterStyled = styled.footer`
-  /* position: absolute;
-  bottom: 0;
-  right: 0; */
   width: 100%;
   background: var(--color-bg-footer);
   display: flex;
