@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "icon": "LocationIcon",
+    "title": "dieuthinsiTitlos",
+    "content": "dieuthinsi",
+    "href": null,
+    "text": null
+  },
+  {
+    "id": 2,
+    "icon": "PhoneIcon",
+    "title": "tilefono",
+    "content": null,
+    "href": "tel:+302374082034",
+    "text": "23740 82034"
+  },
+  {
+    "id": 3,
+    "icon": "EmailIcon",
+    "title": "Email",
+    "content": null,
+    "href": "mailto:lada.katia@gmail.com",
+    "text": "lada.katia@gmail.com"
+  }
+]

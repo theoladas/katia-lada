@@ -17,6 +17,7 @@ import { useTranslation } from "react-i18next";
 import { ReactComponent as LocationIcon } from "../img/icons/location.svg";
 import { ReactComponent as PhoneIcon } from "../img/icons/phone.svg";
 import { ReactComponent as EmailIcon } from "../img/icons/email.svg";
+import contactCardsData from "../resources/contact-cards.json";
 import magazi from "../img/magazi.png";
 import styled from "styled-components";
 
@@ -216,28 +217,29 @@ const Contact = () => {
         </motion.div>
         <motion.div ref={heroContentRef} {...heroContentAnimation}>
           <CardContainer>
-            <Card>
-              <LocationIcon />
-              <Title>{t("dieuthinsiTitlos")}</Title>
-              <Content>{t("dieuthinsi")}</Content>
-            </Card>
-            <Card>
-              <PhoneIcon />
-              <Title>{t("tilefono")}</Title>
-              <Content>
-                <a href="tel:+302374082034" rel="noreferrer">
-                  23740 82034
-                </a>
-              </Content>
-            </Card>
-            <Card>
-              <EmailIcon />
-              <Title>Email</Title>
-              <Content>
-                {" "}
-                <a href="mailto:lada.katia@gmail.com">lada.katia@gmail.com</a>
-              </Content>
-            </Card>
+            {contactCardsData.map((card) => {
+              const Icon =
+                card.icon === "LocationIcon"
+                  ? LocationIcon
+                  : card.icon === "PhoneIcon"
+                  ? PhoneIcon
+                  : EmailIcon;
+              return (
+                <Card key={card.id}>
+                  <Icon />
+                  <Title>{t(card.title)}</Title>
+                  <Content>
+                    {card.content ? (
+                      t(card.content)
+                    ) : (
+                      <a href={card.href} rel="noreferrer">
+                        {card.text}
+                      </a>
+                    )}
+                  </Content>
+                </Card>
+              );
+            })}
           </CardContainer>
         </motion.div>
 
