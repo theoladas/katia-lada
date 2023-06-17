@@ -6,27 +6,6 @@ import styled from "styled-components";
 export const GlobalStyle = createGlobalStyle` 
 
 :root {
-  --color-pink: #f49ac1;
-  --color-pink-strong: #e4389b;
-  --color-text: #282828;
-  --color-white: #fff;
-  --color-bg: #f0e9eb;
-  --color-bg-footer: #77787b;
-  --color-bg-accordion: #f6f6f6;
-  --color-bg-form-input-textarea: #f0f0f0;
-  --color-dropdown: #f1f1f1;
-  
-
-  --border-primary-button: 1px solid #f49ac1;
-  --border-accordion-top: 1px solid #ddd; 
-  --border-radius-primary: 10px;
-  --border-form-input-textarea: 1px solid #f0f0f0;
-
-  --box-shadow-navigation: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  --box-shadow-components: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-  --hover-pink-color: #f49ac1;
-
   --font-family-contact-form: "Manrope", sans-serif;
   --font-family-beauty: "Dancing Script", cursive;
   --font-family-paragraph-styled: "Comfortaa", cursive;
@@ -42,6 +21,29 @@ export const GlobalStyle = createGlobalStyle`
   --font-size-footer-paragraph: 0.6rem;
   --font-size-footer-attribute: 0.45rem;
   --font-weight-beauty: 400;
+
+  --color-pink: #f49ac1;
+  --color-pink-strong: #e4389b;
+  --color-text: #282828;
+  --color-white: #fff;
+  --color-bg: #f0e9eb;
+  --color-bg-footer: #77787b;
+  --color-bg-accordion: #f6f6f6;
+  --color-bg-form-input-textarea: #f0f0f0;
+  --color-dropdown: #f1f1f1;
+  
+  --hover-pink-color: #f49ac1;
+
+  --border-primary-button: 1px solid #f49ac1;
+  --border-accordion-top: 1px solid #ddd; 
+  --border-form-input-textarea: 1px solid #f0f0f0;
+  --border-gallery-image: 1px solid black;
+
+  --border-radius-primary: 10px;
+
+  --box-shadow-navigation: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  --box-shadow-grid-column: 0 0 11px rgba(8, 8, 8, 0.5);
+  --box-shadow-components: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   --transition-primary: all 0.4s ease;
 

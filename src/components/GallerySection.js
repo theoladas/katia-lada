@@ -18,23 +18,23 @@ const HeroSection = styled(Flex)`
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 5rem;
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     justify-content: center;
   }
-  @media only screen and (max-width: 500px) {
+  @media (max-width: 500px) {
     padding: 4rem 2rem;
   }
-  @media only screen and (max-width: 390px) {
+  @media (max-width: 390px) {
     padding: 2rem 1rem;
   }
 `;
 
 const HeroContent = styled(motion.div)`
   width: 50%;
-  @media screen and (max-width: 1070px) {
+  @media (max-width: 1070px) {
     width: 40%;
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -44,10 +44,10 @@ const GridRow = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   width: 50%;
-  @media screen and (max-width: 1070px) {
+  @media (max-width: 1070px) {
     width: 60%;
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     width: 100%;
     margin-right: 0rem;
   }
@@ -62,14 +62,14 @@ const GridColumn = styled.div`
     vertical-align: middle;
     width: 100%;
     object-fit: cover;
-    border: 1px solid black;
+    border: var(--border-gallery-image);
     border-radius: 10px;
-    transition: all 0.4s ease;
+    transition: var(--transition-primary);
     &:hover {
-      box-shadow: 0 0 11px rgba(8, 8, 8, 0.5);
+      box-shadow: var(--box-shadow-grid-column);
     }
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     flex: 33%;
     max-width: 33%;
   }
