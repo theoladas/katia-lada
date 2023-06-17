@@ -44,6 +44,7 @@ export const GlobalStyle = createGlobalStyle`
   --box-shadow-navigation: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   --box-shadow-grid-column: 0 0 11px rgba(8, 8, 8, 0.5);
   --box-shadow-components: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --box-shadow-card-section: 0 10px 25px rgba(244, 154, 193, 0.7);
 
   --transition-primary: all 0.4s ease;
 

@@ -11,7 +11,7 @@ const ServiceSection = styled.div`
 
 const Card = styled(motion.div)`
   padding: 1rem;
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 0.5rem;
   }
 `;
@@ -24,33 +24,33 @@ const CardContent = styled.div`
   width: 200px;
   height: 200px;
   padding: 0.8rem;
-  background-color: #f49ac1;
-  border: 1px solid #f49ac1;
+  background-color: var(--color-pink);
+  border: var(--border-button);
   border-radius: 50%;
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
   cursor: pointer;
-  transition: 0.4s all ease;
-  @media screen and (max-width: 1070px) {
+  transition: var(--transition-primary);
+  @media (max-width: 1070px) {
     width: 180px;
     height: 180px;
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     width: 130px;
     height: 130px;
   }
   &:hover,
   &:focus {
-    color: #282828;
-    background-color: #f0e9eb;
-    border: 1px solid #f49ac1;
-    box-shadow: 0 10px 25px rgba(244, 154, 193, 0.7);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: var(--border-button);
+    box-shadow: var(--box-shadow-card-section);
   }
 `;
 
 const CardParagraph = styled.p`
   padding: 0 1rem;
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 0.8rem;
   }
 `;
@@ -59,8 +59,8 @@ const CardImage = styled.div`
   padding: 0.5rem 0;
   width: 80px;
   height: auto;
-  background-color: fff;
-  @media screen and (max-width: 768px) {
+  background-color: var(--color-white);
+  @media (max-width: 768px) {
     width: 40px;
   }
 `;
