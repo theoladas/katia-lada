@@ -58,11 +58,11 @@ const OurStoreContent = styled.div`
 const OpenStoreContainer = styled.div`
   display: flex;
   gap: 1.4rem;
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     align-items: center;
     justify-content: center;
   }
-  @media screen and (max-width: 450px) {
+  @media (max-width: 450px) {
     gap: 10px;
   }
 `;
@@ -70,13 +70,13 @@ const OpenStoreContainer = styled.div`
 const OpenStoreDays = styled(motion.div)`
   font-size: 1.1rem;
   line-height: 27px;
-  @media screen and (max-width: 849px) {
+  @media (max-width: 849px) {
     font-size: 0.97rem;
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 1.1rem;
   }
-  @media screen and (max-width: 550px) {
+  @media (max-width: 550px) {
     font-size: 1rem;
   }
 `;
@@ -88,13 +88,13 @@ const OpenStoreHours = styled(motion.div)`
   span {
     color: var(--color-text);
   }
-  @media screen and (max-width: 849px) {
+  @media (max-width: 849px) {
     font-size: 0.97rem;
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 1.1rem;
   }
-  @media screen and (max-width: 550px) {
+  @media (max-width: 550px) {
     font-size: 1rem;
   }
 `;
