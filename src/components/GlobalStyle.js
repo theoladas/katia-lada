@@ -13,16 +13,17 @@ export const GlobalStyle = createGlobalStyle`
   --color-bg: #f0e9eb;
   --color-bg-footer: #77787b;
   --color-bg-accordion: #f6f6f6;
+  --color-bg-form-input-textarea: #f0f0f0;
   --color-dropdown: #f1f1f1;
   
 
   --border-primary-button: 1px solid #f49ac1;
   --border-accordion-top: 1px solid #ddd; 
   --border-radius-primary: 10px;
+  --border-form-input-textarea: 1px solid #f0f0f0;
 
   --box-shadow-navigation: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  --box-shadow-accordion: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  --box-shadow-contact-cards: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --box-shadow-components: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   --hover-pink-color: #f49ac1;
 

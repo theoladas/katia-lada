@@ -46,7 +46,7 @@ const Card = styled.div`
   align-items: center;
   margin: 1rem;
   border: 1px solid var(--color-white);
-  box-shadow: var(--box-shadow-contact-cards);
+  box-shadow: var(--box-shadow-components);
   border-radius: 10px;
   padding: 1rem;
   box-sizing: border-box;

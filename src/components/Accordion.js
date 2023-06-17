@@ -6,7 +6,7 @@ const AccordionWrapper = styled.div`
   border: var(--border-accordion-top);
   margin: 10px auto;
   min-width: 50vw;
-  box-shadow: var(--box-shadow-contact-cards);
+  box-shadow: var(--box-shadow-components);
 `;
 
 const AccordionTitle = styled.div`

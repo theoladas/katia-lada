@@ -29,7 +29,7 @@ const ContactContent = styled(motion.div)`
   width: 50%;
   padding-bottom: 2rem;
   padding-right: 2rem;
-  @media only screen and (max-width: 850px) {
+  @media (max-width: 850px) {
     width: 100%;
     text-align: center;
     padding-right: 0rem;
@@ -72,7 +72,6 @@ const ContantLinkCallUs = styled.a`
 export const FormContainer = styled(motion.div)`
   width: 50%;
   padding-right: 2rem;
-  /* margin-right: -5rem; */
   @media (max-width: 950px) {
     margin-right: -2rem;
     padding-right: 0rem;
@@ -85,26 +84,26 @@ export const FormContainer = styled(motion.div)`
   form {
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: var(--color-white);
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: var(--border-radius-primary);
+    box-shadow: var(--box-shadow-components);
     max-width: 500px;
-    @media only screen and (max-width: 850px) {
+    @media (max-width: 850px) {
       margin: auto;
     }
     input,
     textarea {
       padding: 0.5rem;
-      border: 1px solid #f0f0f0;
-      background-color: #f0f0f0;
-      border-radius: 10px;
+      border: var(--border-form-input-textarea);
+      background-color: var(--color-bg-form-input-textarea);
+      border-radius: var(--border-radius-primary);
       margin: 0.5rem 0;
     }
     input[type="text"],
     input[type="email"],
     textarea {
-      font-family: "Manrope", sans-serif;
+      font-family: var(--font-family-contact-form);
       font-size: 1.1rem;
     }
     textarea {
