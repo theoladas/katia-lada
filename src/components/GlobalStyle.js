@@ -127,10 +127,10 @@ export const HalfContainer = styled.div`
   padding: 5rem;
   min-height: 45vh;
   background-color: #fff;
-  @media only screen and (max-width: 500px) {
+  @media (max-width: 500px) {
     padding: 4rem 2rem;
   }
-  @media only screen and (max-width: 390px) {
+  @media (max-width: 390px) {
     padding: 2rem 1rem;
   }
 `;
@@ -138,10 +138,10 @@ export const HalfContainer = styled.div`
 export const HeroSection = styled.section`
   min-height: 90vh;
   padding: 5rem;
-  @media only screen and (max-width: 500px) {
+  @media (max-width: 500px) {
     padding: 4rem 2rem;
   }
-  @media only screen and (max-width: 390px) {
+  @media (max-width: 390px) {
     padding: 2rem 1rem;
   }
 `;
@@ -165,7 +165,7 @@ export const HeroTitleSecondary = styled(motion.h2)`
   font-family: var(--font-family-hero);
   font-size: var(--font-size-hero-title-secondary);
   padding: 1rem 0rem 0.5rem 0rem;
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     text-align: center;
   }
 `;
@@ -194,7 +194,7 @@ export const Paragraph = styled.p`
 
 export const PrimaryButtonContainer = styled(motion.div)`
   padding: 2rem 0;
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     text-align: center;
   }
 `;
@@ -230,17 +230,17 @@ export const PageTitle = styled.h2`
   font-size: 3rem;
   font-weight: 700;
   color: #282828;
-  @media screen and (max-width: 1330px) {
+  @media (max-width: 1330px) {
     padding-top: 1rem;
   }
-  @media screen and (max-width: 950px) {
+  @media (max-width: 950px) {
     line-height: 55px;
     font-size: 2.6rem;
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     text-align: center;
   }
-  @media only screen and (max-width: 500px) {
+  @media (max-width: 500px) {
     padding-top: 0;
   }
 `;
@@ -276,7 +276,7 @@ export const FlexCenter = styled.div`
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  @media screen and (max-width: 1200px) {
+  @media (max-width: 1200px) {
     justify-content: center;
   }
 `;
@@ -298,7 +298,7 @@ export const CTAButton = styled.a`
 export const HeroImg = styled.img`
   height: auto;
   margin-left: auto;
-  @media screen and (max-width: 1024px) {
+  @media (max-width: 1024px) {
     margin: auto;
   }
 `;

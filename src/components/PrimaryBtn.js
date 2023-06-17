@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 export const PrimaryButton = styled.div`
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     text-align: center;
   }
   padding: 2rem 0;
