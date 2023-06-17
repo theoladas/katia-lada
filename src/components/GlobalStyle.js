@@ -38,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
   --border-accordion-top: 1px solid #ddd; 
   --border-form-input-textarea: 1px solid #f0f0f0;
   --border-gallery-image: 1px solid black;
+  --border-tab-container: 2px solid transparent;
 
   --border-radius-primary: 10px;
 

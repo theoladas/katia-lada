@@ -6,10 +6,10 @@ const TabContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: var(--color-white);
+  border: var(--border-tab-container);
+  border-radius: var(--border-radius-primary);
+  box-shadow: var(--box-shadow-components);
   @media (max-width: 768px) {
     max-width: 90%;
     margin: 0 auto;
@@ -26,7 +26,7 @@ const Tab = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   padding: 1rem;
-  border: 2px solid transparent;
+  border: var(--border-tab-container);
   cursor: pointer;
   @media (max-width: 400px) {
     font-size: 1.2rem;
@@ -40,11 +40,10 @@ const Tab = styled.div`
   ${({ active }) =>
     active &&
     css`
-      border-bottom: 2px solid #f49ac1;
+      border-bottom: 2px solid var(--color-pink);
     `}
   &:hover {
-    border-top-left-radius: 10px;
-    /* background-color: white; */
+    border-top-left-radius: var(--border-radius-primary);
   }
 `;
 
@@ -53,8 +52,8 @@ const TabContent = styled.div`
   line-height: 32px;
   width: 100%;
   padding: 1rem;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: var(--border-radius-primary);
+  border-bottom-right-radius: var(--border-radius-primary);
 `;
 
 const fadeIn = keyframes`
@@ -70,7 +69,6 @@ export const Description = styled.p`
 const Tabs = ({ tabs, onTabChange }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
-  // Call the onTabChange function whenever a tab is clicked.
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
     if (onTabChange) {
