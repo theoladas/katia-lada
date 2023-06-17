@@ -7,17 +7,17 @@ export const PrimaryButton = styled.div`
   }
   padding: 2rem 0;
   a {
-    font-size: 1.1rem;
+    font-size: var(--font-size-primary-button);
     text-decoration: none;
     letter-spacing: 1px;
-    color: #e4389b;
+    color: var(--color-pink-strong);
     padding: 10px 12px;
-    color: #fff;
-    background: #f49ac1;
-    border: 1px solid #f49ac1;
-    border-radius: 10px;
+    color: var(--color-white);
+    background: var(--color-pink);
+    border: var(--border-button);
+    border-radius: var(--border-radius-primary);
     opacity: 1;
-    transition: all 0.4s ease;
+    transition: var(--transition-primary);
     &:hover,
     &:focus {
       opacity: 0.7;

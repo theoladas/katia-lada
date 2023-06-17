@@ -120,7 +120,7 @@ export const FormSubmitButton = styled.button`
   padding: 0.5rem;
   margin-top: 0.5rem;
   background: var(--color-pink);
-  border: var(--border-primary-button);
+  border: var(--border-button);
   border-radius: var(--border-radius-primary);
   color: var(--color-white);
   cursor: pointer;

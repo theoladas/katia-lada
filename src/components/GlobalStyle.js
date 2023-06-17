@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
   
   --hover-pink-color: #f49ac1;
 
-  --border-primary-button: 1px solid #f49ac1;
+  --border-button: 1px solid #f49ac1;
   --border-accordion-top: 1px solid #ddd; 
   --border-form-input-textarea: 1px solid #f0f0f0;
   --border-gallery-image: 1px solid black;
@@ -204,7 +204,7 @@ export const PrimaryButton = styled(Link)`
   letter-spacing: 1px;
   background: var(--color-pink);
   color: var(--color-white);
-  border: var(--border-primary-button);
+  border: var(--border-button);
   border-radius: var(--border-radius-primary);
   padding: 10px 12px;
   opacity: 1;
