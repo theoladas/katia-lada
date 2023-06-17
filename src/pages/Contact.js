@@ -141,54 +141,68 @@ const FormContainerStyled = styled(FormContainer)`
 const Contact = () => {
   const { t } = useTranslation();
 
-  const dropIn = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  const useScrollAnimation = (options = {}) => {
+    const { animation, direction } = options;
+
+    const [ref, inView] = useInView({
+      triggerOnce: false,
+      threshold: 0.1,
+    });
+
+    const defaultVariants = {
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    };
+
+    const directionVariants = {
+      hidden: { opacity: 0, x: direction === "left" ? -50 : 50 },
+      visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+    };
+
+    const variants =
+      animation || (direction ? directionVariants : defaultVariants);
+
+    const animationProps = {
+      initial: "hidden",
+      animate: inView ? "visible" : "hidden",
+      variants: variants,
+    };
+
+    return [ref, animationProps];
   };
 
-  const riseIn = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-  };
-
-  const fromTop = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-  };
+  const [heroTitleRef, heroTitleAnimation] = useScrollAnimation();
+  const [heroImageRef, heroImageAnimation] = useScrollAnimation();
+  const [heroContentRef, heroContentAnimation] = useScrollAnimation();
+  const [FormRef, FormAnimation] = useScrollAnimation({ direction: "right" });
+  const [ParagraphRef, ParagraphAnimation] = useScrollAnimation({
+    direction: "left",
+  });
 
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
-  const useFadeInAnimation = () => {
-    return {
-      hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
-    };
+  const dropIn = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
-
-  const fadeIn = useFadeInAnimation();
 
   return (
     <Page>
-      <HeroTitle initial="hidden" animate="visible" variants={fromTop}>
+      <HeroTitle ref={heroTitleRef} {...heroTitleAnimation}>
         {t("epikoinonia")}
       </HeroTitle>
 
       <HeroImage>
-        <motion.div initial="hidden" animate="visible">
+        <motion.div ref={heroImageRef} {...heroImageAnimation}>
           <img src={magazi} alt="Katia Lada Beauty Salon"></img>
         </motion.div>
       </HeroImage>
 
       <HeroContent>
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={riseIn}
-          ref={ref}
-        >
+        <motion.div ref={heroContentRef} {...heroContentAnimation}>
           <Paragraph>
             <h2>
               <Beauty>
@@ -197,12 +211,7 @@ const Contact = () => {
             </h2>
           </Paragraph>
         </motion.div>
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={riseIn}
-          ref={ref}
-        >
+        <motion.div ref={heroContentRef} {...heroContentAnimation}>
           <CardContainer>
             <Card>
               <svg
@@ -313,12 +322,7 @@ const Contact = () => {
           </CardContainer>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={riseIn}
-          ref={ref}
-        >
+        <motion.div ref={heroContentRef} {...heroContentAnimation}>
           <Paragraph>
             {t("forAppointments")}{" "}
             <CTACall href="tel:+302374082034">23740 82034</CTACall>,{" "}
@@ -368,19 +372,11 @@ const Contact = () => {
       <ContactSection>
         {animate && (
           <>
-            <motion.div
-              initial={{ x: "-100vw" }}
-              animate={{ x: "0vw", ...fadeIn.visible }}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
-            >
+            <motion.div ref={ParagraphRef} {...ParagraphAnimation}>
               <Paragraph>{t("plirofories")}</Paragraph>
             </motion.div>
 
-            <FormContainerStyled
-              initial={{ x: "100vw" }}
-              animate={{ x: "0vw", ...fadeIn.visible }}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
-            >
+            <FormContainerStyled ref={FormRef} {...FormAnimation}>
               <form action="https://formspree.io/f/mrgvjnvg" method="POST">
                 <label htmlFor="">{t("onomateponimo")}</label>
                 <input type="text" name="name" required />
