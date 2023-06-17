@@ -5,14 +5,14 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Tabs from "../components/Tabs.js";
 import {
-  Page,
-  PageTitle,
+  HeroSection,
+  HeroTitle,
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
 import facial from "../img/facial.jpg";
 
-export const PageStyled = styled(Page)`
+export const PageStyled = styled(HeroSection)`
   background-image: url(${(props) => props.backgroundImage});
   background-position: center;
   background-repeat: no-repeat;
@@ -65,7 +65,7 @@ const Facial = () => {
         variants={dropIn}
         ref={ref}
       >
-        <PageTitle>{t("peripoihshProsopou")}</PageTitle>
+        <HeroTitle>{t("peripoihshProsopou")}</HeroTitle>
       </motion.div>
 
       <FlexRowHeroContainer>

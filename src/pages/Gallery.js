@@ -1,5 +1,5 @@
 import React from "react";
-import { Page, HeroTitle } from "../components/GlobalStyle";
+import { HeroSection, HeroTitle } from "../components/GlobalStyle";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -81,7 +81,7 @@ const Gallery = () => {
   const images = galleryData.images;
 
   return (
-    <Page>
+    <HeroSection>
       <HeroTitleStyled>Gallery</HeroTitleStyled>
       <GalleryWrapper>
         <Carousel
@@ -101,7 +101,7 @@ const Gallery = () => {
           })}
         </Carousel>
       </GalleryWrapper>
-    </Page>
+    </HeroSection>
   );
 };
 

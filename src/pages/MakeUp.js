@@ -4,8 +4,8 @@ import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import Tabs from "../components/Tabs.js";
 import {
-  PageTitle,
   HeroContent,
+  HeroTitle,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
 import { PageStyled } from "./Facial.js";
@@ -57,9 +57,7 @@ const MakeUp = () => {
         variants={dropIn}
         ref={ref}
       >
-        <PageTitle className="main-title gallery-title">
-          {t("makigiaz")}
-        </PageTitle>
+        <HeroTitle>{t("makigiaz")}</HeroTitle>
       </motion.div>
 
       <FlexRowHeroContainer>

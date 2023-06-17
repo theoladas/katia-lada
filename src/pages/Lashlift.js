@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
-import { PageTitle, FlexRowHeroContainer } from "../components/GlobalStyle.js";
+import { HeroTitle, FlexRowHeroContainer } from "../components/GlobalStyle.js";
 import { PageStyled } from "./Facial.js";
 import Accordion from "../components/Accordion.js";
 import lashlift from "../img/lashlift.jpg";
@@ -61,9 +61,7 @@ const Lashlift = () => {
         variants={dropIn}
         ref={ref}
       >
-        <PageTitle className="main-title gallery-title">
-          {t("lashlift")}
-        </PageTitle>
+        <HeroTitle>{t("lashlift")}</HeroTitle>
       </motion.div>
 
       <FlexRowHeroContainer>

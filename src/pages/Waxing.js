@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import Tabs from "../components/Tabs.js";
 import {
-  PageTitle,
+  HeroTitle,
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
@@ -65,9 +65,7 @@ const Waxing = () => {
         variants={dropIn}
         ref={ref}
       >
-        <PageTitle className="main-title gallery-title">
-          {t("apotrixosi")}
-        </PageTitle>
+        <HeroTitle>{t("apotrixosi")}</HeroTitle>
       </motion.div>
 
       <FlexRowHeroContainer>
