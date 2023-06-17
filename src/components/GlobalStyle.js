@@ -12,12 +12,16 @@ export const GlobalStyle = createGlobalStyle`
   --color-white: #fff;
   --color-bg: #f0e9eb;
   --color-bg-footer: #77787b;
+  --color-bg-accordion: #f6f6f6;
   --color-dropdown: #f1f1f1;
+  
 
   --border-primary-button: 1px solid #f49ac1;
+  --border-accordion-top: 1px solid #ddd; 
   --border-radius-primary: 10px;
 
   --box-shadow-navigation: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  --box-shadow-accordion: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   --box-shadow-contact-cards: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   --hover-pink-color: #f49ac1;
@@ -31,6 +35,8 @@ export const GlobalStyle = createGlobalStyle`
   --font-size-paragraph-styled: 1.135rem;
   --font-size-primary-button: 1.1rem;
   --font-size-beauty: 3rem;
+  --font-size-accordion-title: 1.5rem;
+  --font-size-accordion-content: 1.2rem;
   --font-size-footer: 0.8rem;
   --font-size-footer-paragraph: 0.6rem;
   --font-size-footer-attribute: 0.45rem;
