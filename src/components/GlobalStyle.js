@@ -66,9 +66,9 @@ export const GlobalStyle = createGlobalStyle`
 }
 ::-webkit-scrollbar-thumb {
   background: transparent; 
-  border-radius: 10px; 
+  border-radius: var(--border-radius-primary); 
   &:hover {
-  background: #f49ac1;  
+  background: var(--hover-pink-color);  
   }
 }
 
