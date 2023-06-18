@@ -40,7 +40,6 @@ const HeroContent = styled(motion.div)`
 `;
 
 const GridRow = styled(motion.div)`
-  margin-right: -5rem;
   display: flex;
   flex-wrap: wrap;
   width: 50%;
