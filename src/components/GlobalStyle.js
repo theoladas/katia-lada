@@ -136,11 +136,11 @@ export const HalfContainer = styled.div`
   }
 `;
 
-export const HeroSection = styled.section`
+export const HeroSection = styled.main`
   min-height: 90vh;
   padding: 5rem;
-  @media (max-width: 500px) {
-    padding: 4rem 2rem;
+  @media (max-width: 768px) {
+    padding: 2rem;
   }
   @media (max-width: 390px) {
     padding: 2rem 1rem;
@@ -154,8 +154,8 @@ export const HeroTitle = styled(motion.div)`
   color: var(--font-text);
   margin-top: 2rem;
   @media (max-width: 1024px) {
-    line-height: 55px;
     font-size: 2.6rem;
+    line-height: 55px;
   }
   @media (max-width: 768px) {
     text-align: center;
@@ -193,13 +193,6 @@ export const Paragraph = styled.p`
   }
 `;
 
-export const PrimaryButtonContainer = styled(motion.div)`
-  padding: 2rem 0;
-  @media (max-width: 768px) {
-    text-align: center;
-  }
-`;
-
 export const PrimaryButton = styled(Link)`
   font-size: var(--font-size-primary-button);
   text-decoration: none;
@@ -217,34 +210,14 @@ export const PrimaryButton = styled(Link)`
   }
 `;
 
-// Check if we use that!!!!!!
-export const Page = styled.main`
-  padding: 2rem 5rem;
-  min-height: 100vh;
-  @media (max-width: 768px) {
-    padding: 2rem 2rem;
-  }
-`;
-
-export const PageTitle = styled.h2`
-  font-family: "Arima", cursive;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #282828;
-  @media (max-width: 1330px) {
-    padding-top: 1rem;
-  }
-  @media (max-width: 950px) {
-    line-height: 55px;
-    font-size: 2.6rem;
-  }
+export const PrimaryButtonContainer = styled(motion.div)`
+  padding: 2rem 0;
   @media (max-width: 768px) {
     text-align: center;
   }
-  @media (max-width: 500px) {
-    padding-top: 0;
-  }
 `;
+
+// Check if we use that!!!!!!
 
 export const FlexRowHeroContainer = styled.div`
   display: flex;

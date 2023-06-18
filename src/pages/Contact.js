@@ -2,7 +2,7 @@ import React from "react";
 import {
   Paragraph,
   CTACall,
-  Page,
+  HeroSection,
   HeroTitle,
   HeroContent,
   HeroImage,
@@ -194,7 +194,7 @@ const Contact = () => {
   };
 
   return (
-    <Page>
+    <HeroSection>
       <HeroTitle ref={heroTitleRef} {...heroTitleAnimation}>
         {t("epikoinonia")}
       </HeroTitle>
@@ -313,7 +313,7 @@ const Contact = () => {
           </>
         )}
       </ContactSection>
-    </Page>
+    </HeroSection>
   );
 };
 

@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import Tabs from "../components/Tabs.js";
 import {
-  PageTitle,
+  HeroTitle,
   HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
@@ -58,9 +58,7 @@ const Manicure = () => {
         variants={dropIn}
         ref={ref}
       >
-        <PageTitle className="main-title gallery-title">
-          {t("peripoihshAkron")}
-        </PageTitle>
+        <HeroTitle>{t("peripoihshAkron")}</HeroTitle>
       </motion.div>
 
       <FlexRowHeroContainer>

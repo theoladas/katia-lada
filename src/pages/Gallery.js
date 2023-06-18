@@ -1,14 +1,20 @@
 import React from "react";
-import { Page, HeroTitle } from "../components/GlobalStyle";
+import { HeroSection, HeroTitle } from "../components/GlobalStyle";
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import galleryData from "../resources/gallery-data.json";
 
+const HeroSectionStyled = styled(HeroSection)`
+  padding: 2rem 5rem;
+`;
 const HeroTitleStyled = styled(HeroTitle)`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 768px) {
+    padding-bottom: 4rem;
+  }
 `;
 
 const GalleryWrapper = styled.div`
@@ -81,7 +87,7 @@ const Gallery = () => {
   const images = galleryData.images;
 
   return (
-    <Page>
+    <HeroSectionStyled>
       <HeroTitleStyled>Gallery</HeroTitleStyled>
       <GalleryWrapper>
         <Carousel
@@ -101,7 +107,7 @@ const Gallery = () => {
           })}
         </Carousel>
       </GalleryWrapper>
-    </Page>
+    </HeroSectionStyled>
   );
 };
 
