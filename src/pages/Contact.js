@@ -21,6 +21,9 @@ import contactCardsData from "../resources/contact-cards.json";
 import magazi from "../img/magazi.png";
 import styled from "styled-components";
 
+const HeroSectionStyled = styled(HeroSection)`
+  padding: 2rem 5rem;
+`;
 const Beauty = styled.span`
   font-family: var(--font-family-beauty);
   font-weight: var(--font-weight-beauty);
@@ -194,7 +197,7 @@ const Contact = () => {
   };
 
   return (
-    <HeroSection>
+    <HeroSectionStyled>
       <HeroTitle ref={heroTitleRef} {...heroTitleAnimation}>
         {t("epikoinonia")}
       </HeroTitle>
@@ -313,7 +316,7 @@ const Contact = () => {
           </>
         )}
       </ContactSection>
-    </HeroSection>
+    </HeroSectionStyled>
   );
 };
 
