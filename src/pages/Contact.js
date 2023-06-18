@@ -143,6 +143,10 @@ const ContactSection = styled.section`
 
 const FormContainerStyled = styled(FormContainer)`
   padding: 0 2rem;
+  margin-right: -5rem;
+  @media (max-width: 768px) {
+    margin-right: 0rem;
+  }
 `;
 
 const Contact = () => {
