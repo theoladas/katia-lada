@@ -59,7 +59,6 @@ const CardImage = styled.div`
   padding: 0.5rem 0;
   width: 80px;
   height: auto;
-  background-color: var(--color-white);
   @media (max-width: 768px) {
     width: 40px;
   }
