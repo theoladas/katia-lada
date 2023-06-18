@@ -112,6 +112,26 @@ export const Flex = styled.div`
   }
 `;
 
+export const FlexCenter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  @media (max-width: 1200px) {
+    justify-content: center;
+  }
+`;
+
+export const FlexRowHeroContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-top: 2rem;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
 export const CTACall = styled.a`
   font-weight: 600;
   letter-spacing: 1px;
@@ -147,6 +167,11 @@ export const HeroSection = styled.main`
   }
 `;
 
+export const HeroContent = styled.div`
+  max-width: 100%;
+  padding-top: 2rem;
+`;
+
 export const HeroTitle = styled(motion.div)`
   font-family: var(--font-family-hero);
   font-size: var(--font-size-hero-title);
@@ -159,6 +184,17 @@ export const HeroTitle = styled(motion.div)`
   }
   @media (max-width: 768px) {
     text-align: center;
+  }
+`;
+
+export const HeroImage = styled.div`
+  padding-top: 2rem;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 `;
 
@@ -214,66 +250,6 @@ export const PrimaryButtonContainer = styled(motion.div)`
   padding: 2rem 0;
   @media (max-width: 768px) {
     text-align: center;
-  }
-`;
-
-// Check if we use that!!!!!!
-
-export const FlexRowHeroContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  padding-top: 2rem;
-  @media (max-width: 768px) {
-    justify-content: center;
-  }
-`;
-
-export const HeroContent = styled.div`
-  max-width: 100%;
-  padding-top: 2rem;
-`;
-
-export const HeroImage = styled.div`
-  padding-top: 2rem;
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cove;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-`;
-
-export const FlexCenter = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  @media (max-width: 1200px) {
-    justify-content: center;
-  }
-`;
-
-export const CTAButton = styled.a`
-  border: 1px solid #e4389b;
-  border-radius: 20px;
-  color: #e4389b;
-  color: #e4389b;
-  padding: 8px 20px;
-  transition: all 0.4s ease;
-  &:hover,
-  &:focus {
-    color: #282828;
-    background: #e4389b;
-  }
-`;
-
-export const HeroImg = styled.img`
-  height: auto;
-  margin-left: auto;
-  @media (max-width: 1024px) {
-    margin: auto;
   }
 `;
 
