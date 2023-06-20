@@ -8,6 +8,7 @@ import galleryData from "../resources/gallery-data.json";
 const HeroSectionStyled = styled(HeroSection)`
   padding: 2rem 5rem;
 `;
+
 const HeroTitleStyled = styled(HeroTitle)`
   display: flex;
   align-items: center;
