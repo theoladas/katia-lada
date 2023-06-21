@@ -10,6 +10,7 @@ import Manicure from "./pages/Manicure";
 import Waxing from "./pages/Waxing";
 import Facial from "./pages/Facial";
 import Contact from "./pages/Contact";
+import OurStore from "./pages/OurStore";
 import Footer from "./components/Footer";
 import Lashlift from "./pages/Lashlift";
 
@@ -29,6 +30,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/contact" exact element={<Contact />} />
+      </Routes>
+      <Routes>
+        <Route path="/our-store" exact element={<OurStore />} />
       </Routes>
       <Routes>
         <Route path="/gallery" exact element={<Gallery />} />

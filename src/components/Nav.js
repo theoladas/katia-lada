@@ -287,7 +287,7 @@ const Nav = () => {
                 </NavLink>
               </li>
               <li onClick={handleNavLinkClick}>
-                <NavLink to="/contact">
+                <NavLink to="/our-store">
                   <FontAwesomeIcon icon={faLocationDot} className="icon" />
                   {t("oXorosMas")}
                 </NavLink>
