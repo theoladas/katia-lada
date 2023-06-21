@@ -244,9 +244,9 @@ const Footer = () => {
             <FooterLi>
               <LinkStyled to="/gallery">Gallery</LinkStyled>
             </FooterLi>
-            <FooterLi>
+            {/* <FooterLi>
               <LinkStyled to="/our-store">{t("oXorosMas")}</LinkStyled>
-            </FooterLi>
+            </FooterLi> */}
             <FooterLi>
               <FlexStyled>
                 <FooterLinkInstagram>

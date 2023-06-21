@@ -286,12 +286,7 @@ const Nav = () => {
                   Gallery
                 </NavLink>
               </li>
-              <li onClick={handleNavLinkClick}>
-                <NavLink to="/our-store">
-                  <FontAwesomeIcon icon={faLocationDot} className="icon" />
-                  {t("oXorosMas")}
-                </NavLink>
-              </li>
+
               <li onClick={handleNavLinkClick}>
                 <NavLink to="/contact">
                   <FontAwesomeIcon icon={faEnvelope} className="icon" />
