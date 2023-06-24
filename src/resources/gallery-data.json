@@ -1,10 +1,10 @@
 {
   "images": [
-    { "src": "img/grid-1.png", "alt": "Grid 1" },
-    { "src": "img/grid-2.png", "alt": "Grid 2" },
-    { "src": "img/grid-3.png", "alt": "Grid 3" },
-    { "src": "img/grid-4.png", "alt": "Grid 4" },
-    { "src": "img/grid-5.png", "alt": "Grid 5" },
-    { "src": "img/grid-6.png", "alt": "Grid 6" }
+    { "src": "./img/grid-1.png", "alt": "Grid 1" },
+    { "src": "./img/grid-2.png", "alt": "Grid 2" },
+    { "src": "./img/grid-3.png", "alt": "Grid 3" },
+    { "src": "./img/grid-4.png", "alt": "Grid 4" },
+    { "src": "./img/grid-5.png", "alt": "Grid 5" },
+    { "src": "./img/grid-6.png", "alt": "Grid 6" }
   ]
 }

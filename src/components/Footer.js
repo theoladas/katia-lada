@@ -29,6 +29,7 @@ const FooterStyled = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
   @media (max-width: 768px) {
     padding-top: 1rem;
   }
@@ -177,6 +178,9 @@ const FooterCardAttribute = styled.ul`
   @media (max-width: 768px) {
     display: flex;
   }
+  @media (max-width: 320px) {
+    max-width: 80%;
+  }
 `;
 
 const FooterAttributeLi = styled.li`
@@ -244,9 +248,6 @@ const Footer = () => {
             <FooterLi>
               <LinkStyled to="/gallery">Gallery</LinkStyled>
             </FooterLi>
-            {/* <FooterLi>
-              <LinkStyled to="/our-store">{t("oXorosMas")}</LinkStyled>
-            </FooterLi> */}
             <FooterLi>
               <FlexStyled>
                 <FooterLinkInstagram>
@@ -284,7 +285,7 @@ const Footer = () => {
               <LinkStyled to="/waxing">{t("apotrixosi")}</LinkStyled>
             </FooterLi>
             <FooterLi>
-              <LinkStyled href="/facial">{t("peripoihshProsopou")}</LinkStyled>
+              <LinkStyled to="/facial">{t("peripoihshProsopou")}</LinkStyled>
             </FooterLi>
             <FooterLi>
               <LinkStyled to="/lashlift">{t("lashlift")}</LinkStyled>

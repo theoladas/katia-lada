@@ -34,19 +34,19 @@ const Waxing = () => {
       id: 1,
       title: t("apotrixosiPodion"),
       description: t("apotrixosiPodionPerigrafi"),
-      image: "/img/waxing.jpg",
+      image: "./img/waxing.jpg",
     },
     {
       id: 2,
       title: t("apotrixosiXerion"),
       description: t("apotrixosiXerionPerigrafi"),
-      image: "/img/waxing-arms.webp",
+      image: "./img/waxing-arms.webp",
     },
     {
       id: 3,
       title: t("apotrixosiMpikini"),
       description: t("apotrixosiMpikiniPerigrafi"),
-      image: "/img/waxing-bikini.jpg",
+      image: "./img/waxing-bikini.jpg",
     },
   ];
   const [selectedTab, setSelectedTab] = useState(tabData[0].id);

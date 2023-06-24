@@ -4,14 +4,15 @@ import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 import Tabs from "../components/Tabs.js";
 import {
-  HeroContent,
   HeroTitle,
+  HeroContent,
   FlexRowHeroContainer,
 } from "../components/GlobalStyle.js";
 import { PageStyled } from "./Facial.js";
-import makeup from "../img/makeup.jpg";
+// import manicure from "../img/manicure.jpg";
+import manicure from "../img/manicure.jpg";
 
-const MakeUp = () => {
+const Manicure = () => {
   const { t } = useTranslation();
   const dropIn = {
     hidden: { opacity: 0, y: -50 },
@@ -25,30 +26,31 @@ const MakeUp = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.1, // Percentage of the element that is in view before the callback triggers
+    threshold: 0.1,
   });
 
   const tabData = [
     {
       id: 1,
-      title: "Standard",
-      description: t("makigiazPerigrafi"),
-      image: "/img/makeup.jpg",
+      title: t("manikiour"),
+      description: t("manikiourPerigrafi"),
+      image: "./img/manicure.jpg",
     },
     {
       id: 2,
-      title: t("nifikoMakigiaz"),
-      description: t("nigikoMakigiazPerigrafi"),
-      image: "/img/makeup-bride.jpg",
+      title: t("pentikiour"),
+      description: t("pentikiourPerigrafi"),
+      image: "./img/pedicure.jpg",
     },
   ];
   const [selectedTab, setSelectedTab] = useState(tabData[0].id);
 
   const selectedTabData = tabData.find((tab) => tab.id === selectedTab);
-  const backgroundImage = selectedTabData ? selectedTabData.image : makeup;
+  const backgroundImage = selectedTabData ? selectedTabData.image : manicure;
   const handleTabChange = (tabId) => {
     setSelectedTab(tabId);
   };
+
   return (
     <PageStyled backgroundImage={backgroundImage}>
       <motion.div
@@ -57,7 +59,7 @@ const MakeUp = () => {
         variants={dropIn}
         ref={ref}
       >
-        <HeroTitle>{t("makigiaz")}</HeroTitle>
+        <HeroTitle>{t("peripoihshAkron")}</HeroTitle>
       </motion.div>
 
       <FlexRowHeroContainer>
@@ -76,4 +78,4 @@ const MakeUp = () => {
   );
 };
 
-export default MakeUp;
+export default Manicure;

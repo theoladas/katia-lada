@@ -21,9 +21,6 @@ import contactCardsData from "../resources/contact-cards.json";
 import magazi from "../img/magazi.png";
 import styled from "styled-components";
 
-const HeroSectionStyled = styled(HeroSection)`
-  padding: 2rem 5rem;
-`;
 const Beauty = styled.span`
   font-family: var(--font-family-beauty);
   font-weight: var(--font-weight-beauty);
@@ -53,12 +50,12 @@ const Card = styled.div`
   border-radius: 10px;
   padding: 1rem;
   box-sizing: border-box;
-  width: 300px;
+  width: 220px;
   height: 200px;
   text-align: center;
   @media (max-width: 1024px) {
-    width: 200px;
-    height: 200px;
+    min-width: 200px;
+    min-height: 200px;
   }
   @media (max-width: 768px) {
     width: 200px;
@@ -134,7 +131,6 @@ const ContactSection = styled.section`
   justify-content: space-between;
   gap: 1rem;
   padding: 2rem 0;
-  /* margin: auto 0; */
   @media (max-width: 768px) {
     flex-direction: column;
     padding-top: 0;
@@ -143,9 +139,10 @@ const ContactSection = styled.section`
 
 const FormContainerStyled = styled(FormContainer)`
   padding: 0 2rem;
-  margin-right: -5rem;
+  margin-right: -2rem;
   @media (max-width: 768px) {
     margin-right: 0rem;
+    max-width: 100%;
   }
 `;
 
@@ -201,7 +198,7 @@ const Contact = () => {
   };
 
   return (
-    <HeroSectionStyled>
+    <HeroSection>
       <HeroTitle ref={heroTitleRef} {...heroTitleAnimation}>
         {t("epikoinonia")}
       </HeroTitle>
@@ -320,7 +317,7 @@ const Contact = () => {
           </>
         )}
       </ContactSection>
-    </HeroSectionStyled>
+    </HeroSection>
   );
 };
 

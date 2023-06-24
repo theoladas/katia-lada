@@ -5,40 +5,43 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import galleryData from "../resources/gallery-data.json";
 
-const HeroSectionStyled = styled(HeroSection)`
-  padding: 2rem 5rem;
-`;
-
 const HeroTitleStyled = styled(HeroTitle)`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 2rem;
   @media (max-width: 768px) {
     padding-bottom: 4rem;
+  }
+  @media (max-width: 500px) {
+    padding-bottom: 2rem;
   }
 `;
 
 const GalleryWrapper = styled.div`
   --dot-width: 15px;
   --dot-height: 15px;
-  padding: 2rem 10rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 50%;
+  margin: 0 auto;
+  @media (max-width: 1330px) {
+    max-width: 80%;
+  }
   @media (max-width: 768px) {
+    max-width: 100%;
     padding: 0rem;
   }
+
   .carousel .slide img {
-    max-width: 50%;
-    display: block;
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
     margin: 0 auto;
-    object-fit: cover;
     @media (max-width: 1024px) {
-      max-width: 80%;
+      width: 80%;
     }
     @media (max-width: 768px) {
-      max-width: 100%;
+      width: 100%;
     }
   }
 
@@ -52,6 +55,7 @@ const GalleryWrapper = styled.div`
 
   .carousel .control-arrow {
     color: var(--color-pink-strong);
+    padding: 0rem 1rem;
   }
 
   .carousel .control-dots .dot {
@@ -88,7 +92,7 @@ const Gallery = () => {
   const images = galleryData.images;
 
   return (
-    <HeroSectionStyled>
+    <HeroSection>
       <HeroTitleStyled>Gallery</HeroTitleStyled>
       <GalleryWrapper>
         <Carousel
@@ -108,7 +112,7 @@ const Gallery = () => {
           })}
         </Carousel>
       </GalleryWrapper>
-    </HeroSectionStyled>
+    </HeroSection>
   );
 };
 

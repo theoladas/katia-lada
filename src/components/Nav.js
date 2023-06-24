@@ -7,7 +7,6 @@ import logo from "../img/logo.png";
 import {
   faPhone,
   faEnvelope,
-  faLocationDot,
   faStar,
   faImages,
   faCaretDown,
@@ -46,7 +45,7 @@ const DropdownContent = styled.div.attrs((props) => ({
   display: ${({ open }) => (open ? "block" : "none")};
   position: absolute;
   min-width: 70px;
-  background-color: var(--color-dropdown);
+  background-color: #f1f1f1;
   border-radius: var(--border-radius-primary);
   box-shadow: var(--box-shadow-navigation);
   z-index: 1;

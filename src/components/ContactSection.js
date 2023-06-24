@@ -81,6 +81,7 @@ export const FormContainer = styled(motion.div)`
     margin-right: 0rem;
     padding-right: 0rem;
   }
+
   form {
     display: flex;
     flex-direction: column;

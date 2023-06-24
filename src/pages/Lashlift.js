@@ -30,19 +30,19 @@ const Lashlift = () => {
       id: 1,
       title: "Lashlift",
       description: t("lashliftPerigrafi"),
-      image: "/img/lashlift.jpg",
+      image: "./img/lashlift.jpg",
     },
     {
       id: 2,
       title: t("lashBrow"),
       description: t("lashBrowPerigrafi"),
-      image: "/img/lash-brow-tint.jpg",
+      image: "./img/lash-brow-tint.jpg",
     },
     {
       id: 3,
       title: t("browShape"),
       description: t("browShapePerigrafi"),
-      image: "/img/brow-shape.jpg",
+      image: "./img/brow-shape.jpg",
     },
   ];
   const [selectedTab, setSelectedTab] = useState(tabData[0].id);

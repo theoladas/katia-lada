@@ -41,13 +41,13 @@ const Facial = () => {
       id: 1,
       title: "Standard",
       description: t("peripoihshProsopouStandard"),
-      image: "/img/facial.jpg",
+      image: "./img/facial.jpg",
     },
     {
       id: 2,
       title: "Luxury",
       description: t("peripoihshProsopouLuxury"),
-      image: "/img/facial-luxury.jpg",
+      image: "./img/facial-luxury.jpg",
     },
   ];
   const [selectedTab, setSelectedTab] = useState(tabData[0].id);

@@ -10,9 +10,14 @@ const TabContainer = styled.div`
   border: var(--border-tab-container);
   border-radius: var(--border-radius-primary);
   box-shadow: var(--box-shadow-components);
+
   @media (max-width: 768px) {
     max-width: 90%;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.57);
+  }
+  @media (max-width: 500px) {
+    max-width: 100%;
   }
 `;
 
@@ -33,7 +38,6 @@ const Tab = styled.div`
     padding: 0.8rem;
   }
   @media (max-width: 350px) {
-    font-size: 1.2rem;
     padding: 0.5rem;
   }
 
